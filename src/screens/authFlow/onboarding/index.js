@@ -12,19 +12,20 @@ import Button from '../../../components/button';
 const OnboardingScreen = ({ navigation }) => {
     const onboardingArray = [
         {
-            title: 'Mya Yin Treasures',
-            subtitle: `Lorem ipsum dolor sit amet consectetur adipiscing elit Ut aliquebibendum vehicula Nullam`,
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a quam placerat.',
             image: appImages.onboarding1,
         },
         {
-            title: 'Mya Yin Treasures',
-            subtitle: 'Lorem ipsum dolor sit amet consectetur adipiscing elit Ut aliquebibendum vehicula Nullam',
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a quam placerat.',
             image: appImages.onboarding2,
         },
         {
-            title: 'Mya Yin Treasures',
-            subtitle: "Lorem ipsum dolor sit amet consectetur adipiscing elit Ut aliquebibendum vehicula Nullam",
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a quam placerat.',
             image: appImages.onboarding3,
+        },
+        {
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a quam placerat.',
+            image: appImages.onboarding4,
         },
     ]
 
@@ -47,28 +48,30 @@ const OnboardingScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={[appStyles.safeContainer,]}>
             <StatusBar hidden backgroundColor={colors.white} barStyle={'dark-content'} />
-            <SwiperFlatList
-                showPagination
-                PaginationComponent={(value) => DotComponent(value)}
-                data={onboardingArray}
-                renderItem={({ item }) => (
-                    <View style={[styles.swiperTopView]}>
-                        <View style={appStyles.aiCenter}>
-                            <Text style={[styles.titleStyle]}>{item.title}</Text>
-                            <Text style={[styles.subtitleStyle]}>{item.subtitle}</Text>
+            <View style={appStyles.flex1}>
+
+
+                <SwiperFlatList
+                    showPagination
+                    // PaginationComponent={(value) => DotComponent(value)}
+                    data={onboardingArray}
+                    renderItem={({ item }) => (
+                        <View style={[styles.swiperTopView]}>
+                            <View style={appStyles.aiCenter}>
+                                <Text style={[styles.titleStyle]}>{item.title}</Text>
+                                <Text style={[styles.subtitleStyle]}>{item.subtitle}</Text>
+                            </View>
+                            <View style={styles.imageTopView}>
+                                <Image source={item.image} style={styles.imageStyle} />
+                            </View>
                         </View>
-                        <View style={styles.imageTopView}>
-                            <Image source={item.image} style={styles.imageStyle} />
-                        </View>
-                    </View>
-                )}
-            />
-            <View style={[appStyles.ph20]}>
-                <Button onPress={() => navigation.replace(routes.selectAccount)}>GET STARTED</Button>
-                <View style={[appStyles.aiCenter, appStyles.pv10]}>
-                    <Text style={[styles.textStyle]}>Copyrighted © Mya Yin Treasures</Text>
-                </View>
+                    )}
+                />
             </View>
+            {/* <View style={[appStyles.ph20]}>
+                <Button onPress={() => navigation.replace(routes.selectAccount)}>GET STARTED</Button>
+
+            </View> */}
         </SafeAreaView>
     )
 }
