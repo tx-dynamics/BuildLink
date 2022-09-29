@@ -118,7 +118,7 @@ const OnboardingScreen = ({ navigation }) => {
     const transform4 = [{ translateX: translate4 }]
 
     const onPress = () => {
-        index === 3 ? navigation.navigate(routes.login) :
+        index === 3 ? navigation.navigate(routes.tab) :
             swiperRef.current._swiper.scrollToIndex({ index: index + 1 })
     }
 
@@ -135,7 +135,7 @@ const OnboardingScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView style={[appStyles.safeContainer]}>
-            <StatusBar backgroundColor={colors.backgroundColor} barStyle={'dark-content'} />
+            <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
             <View style={appStyles.flex1}>
                 <View style={styles.topImageStyle}>
                     <Image source={appIcons.bgIcon} style={styles.topImageIconStyle} />

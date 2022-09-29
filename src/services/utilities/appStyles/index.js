@@ -5,7 +5,7 @@ import { colors } from '../colors'
 export default StyleSheet.create({
   safeContainer: {
     flex: 1,
-    backgroundColor: colors.backgroundColor,
+    backgroundColor: colors.white,
   },
   scrollContainer: {
     flexGrow: 1,

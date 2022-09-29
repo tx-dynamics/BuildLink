@@ -22,7 +22,7 @@ const Splash = ({ navigation }) => {
 
   return (
     <SafeAreaView style={appStyles.safeContainer}>
-      <StatusBar backgroundColor={colors.backgroundColor} barStyle={'dark-content'} />
+      <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps="always"
         contentContainerStyle={appStyles.scrollContainer}>

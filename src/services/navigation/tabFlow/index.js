@@ -57,15 +57,15 @@ export function TabNavigator() {
 const styles = StyleSheet.create({
     barStyle: {
         backgroundColor: colors.white,
-        height: hp(10),
+        height: hp(6.8),
         alignItems: 'center',
         justifyContent: 'center',
-        paddingHorizontal: wp(3),
+        // paddingHorizontal: wp(3),
         paddingTop: Platform.OS == 'ios' ? hp(1) : hp(0.5)
     },
     tabIcon: {
-        width: 25,
-        height: 25,
+        width: wp(5),
+        height: wp(5),
         resizeMode: 'contain'
     },
     container: {

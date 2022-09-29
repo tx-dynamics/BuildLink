@@ -36,8 +36,7 @@ export const styles = StyleSheet.create({
         paddingTop: hp(5)
     },
     titleStyle: {
-        fontFamily:
-            fontFamily.appTextRegular,
+        fontFamily: fontFamily.appTextRegular,
         fontSize: 16,
         color: colors.black,
         textAlign: 'center'
