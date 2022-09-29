@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
-import { colors, fontFamily } from '../../../services';
+import { colors, fontFamily, hp, wp } from '../../../services';
 
 export const styles = StyleSheet.create({
     imageStyle: {
-        width: '70%',
-        height: '70%',
+        width: wp(70),
+        height: hp(35),
         resizeMode: 'contain'
     },
     subtitleStyle: {
@@ -34,18 +34,23 @@ export const styles = StyleSheet.create({
         borderColor: colors.theme,
     },
     dotComponentStyle: {
-        width: 9,
-        height: 9,
-        borderRadius: 5,
+        width: wp(3.5),
+        height: wp(3.5),
+        borderRadius: wp(2),
+    },
+    dotComponentStyleTwo: {
+        width: wp(5),
+        height: wp(5),
+        borderRadius: wp(3),
     },
     swiperTopView: {
-        width: '100%',
-        flex: 1,
+        width: wp(100),
+        height: hp(50),
+        alignSelf: 'center',
         paddingHorizontal: 10,
-        justifyContent: 'space-around'
+        justifyContent: 'center'
     },
     imageTopView: {
         alignItems: 'center',
-        marginBottom: 50
     }
 })

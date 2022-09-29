@@ -31,7 +31,7 @@ const Button = props => {
 
 const styles = StyleSheet.create({
     container: {
-        width: wp(90),
+        width: '100%',
         borderRadius: wp(8),
         height: hp(6.4),
         alignItems: 'center',
