@@ -1,40 +1,24 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Text, StyleSheet, View, TextInput, Image, TouchableOpacity } from 'react-native';
 
-import { appIcons, appImages, colors, fontFamily, hp, wp } from '../../services';
+import { appIcons, colors, fontFamily, hp, wp } from '../../services';
 import appStyles from '../../services/utilities/appStyles';
 
 export const Input = props => {
-    const [borderColor, setBorderColor] = useState(false)
-    const [countryCode, setCountryCode] = useState('FR')
-    const [country, setCountry] = useState(null)
-    const onFocus = () => {
-        setBorderColor(true)
-    }
-    const onBlur = () => {
-        setBorderColor(false)
-    }
-
     return (
-        <View style={[styles.formInput, { paddingTop: props.chat ? 0 : 15 }]}>
+        <View style={styles.formInput}>
             <View style={[appStyles.row]}>
-                <Text style={[styles.titleStyle, props.textStyle]}>{props.children}</Text>
-                {!props.star &&
-                    <Text style={{ color: colors.errorColor, paddingLeft: 3 }}>*</Text>
-                }
+                <Text style={[styles.titleStyle]}>{props.children}</Text>
             </View>
-            <View style={[styles.input, props.shadow && styles.shadow, props.containerStyle]} >
-
+            <View style={[styles.input, props.containerStyle]} >
                 <TextInput
-                    style={[styles.inputTextStyle, props.inputStyle, { marginLeft: props.phoneNumber ? 0 : 5, }]}
-                    selectionColor={colors.grey}
+                    style={[styles.inputTextStyle, props.inputStyle]}
+                    selectionColor={colors.theme}
                     value={props.value}
-                    onFocus={onFocus}
                     placeholder={props.placeholder}
-                    placeholderTextColor={colors.placeholderColor}
+                    placeholderTextColor={colors.greyDark}
                     secureTextEntry={props.secureTextEntry}
                     keyboardType={props.keyboardType}
-                    onBlur={onBlur}
                     editable={props.editable}
                     onChangeText={props.onChangeText}
                     multiline={props.multiline}
@@ -45,14 +29,11 @@ export const Input = props => {
                         <Image source={props.secureTextEntry ? appIcons.show : appIcons.hide} style={styles.icon} />
                     </TouchableOpacity>
                 }
-
-            </View>
-            <View>
-                {props.errorText && props.errorText ? (
-                    <View style={appStyles.pt5}>
-                        <Text style={[styles.errorText]} >{props.errorText}</Text>
+                {props.check &&
+                    <View onPress={props.onPressEye}>
+                        <Image source={props.check ? appIcons.greenTick : null} style={styles.icon} />
                     </View>
-                ) : null}
+                }
             </View>
         </View>
 
@@ -62,77 +43,34 @@ export const Input = props => {
 const styles = StyleSheet.create({
     inputTextStyle: {
         flex: 1,
-        fontFamily: fontFamily.appTextMedium,
-        fontSize: 14,
-        color: colors.black
-
-    },
-    phoneNumberTextStyle: {
-        fontFamily: fontFamily.appTextMedium,
+        fontFamily: fontFamily.appTextRegular,
         fontSize: 16,
-        color: colors.black,
-        paddingLeft: 5
+        color: colors.blackLight
     },
     icon: {
-        width: 20,
-        height: 20,
-        resizeMode: 'contain'
-    },
-    sendIcon: {
-        width: 22,
-        height: 22,
+        width: wp(6),
+        height: wp(6),
         resizeMode: 'contain'
     },
     formInput: {
-
-        width: '100%',
+        width: wp(90),
+        paddingBottom: wp(6)
     },
     titleStyle: {
-        paddingBottom: 5,
-        fontSize: 16,
-        fontFamily: fontFamily.appTextRegular,
-        color: '#666666',
-
-    },
-    errorText: {
-        color: colors.errorColor,
-        fontSize: 12,
-        fontFamily: fontFamily.appTextRegular,
-        paddingLeft: 25
+        paddingBottom: hp(0.3),
+        fontSize: 14,
+        fontFamily: fontFamily.appTextBold,
+        color: colors.greyDark,
     },
     input: {
-        borderWidth: 1,
-        borderColor: '#11111152',
         fontSize: 14,
         fontFamily: fontFamily.appTextRegular,
-        backgroundColor: '#F8F8F8',
-        borderRadius: 10,
-        height: 55,
-        paddingLeft: 10,
-        paddingRight: 15,
+        backgroundColor: colors.inputBg,
+        borderRadius: wp(8),
+        height: hp(6.4),
+        paddingHorizontal: wp(5),
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
     },
-    bankIconStyle: {
-        width: 40,
-        height: 40,
-        resizeMode: 'contain'
-    },
-    shadow: {
-        shadowColor: "#000",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.25,
-        shadowRadius: 3.84,
-
-        elevation: 5,
-    },
-    fileIconStyle: {
-        width: wp(6),
-        height: hp(4),
-        resizeMode: 'contain',
-    }
 })

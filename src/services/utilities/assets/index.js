@@ -26,6 +26,9 @@ const appIcons = {
     profile: require(`${iconUrl}/profile.png`),
     select: require(`${iconUrl}/select.png`),
     unSelect: require(`${iconUrl}/unSelect.png`),
+    show: require(`${iconUrl}/show.png`),
+    hide: require(`${iconUrl}/hide.png`),
+
 }
 
 export { appImages, appIcons }

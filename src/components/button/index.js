@@ -1,11 +1,11 @@
-import React, { useContext } from 'react'
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import React from 'react'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 
-import { appIcons, colors, fontFamily } from '../../services'
+import { colors, fontFamily, hp, wp } from '../../services'
 import appStyles from '../../services/utilities/appStyles'
 
 const Button = props => {
-    const { style, disable, containerStyle, onPress, themeColor, light, arrowRight, borderButton, borderWidth } = props
+    const { style, disable, containerStyle, onPress, themeColor, borderWidth } = props
 
     return (
         <View style={[appStyles.mb15]}>
@@ -15,17 +15,14 @@ const Button = props => {
                     {
                         ...styles.container,
                         ...containerStyle,
-                        backgroundColor: themeColor,
+                        backgroundColor: themeColor ? themeColor : colors.theme,
                         borderWidth: borderWidth ? borderWidth : 0
                     }}
                 onPress={onPress}>
                 <View style={[appStyles.rowCenter]}>
-                    <Text style={{ ...styles.label, ...style, color: colors.white, fontFamily: light ? fontFamily.appTextSemiBold : fontFamily.appTextBold }}>
+                    <Text style={{ ...styles.label, ...style, }}>
                         {props.children}
                     </Text>
-                    {arrowRight &&
-                        <Image source={appIcons.arrowRightCircle} style={{ marginLeft: 10, width: 17, height: 17, resizeMode: 'contain' }} />
-                    }
                 </View>
             </TouchableOpacity>
         </View>
@@ -34,16 +31,18 @@ const Button = props => {
 
 const styles = StyleSheet.create({
     container: {
-        width: '100%',
-        borderRadius: 30,
-        height: 70,
+        width: wp(90),
+        borderRadius: wp(8),
+        height: hp(6.4),
         alignItems: 'center',
         alignSelf: 'center',
         flexDirection: 'row',
         justifyContent: 'center',
     },
     label: {
-        fontSize: 18
+        fontSize: 18,
+        fontFamily: fontFamily.appTextBold,
+        color: colors.white
     },
 })
 
