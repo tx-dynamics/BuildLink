@@ -1,21 +1,121 @@
 import React from 'react'
-import { View, SafeAreaView, StatusBar, Text } from 'react-native'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { View, SafeAreaView, StatusBar, Image, Text, TouchableOpacity, FlatList } from 'react-native'
 
-import { colors } from '../../../services'
+import { ProfileHeader, ProjectView } from '../../../components';
+import { appIcons, appImages, colors, routes } from '../../../services'
+import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
 
-const ProfileScreen = (props) => {
+const ProfileScreen = ({ navigation }) => {
+    const projectsArray = [
+        {
+            id: 1,
+            title: '8600 Houston Texas',
+            company: 'Company Name',
+            date: '20 July',
+            time: '1 week',
+            image: appImages.dummyImg,
+            tagsArray: [
+                {
+                    id: 1,
+                    name: 'Electrician 13'
+                },
+                {
+                    id: 2,
+                    name: 'Plumber  12'
+                },
+                {
+                    id: 3,
+                    name: 'Site Engineer  3'
+                }
+            ]
+        },
+        {
+            id: 2,
+            title: '8600 Houston Texas',
+            company: 'Company Name',
+            date: '20 July',
+            time: '1 week',
+            image: appImages.dummyImg,
+            tagsArray: [
+                {
+                    id: 1,
+                    name: 'Electrician 13'
+                },
+                {
+                    id: 2,
+                    name: 'Plumber  12'
+                },
+                {
+                    id: 3,
+                    name: 'Site Engineer  3'
+                }
+            ]
+        },
+        {
+            id: 3,
+            title: '8600 Houston Texas',
+            company: 'Company Name',
+            date: '20 July',
+            time: '1 week',
+            image: appImages.dummyImg,
+            tagsArray: [
+                {
+                    id: 1,
+                    name: 'Electrician 13'
+                },
+                {
+                    id: 2,
+                    name: 'Plumber  12'
+                },
+                {
+                    id: 3,
+                    name: 'Site Engineer  3'
+                }
+            ]
+        },
+        {
+            id: 4,
+            title: '8600 Houston Texas',
+            company: 'Company Name',
+            date: '20 July',
+            time: '1 week',
+            image: appImages.dummyImg,
+            tagsArray: [
+                {
+                    id: 1,
+                    name: 'Electrician 13'
+                },
+                {
+                    id: 2,
+                    name: 'Plumber  12'
+                },
+                {
+                    id: 3,
+                    name: 'Site Engineer  3'
+                }
+            ]
+        },
+    ]
     return (
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
-            <KeyboardAwareScrollView
-                keyboardShouldPersistTaps="always"
-                contentContainerStyle={appStyles.scrollContainer}>
-                <View style={[appStyles.flex1, appStyles.pt20]}>
-                    <Text>Profile screen</Text>
-                </View>
-            </KeyboardAwareScrollView>
+            <ProfileHeader profileImage={appImages.profileImg} title={'Jeff Vanah'} onPressEditProfile={() => navigation.navigate(routes.editProfile)} />
+            <View style={styles.myProjectTopView}>
+                <Text style={styles.myProjects}>My Projects</Text>
+                <TouchableOpacity style={styles.addButtonTopView}>
+                    <Image source={appIcons.add} style={styles.addButton} />
+                </TouchableOpacity>
+            </View>
+            <View style={styles.container}>
+                <FlatList
+                    keyExtractor={item => item.id}
+                    data={projectsArray}
+                    renderItem={(item) =>
+                        <ProjectView tagArray={item.item.tagsArray} image={item.item.image} title={item.item.title} company={item.item.company} date={item.item.date} time={item.item.time} />
+                    }
+                />
+            </View>
         </SafeAreaView>
     )
 }

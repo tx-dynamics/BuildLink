@@ -9,6 +9,7 @@ export class ProfileStack extends Component {
         return (
             <MyStack.Navigator initialRouteName={routes.profileScreen} screenOptions={{ headerShown: false }}>
                 <MyStack.Screen name={routes.profileScreen} component={App.ProfileScreen} />
+                <MyStack.Screen name={routes.editProfile} component={App.EditProfile} />
             </MyStack.Navigator>
         )
     }

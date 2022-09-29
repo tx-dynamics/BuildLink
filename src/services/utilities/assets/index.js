@@ -11,6 +11,8 @@ const appImages = {
     onboarding4: require(`${imageUrl}/onboarding4.png`),
     otpIcon: require(`${imageUrl}/otpIcon.png`),
     signupBg: require(`${imageUrl}/signupBg.png`),
+    dummyImg: require(`${imageUrl}/dummyImg.png`),
+    profileImg: require(`${imageUrl}/profileImg.png`),
 }
 const appIcons = {
     apple: require(`${iconUrl}/apple.png`),
@@ -28,7 +30,12 @@ const appIcons = {
     unSelect: require(`${iconUrl}/unSelect.png`),
     show: require(`${iconUrl}/show.png`),
     hide: require(`${iconUrl}/hide.png`),
-
+    add: require(`${iconUrl}/add.png`),
+    backArrow: require(`${iconUrl}/backArrow.png`),
+    cameraIcon: require(`${iconUrl}/cameraIcon.png`),
+    date: require(`${iconUrl}/date.png`),
+    more: require(`${iconUrl}/more.png`),
+    time: require(`${iconUrl}/time.png`),
 }
 
 export { appImages, appIcons }

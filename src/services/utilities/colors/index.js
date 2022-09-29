@@ -1,6 +1,7 @@
 export const colors = {
   theme: '#F05D2A',
   themeSecondary: '#F48B5C',
+  tagColor: '#FFCFBE',
   white: '#FFFFFF',
   black: '#000000',
   blackLight: '#3D3D3D',
