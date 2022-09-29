@@ -10,5 +10,6 @@ export const colors = {
   greyLight: '#CCCCCC',
   greyExtraLight: '#DADADA',
   whitish: '#F3F3F3',
+  backgroundColor: '#F5F5F5',
   errorColor: '#FF0000',
 }

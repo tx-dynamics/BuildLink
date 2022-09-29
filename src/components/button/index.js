@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         borderRadius: wp(8),
-        height: hp(6.4),
+        height: hp(5.5),
         alignItems: 'center',
         alignSelf: 'center',
         flexDirection: 'row',
