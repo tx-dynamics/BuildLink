@@ -15,6 +15,7 @@ export const Input = props => {
                     style={[styles.inputTextStyle, props.inputStyle]}
                     selectionColor={colors.theme}
                     value={props.value}
+                    autoCapitalize="none"
                     placeholder={props.placeholder}
                     placeholderTextColor={colors.greyDark}
                     secureTextEntry={props.secureTextEntry}
@@ -26,7 +27,7 @@ export const Input = props => {
                 />
                 {props.eye &&
                     <TouchableOpacity onPress={props.onPressEye}>
-                        <Image source={props.secureTextEntry ? appIcons.show : appIcons.hide} style={styles.icon} />
+                        <Image source={props.secureTextEntry ? appIcons.hide : appIcons.show} style={styles.icon} />
                     </TouchableOpacity>
                 }
                 {props.check &&
@@ -44,8 +45,9 @@ const styles = StyleSheet.create({
     inputTextStyle: {
         flex: 1,
         fontFamily: fontFamily.appTextRegular,
-        fontSize: 16,
-        color: colors.blackLight
+        fontSize: 14,
+        color: colors.blackLight,
+
     },
     icon: {
         width: wp(6),
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
     },
     titleStyle: {
         paddingBottom: hp(0.3),
-        fontSize: 14,
+        fontSize: 12,
         fontFamily: fontFamily.appTextBold,
         color: colors.greyDark,
     },
@@ -67,7 +69,7 @@ const styles = StyleSheet.create({
         fontFamily: fontFamily.appTextRegular,
         backgroundColor: colors.inputBg,
         borderRadius: wp(8),
-        height: hp(6.4),
+        height: hp(5.5),
         paddingHorizontal: wp(5),
         flexDirection: 'row',
         justifyContent: 'space-between',
