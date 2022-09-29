@@ -60,12 +60,10 @@ const styles = StyleSheet.create({
         height: hp(6.8),
         alignItems: 'center',
         justifyContent: 'center',
-        // paddingHorizontal: wp(3),
-        paddingTop: Platform.OS == 'ios' ? hp(1) : hp(0.5)
     },
     tabIcon: {
-        width: wp(5),
-        height: wp(5),
+        width: wp(5.5),
+        height: wp(5.5),
         resizeMode: 'contain'
     },
     container: {
