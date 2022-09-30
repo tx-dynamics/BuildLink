@@ -2,7 +2,7 @@ import React from 'react'
 import { View, SafeAreaView, StatusBar, Text } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import { colors } from '../../../services'
+import { colors, fontFamily } from '../../../services'
 import appStyles from '../../../services/utilities/appStyles'
 
 const HomeScreen = (props) => {
@@ -12,8 +12,8 @@ const HomeScreen = (props) => {
       <KeyboardAwareScrollView
         keyboardShouldPersistTaps="always"
         contentContainerStyle={appStyles.scrollContainer}>
-        <View style={[appStyles.flex1, appStyles.pt20]}>
-          <Text>Home screen</Text>
+        <View style={[appStyles.flex1, appStyles.aiCenter, appStyles.jcCenter]}>
+          <Text style={{ fontFamily: fontFamily.appTextBold, fontSize: 18, color: colors.blackLight }}>Home screen</Text>
         </View>
       </KeyboardAwareScrollView>
     </SafeAreaView>

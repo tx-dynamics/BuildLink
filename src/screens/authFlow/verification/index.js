@@ -4,7 +4,7 @@ import { View, SafeAreaView, StatusBar, Text, TouchableOpacity, Image } from 're
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Button from '../../../components/button';
 
-import { appImages, colors, } from '../../../services'
+import { appImages, colors, routes, } from '../../../services'
 import appStyles from '../../../services/utilities/appStyles'
 import { styles } from './styles';
 
@@ -34,7 +34,7 @@ const Verification = (props) => {
                         />
                     </View>
                     <View style={styles.buttonView}>
-                        <Button onPress={() => props.navigation.navigate(routes.verification)} containerStyle={styles.buttonStyle} style={{ fontSize: 13 }} >Verify OTP</Button>
+                        <Button onPress={() => props.navigation.navigate(routes.tab)} containerStyle={styles.buttonStyle} style={{ fontSize: 13 }} >Verify OTP</Button>
                     </View>
                     <View style={styles.lastTextView}>
                         <Text style={styles.timeText}>27Sec</Text>
