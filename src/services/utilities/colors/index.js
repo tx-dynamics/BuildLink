@@ -16,4 +16,5 @@ export const colors = {
   headerText: '#363430',
   dateColor: "#979797",
   borderColorLight: "#DEDEDE"
+
 }
