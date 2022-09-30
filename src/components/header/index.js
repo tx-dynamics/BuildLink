@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     },
     container: {
         backgroundColor: colors.white,
-        paddingLeft: wp(5),
+        paddingLeft: wp(6),
         paddingRight: wp(3),
         height: wp(15),
         width: wp(100),
