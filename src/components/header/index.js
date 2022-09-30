@@ -9,7 +9,7 @@ const Header = props => {
     return (
         <View style={[styles.container, shadow && styles.shadow]}>
             <View style={[appStyles.rowBtw]}>
-                <TouchableOpacity style={[leftIconView && styles.arrowView, { width: wp(7) }]} onPress={onPress}>
+                <TouchableOpacity style={[leftIconView && styles.arrowView, { width: wp(6) }]} onPress={onPress}>
                     {leftIcon &&
                         <Image style={styles.iconStyle} source={leftIcon} />
                     }
@@ -19,7 +19,7 @@ const Header = props => {
                         {title}
                     </Text>
                 </View>
-                <View style={{ width: wp(7) }}>
+                <View style={{ width: wp(6) }}>
                     {rightIcon &&
                         <TouchableOpacity onPress={onPressRightIcon} >
                             <Image style={[styles.iconStyle]} source={rightIcon} />
@@ -33,9 +33,9 @@ const Header = props => {
 
 const styles = StyleSheet.create({
     arrowView: {
-        width: wp(7),
-        height: wp(7),
-        borderRadius: wp(2),
+        width: wp(4.5),
+        height: wp(5.5),
+        borderRadius: wp(1.5),
         backgroundColor: colors.whitish,
         justifyContent: 'center',
         alignItems: 'center'
@@ -69,8 +69,8 @@ const styles = StyleSheet.create({
         fontFamily: fontFamily.appTextBold
     },
     iconStyle: {
-        width: wp(3),
-        height: wp(5),
+        width: wp(2),
+        height: wp(4),
         resizeMode: 'contain',
     },
 })

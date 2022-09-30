@@ -36,6 +36,10 @@ const appIcons = {
     date: require(`${iconUrl}/date.png`),
     more: require(`${iconUrl}/more.png`),
     time: require(`${iconUrl}/time.png`),
+    gps: require(`${iconUrl}/gps.png`),
+    subscribeButton: require(`${iconUrl}/subscribeButton.png`),
+    subscriptionIcon: require(`${iconUrl}/subscriptionIcon.png`),
+    arrowUp: require(`${iconUrl}/arrowUp.png`)
 }
 
 export { appImages, appIcons }

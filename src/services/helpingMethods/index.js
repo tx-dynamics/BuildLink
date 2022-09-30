@@ -1,5 +1,6 @@
 import { Platform, PermissionsAndroid } from "react-native";
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import moment from 'moment';
 
 export const storeDataToStorage = async (key, value) => {
     await AsyncStorage.setItem(key, JSON.stringify(value))
@@ -54,4 +55,10 @@ export async function getLocationPermission() {
         }
     }
     return response;
+}
+
+export const getDateTime = (value) => {
+    const date = moment('2022-09-21T11:12:00.000Z').utc().format('DD, MMM YYYY , hh:mm a')
+    console.log(date);
+    // return date
 }

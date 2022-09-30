@@ -103,7 +103,7 @@ const ProfileScreen = ({ navigation }) => {
             <ProfileHeader profileImage={appImages.profileImg} title={'Jeff Vanah'} onPressEditProfile={() => navigation.navigate(routes.editProfile)} />
             <View style={styles.myProjectTopView}>
                 <Text style={styles.myProjects}>My Projects</Text>
-                <TouchableOpacity style={styles.addButtonTopView}>
+                <TouchableOpacity onPress={() => navigation.navigate(routes.requestDetail)} style={styles.addButtonTopView}>
                     <Image source={appIcons.add} style={styles.addButton} />
                 </TouchableOpacity>
             </View>
