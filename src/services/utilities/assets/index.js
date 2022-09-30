@@ -13,6 +13,7 @@ const appImages = {
     signupBg: require(`${imageUrl}/signupBg.png`),
     dummyImg: require(`${imageUrl}/dummyImg.png`),
     profileImg: require(`${imageUrl}/profileImg.png`),
+    chatuser: require(`${imageUrl}/chatuser.png`),
 }
 const appIcons = {
     apple: require(`${iconUrl}/apple.png`),
@@ -39,7 +40,9 @@ const appIcons = {
     gps: require(`${iconUrl}/gps.png`),
     subscribeButton: require(`${iconUrl}/subscribeButton.png`),
     subscriptionIcon: require(`${iconUrl}/subscriptionIcon.png`),
-    arrowUp: require(`${iconUrl}/arrowUp.png`)
+    arrowUp: require(`${iconUrl}/arrowUp.png`),
+    greendot: require(`${iconUrl}/greendot.png`),
+    language: require(`${iconUrl}/language.png`),
 }
 
 export { appImages, appIcons }

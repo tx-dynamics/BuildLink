@@ -13,5 +13,7 @@ export const colors = {
   whitish: '#F3F3F3',
   backgroundColor: '#F5F5F5',
   errorColor: '#FF0000',
-  headerText: '#363430'
+  headerText: '#363430',
+  dateColor: "#979797",
+  borderColorLight: "#DEDEDE"
 }

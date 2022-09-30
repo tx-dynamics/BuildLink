@@ -25,7 +25,9 @@ export const routes = {
     calandarScreen: 'calandarScreen',
     chatScreen: 'chatScreen',
     editProfile: 'editProfile',
-    requestDetail: 'requestDetail'
+    requestDetail: 'requestDetail',
+    message: "message",
+
 }
 
 export const loaderStyles = {

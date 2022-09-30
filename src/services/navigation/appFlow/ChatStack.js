@@ -9,6 +9,7 @@ export class ChatStack extends Component {
         return (
             <MyStack.Navigator initialRouteName={routes.chatScreen} screenOptions={{ headerShown: false }}>
                 <MyStack.Screen name={routes.chatScreen} component={App.ChatScreen} />
+                <MyStack.Screen name={routes.message} component={App.MessageScreen} />
             </MyStack.Navigator>
         )
     }
