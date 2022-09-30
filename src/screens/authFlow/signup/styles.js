@@ -2,9 +2,14 @@ import { StyleSheet } from 'react-native';
 import { colors, fontFamily, hp, wp } from '../../../services';
 
 export const styles = StyleSheet.create({
+    bgimageView: {
+        alignItems: "center",
+        width: wp(100),
+    },
     bgImgeStyle: {
-        width: wp(102),
-        height: hp(31)
+        //width: wp(104),
+        height: hp(31),
+
     },
     selectionMainView: {
         flexDirection: "row",
@@ -13,7 +18,10 @@ export const styles = StyleSheet.create({
     },
     selectionSubView: {
         flexDirection: "row",
-        alignItems: "center"
+        alignItems: "center",
+        marginLeft: wp(2.5),
+        marginRight: wp(13),
+        marginTop: hp(.8)
     },
     titleView: {
         marginTop: hp(-2.8),
@@ -48,12 +56,22 @@ export const styles = StyleSheet.create({
 
     },
     selectImageStyle: {
-        width: wp(3.5),
-        height: wp(3.5),
+        width: wp(3),
+        height: wp(3),
+    },
+    unselectImageStyle: {
+        width: wp(2.5),
+        height: wp(2.5),
     },
     selectText: {
         color: colors.blackLight,
         fontFamily: fontFamily.appTextRegular,
         fontSize: 13
     },
+    imageView: {
+        width: wp(6)
+    },
+    flatListStyle: {
+        marginLeft: wp(6.5),
+    }
 })
