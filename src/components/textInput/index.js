@@ -8,7 +8,7 @@ export const Input = props => {
     return (
         <View style={styles.formInput}>
             <View style={[appStyles.row]}>
-                <Text style={[styles.titleStyle]}>{props.children}</Text>
+                <Text style={[styles.titleStyle, props.titleStyle]}>{props.children}</Text>
             </View>
             <View style={[styles.input, props.containerStyle]} >
                 <TextInput
@@ -17,7 +17,7 @@ export const Input = props => {
                     value={props.value}
                     autoCapitalize="none"
                     placeholder={props.placeholder}
-                    placeholderTextColor={colors.greyDark}
+                    placeholderTextColor={colors.greyLight}
                     secureTextEntry={props.secureTextEntry}
                     keyboardType={props.keyboardType}
                     editable={props.editable}
@@ -69,7 +69,6 @@ const styles = StyleSheet.create({
         fontFamily: fontFamily.appTextRegular,
         backgroundColor: colors.inputBg,
         borderRadius: wp(8),
-        height: hp(5.5),
         paddingHorizontal: wp(5),
         flexDirection: 'row',
         justifyContent: 'space-between',

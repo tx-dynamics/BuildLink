@@ -3,9 +3,9 @@ import { View, SafeAreaView, Image, Text, StatusBar, TouchableOpacity } from 're
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import DatePicker from 'react-native-date-picker'
 
-import { appIcons, colors, fontFamily, hp, wp } from '../../../services'
+import { appIcons, colors, hp, wp } from '../../../services'
 import { getDateTime } from '../../../services/helpingMethods';
-import { Header } from '../../../components';
+import { Button, Header, Input } from '../../../components';
 import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
 
@@ -17,6 +17,7 @@ const RequestDetail = ({ navigation }) => {
     const [toDate, setToDate] = useState('2, July 2022 , 6:35 Pm')
     const [payRateModal, setPayRateModal] = useState(false)
     const [selectedRate, setSelectedRate] = useState({ id: 1 })
+    const [selectedType, setSelectedType] = useState({ id: 1 })
     const rateArray = [
         {
             id: 1,
@@ -27,8 +28,19 @@ const RequestDetail = ({ navigation }) => {
             name: 'Daily Rate'
         }
     ]
+    const constructorTypeArray = [
+        {
+            id: 1,
+            name: 'Electricity'
+        },
+        {
+            id: 2,
+            name: 'Construction'
+        }
+    ]
 
     const selectDate = (value) => {
+        value == 1 ? setFromDateModal(false) : settoDateModal(false)
         setTimeout(() => {
             value == 1 ? setFromDateModal(true) : settoDateModal(true)
         }, 10)
@@ -42,7 +54,7 @@ const RequestDetail = ({ navigation }) => {
                 keyboardShouldPersistTaps="always"
                 contentContainerStyle={appStyles.scrollContainer}>
                 <View style={styles.container}>
-                    <View style={{ marginBottom: hp(2) }}>
+                    <View style={styles.bottomMargin}>
                         <Text style={styles.heading}>Date & Time Range</Text>
                         <View style={appStyles.rowBtw}>
                             <TouchableOpacity
@@ -56,7 +68,7 @@ const RequestDetail = ({ navigation }) => {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View>
+                    <View style={styles.bottomMargin}>
                         <Text style={styles.heading}>Pay Rate</Text>
                         <View style={appStyles.rowBtw}>
                             <View
@@ -77,24 +89,54 @@ const RequestDetail = ({ navigation }) => {
 
                                 }
                                 <TouchableOpacity onPress={() => setPayRateModal(!payRateModal)}>
-                                    <Image source={appIcons.arrowUp} style={{ width: wp(3.5), height: hp(2), resizeMode: 'contain', transform: [{ rotate: '180deg' }] }} />
+                                    <Image source={appIcons.arrowDown} style={[styles.arrowDown]} />
                                 </TouchableOpacity>
                             </View>
 
                         </View>
                     </View>
                     {payRateModal &&
-                        <View style={{ marginTop: hp(2) }}>
-                            <View style={appStyles.rowBtw}>
+                        <View style={styles.bottomMargin}>
+                            <View style={[appStyles.rowBtw, { zIndex: 1 }]}>
                                 <View style={styles.payRateTopView}>
                                     <Text style={styles.textStyle}>Contractor Type</Text>
                                     <TouchableOpacity onPress={() => setPayRateModal(!payRateModal)}>
-                                        <Image source={appIcons.arrowUp} style={{ width: wp(3.5), height: hp(2), resizeMode: 'contain', transform: [{ rotate: '180deg' }] }} />
+                                        <Image source={appIcons.arrowDown} style={styles.arrowDown} />
                                     </TouchableOpacity>
+                                </View>
+                            </View>
+                            <View style={styles.contractorTypeTopView}>
+                                <View style={styles.selectionTopView}>
+                                    {constructorTypeArray.map((data) => {
+                                        return (
+                                            <TouchableOpacity onPress={() => setSelectedType(data)} key={data.id} style={[appStyles.rowCenter, { paddingBottom: hp(1), }]}>
+                                                <Image source={selectedType.id === data.id ? appIcons.select : appIcons.unSelect} style={styles.selectionIcon} />
+                                                <Text style={styles.rateTextStyle}>{data.name}</Text>
+                                            </TouchableOpacity>
+                                        )
+                                    })}
                                 </View>
                             </View>
                         </View>
                     }
+                    <View>
+                        <Text style={styles.heading}>Loaction</Text>
+                        <View style={appStyles.rowBtw}>
+                            <View
+                                style={[styles.payRateTopView, { paddingLeft: payRateModal ? wp(7) : wp(4) }]}>
+                                <Text style={styles.textStyle}>Choose location</Text>
+                                <TouchableOpacity onPress={() => setPayRateModal(!payRateModal)}>
+                                    <Image source={appIcons.gps} style={styles.gpsIcon} />
+                                </TouchableOpacity>
+                            </View>
+                        </View>
+                        <View style={{ marginTop: hp(2) }}>
+                            <Input multiline placeholder={'Type services you need'} containerStyle={styles.inputContainerStyle} titleStyle={[styles.heading, { marginTop: -2 }]}>Services Description</Input>
+                        </View>
+                    </View>
+                    <View style={[appStyles.flex1, appStyles.jcCenter]}>
+                        <Button style={{ fontSize: 16 }} onPress={() => navigation.goBack()} containerStyle={styles.buttonContainerStyle}>Send Request</Button>
+                    </View>
                 </View>
             </KeyboardAwareScrollView>
             <DatePicker

@@ -25,12 +25,14 @@ export const styles = StyleSheet.create({
     dateTextStyle: {
         color: colors.blackLight,
         fontSize: 12,
-        fontFamily: fontFamily.appTextRegular
+        fontFamily: fontFamily.appTextRegular,
+        textAlign: 'center'
     },
     textStyle: {
         color: colors.greyLight,
         fontSize: 14,
-        fontFamily: fontFamily.appTextRegular
+        fontFamily: fontFamily.appTextRegular,
+        paddingLeft: wp(4)
     },
     toTextStyle: {
         color: colors.blackLight,
@@ -56,8 +58,8 @@ export const styles = StyleSheet.create({
         alignItems: 'center',
     },
     selectionIcon: {
-        width: wp(4),
-        height: wp(3),
+        width: wp(5),
+        height: wp(4),
         resizeMode: 'contain'
     },
     rateTextStyle: {
@@ -65,5 +67,40 @@ export const styles = StyleSheet.create({
         fontSize: 14,
         paddingLeft: wp(2),
         color: colors.blackLight
+    },
+    buttonContainerStyle: {
+        width: wp(43),
+        borderRadius: 16
+    },
+    bottomMargin: {
+        marginBottom: hp(1.5)
+    },
+    arrowDown: {
+        width: wp(3.5),
+        height: hp(2),
+        resizeMode: 'contain',
+    },
+    contractorTypeTopView: {
+        backgroundColor: '#FBFBFB',
+        marginTop: hp(-1),
+        zIndex: 0,
+        borderBottomLeftRadius: 16,
+        borderBottomRightRadius: 16,
+        width: wp(90)
+    },
+    selectionTopView: {
+        paddingTop: hp(2.5),
+        alignItems: 'flex-start',
+        paddingHorizontal: wp(3),
+        paddingBottom: hp(0.8)
+    },
+    gpsIcon: {
+        width: wp(5),
+        height: wp(5),
+        resizeMode: 'contain',
+    },
+    inputContainerStyle: {
+        borderRadius: 16,
+        backgroundColor: colors.whitish
     }
 })

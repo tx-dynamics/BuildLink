@@ -64,8 +64,9 @@ export const getDateTime = (value) => {
     const time1 = data.slice(11, 16)
     const time = time1.slice(0, 2)
     const mint = time > 12 ? (time - 12) : time1
-    const zone = time > 12 ? 'Pm' : 'Am'
+    const zone = time >= 12 ? 'Pm' : 'Am'
     const sec = time1.slice(3, 5)
-    const finalDate = `${date}, ${month} ${year} , ${mint}:${sec} ${zone}`
+    const time2 = time > 12 ? `${mint}:${sec}` : `${mint}`
+    const finalDate = `${date}, ${month} ${year} , ${time2} ${zone}`
     return finalDate
 }

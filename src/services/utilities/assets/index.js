@@ -42,6 +42,7 @@ const appIcons = {
     subscriptionIcon: require(`${iconUrl}/subscriptionIcon.png`),
     arrowUp: require(`${iconUrl}/arrowUp.png`),
     greendot: require(`${iconUrl}/greendot.png`),
+    arrowDown: require(`${iconUrl}/arrowDown.png`),
     language: require(`${iconUrl}/language.png`),
 }
 
