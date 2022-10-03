@@ -42,5 +42,4 @@ export const styles = StyleSheet.create({
         width: wp(80),
         height: hp(30)
     },
-
 })

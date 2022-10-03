@@ -70,7 +70,7 @@ const ChatScreen = ({ navigation }) => {
                 <View style={[appStyles.flex1]}>
                     <View style={{ marginTop: hp(3.5) }}>
                         <FlatList data={chatData}
-                            renderItem={({ item }) => <UserCard name={item.name} date={item.data} source={item.pic} message={item.message} />} />
+                            renderItem={({ item }) => <UserCard name={item.name} date={item.data} source={item.pic} message={item.message} onPress={() => navigation.navigate(routes.message)} />} />
                     </View>
                 </View>
             </KeyboardAwareScrollView>

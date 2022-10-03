@@ -9,21 +9,21 @@ const Header = props => {
     return (
         <View style={[styles.container, shadow && styles.shadow]}>
             <View style={[appStyles.rowBtw]}>
-                <TouchableOpacity style={[leftIconView && styles.arrowView, { width: wp(6), marginTop: chatHeader ? hp(3) : null }]} onPress={onPress}>
+                <TouchableOpacity style={[leftIconView && styles.arrowView, { width: wp(6) }]} onPress={onPress}>
                     {leftIcon &&
                         <Image style={styles.iconStyle} source={leftIcon} />
                     }
                 </TouchableOpacity>
                 {
                     chatHeader ?
-                        <View style={{ flexDirection: "row", justifyContent: "center", flex: 1 }}>
-                            <Image resizeMode='contain' source={appImages.chatuser} style={{ width: wp(15), height: wp(15), borderRadius: wp(15 / 2) }} />
+                        <View style={{ flexDirection: "row", justifyContent: "center", flex: 1, marginTop: hp(-3) }}>
+                            <Image resizeMode='contain' source={appImages.chatuser} style={{ width: wp(8), height: wp(8), borderRadius: wp(15 / 2) }} />
                             <Image resizeMode='contain' source={appIcons.greendot} style={{
                                 position: "absolute",
-                                width: wp(3),
-                                height: wp(3),
-                                top: hp(6),
-                                right: wp(49)
+                                width: wp(1.5),
+                                height: wp(1.5),
+                                top: hp(3.1),
+                                right: wp(47)
                             }} />
                             <Text style={[titleStyle, styles.chattextStyle]}>
                                 {chatTitle}
@@ -36,10 +36,10 @@ const Header = props => {
                         </View>
                 }
 
-                <View style={{ width: wp(6), marginTop: chatHeader ? hp(3) : null }}>
+                <View style={{ width: wp(6) }}>
                     {rightIcon &&
                         <TouchableOpacity onPress={onPressRightIcon} >
-                            <Image style={[styles.iconStyle]} source={rightIcon} />
+                            <Image style={[styles.iconStyle, { width: chatHeader ? wp(5) : null, height: chatHeader ? wp(5) : null, marginLeft: chatHeader ? wp(-4) : null }]} source={rightIcon} />
                         </TouchableOpacity>
                     }
                 </View>
@@ -86,11 +86,11 @@ const styles = StyleSheet.create({
         fontFamily: fontFamily.appTextBold
     },
     chattextStyle: {
-        fontSize: 16,
+        fontSize: 14,
         color: colors.headerText,
         fontFamily: fontFamily.appTextBold,
         marginTop: hp(.7),
-        left: wp(1)
+        left: wp(2)
 
     },
     iconStyle: {

@@ -14,6 +14,7 @@ const appImages = {
     dummyImg: require(`${imageUrl}/dummyImg.png`),
     profileImg: require(`${imageUrl}/profileImg.png`),
     chatuser: require(`${imageUrl}/chatuser.png`),
+    homeImage: require(`${imageUrl}/homeImage.png`),
 }
 const appIcons = {
     apple: require(`${iconUrl}/apple.png`),
@@ -44,6 +45,16 @@ const appIcons = {
     greendot: require(`${iconUrl}/greendot.png`),
     arrowDown: require(`${iconUrl}/arrowDown.png`),
     language: require(`${iconUrl}/language.png`),
+    attach: require(`${iconUrl}/attach.png`),
+    send: require(`${iconUrl}/send.png`),
+    fourbox: require(`${iconUrl}/fourbox.png`),
+    filter: require(`${iconUrl}/filter.png`),
+    cat1: require(`${iconUrl}/cat1.png`),
+    cat2: require(`${iconUrl}/cat2.png`),
+    cat3: require(`${iconUrl}/cat3.png`),
+    cat4: require(`${iconUrl}/cat4.png`),
+    cat5: require(`${iconUrl}/cat5.png`),
+
 }
 
 export { appImages, appIcons }

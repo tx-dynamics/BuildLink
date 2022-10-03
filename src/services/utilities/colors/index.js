@@ -15,6 +15,8 @@ export const colors = {
   errorColor: '#FF0000',
   headerText: '#363430',
   dateColor: "#979797",
-  borderColorLight: "#DEDEDE"
+  borderColorLight: "#DEDEDE",
+  backgrondLight: "#fef3ee",
+  borderLight: "#EEEEEE"
 
 }
