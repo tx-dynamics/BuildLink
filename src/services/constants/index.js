@@ -27,6 +27,9 @@ export const routes = {
     editProfile: 'editProfile',
     requestDetail: 'requestDetail',
     message: "message",
+    category: "category",
+    filter: "filter",
+
 
 }
 

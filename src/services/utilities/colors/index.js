@@ -17,6 +17,7 @@ export const colors = {
   dateColor: "#979797",
   borderColorLight: "#DEDEDE",
   backgrondLight: "#fef3ee",
-  borderLight: "#EEEEEE"
+  borderLight: "#EEEEEE",
+  catBorder: "#F7DBD3"
 
 }

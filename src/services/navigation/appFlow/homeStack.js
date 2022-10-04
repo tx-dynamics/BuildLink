@@ -10,6 +10,8 @@ export class HomeStack extends Component {
             <MyStack.Navigator initialRouteName={routes.homeScreen} screenOptions={{ headerShown: false }}>
                 <MyStack.Screen name={routes.homeScreen} component={App.HomeScreen} />
                 <MyStack.Screen name={routes.requestDetail} component={App.RequestDetail} />
+                <MyStack.Screen name={routes.category} component={App.CategoryScreen} />
+                <MyStack.Screen name={routes.filter} component={App.FilterScreen} />
 
             </MyStack.Navigator>
         )

@@ -15,6 +15,7 @@ const appImages = {
     profileImg: require(`${imageUrl}/profileImg.png`),
     chatuser: require(`${imageUrl}/chatuser.png`),
     homeImage: require(`${imageUrl}/homeImage.png`),
+    labourpic: require(`${imageUrl}/labourpic.png`),
 }
 const appIcons = {
     apple: require(`${iconUrl}/apple.png`),
@@ -54,6 +55,12 @@ const appIcons = {
     cat3: require(`${iconUrl}/cat3.png`),
     cat4: require(`${iconUrl}/cat4.png`),
     cat5: require(`${iconUrl}/cat5.png`),
+    star: require(`${iconUrl}/star.png`),
+    cross: require(`${iconUrl}/cross.png`),
+    location: require(`${iconUrl}/location.png`),
+    blacktime: require(`${iconUrl}/blacktime.png`),
+    scrollmarker: require(`${iconUrl}/scrollmarker.png`),
+
 
 }
 

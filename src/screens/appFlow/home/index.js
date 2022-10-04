@@ -1,53 +1,103 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, SafeAreaView, StatusBar, Text, Image, TextInput, FlatList, TouchableOpacity } from 'react-native'
-import { ListItem } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
 import { Button } from '../../../components';
-
-import { appIcons, appImages, colors, fontFamily, hp, wp } from '../../../services'
-import appStyles from '../../../services/utilities/appStyles'
+import { appIcons, appImages, colors, routes, } from '../../../services'
 import { styles } from './styles';
+import appStyles from '../../../services/utilities/appStyles'
+import SuggestionCard from '../../../components/suggestioncard';
 
-const HomeScreen = (props) => {
+const HomeScreen = ({ navigation }) => {
+  const [isSearch, setIsSearch] = useState("")
   const categorArray = [
     {
       id: 1,
+      labourPic: appImages.labourpic,
+      rating: 4.6,
+      wage: 25,
+      company: "Ms Hannah",
+      adress: "8700 Commerce Park Houston texas",
+      opening: "9:30AM",
+      closing: "8:30PM",
       pic: appIcons.cat1,
       text: "Plumber",
       shade: true
     },
     {
       id: 2,
+      labourPic: appImages.labourpic,
+      rating: 4.6,
+      wage: 25,
+      company: "Ms Hannah",
+      adress: "8700 Commerce Park Houston texas",
+      opening: "9:30AM",
+      closing: "8:30PM",
       pic: appIcons.cat2,
       text: "Cleaning",
       shade: true
     },
     {
       id: 3,
+      labourPic: appImages.labourpic,
+      rating: 4.6,
+      wage: 25,
+      company: "Ms Hannah",
+      adress: "8700 Commerce Park Houston texas",
+      opening: "9:30AM",
+      closing: "8:30PM",
       pic: appIcons.cat3,
       text: "Laundry",
       shade: false
     },
     {
       id: 4,
+      labourPic: appImages.labourpic,
+      rating: 4.6,
+      wage: 25,
+      company: "Ms Hannah",
+      adress: "8700 Commerce Park Houston texas",
+      opening: "9:30AM",
+      closing: "8:30PM",
       pic: appIcons.cat4,
       text: "Repairing",
       shade: false
     },
     {
       id: 5,
+      labourPic: appImages.labourpic,
+      rating: 4.6,
+      wage: 25,
+      company: "Ms Hannah",
+      adress: "8700 Commerce Park Houston texas",
+      opening: "9:30AM",
+      closing: "8:30PM",
       pic: appIcons.cat5,
       text: "Polishing",
       shade: false
     },
     {
       id: 6,
+      labourPic: appImages.labourpic,
+      rating: 4.6,
+      wage: 25,
+      company: "Ms Hannah",
+      adress: "8700 Commerce Park Houston texas",
+      opening: "9:30AM",
+      closing: "8:30PM",
       pic: appIcons.cat4,
       text: "Painting",
       shade: false
     },
     {
       id: 7,
+      labourPic: appImages.labourpic,
+      rating: 4.6,
+      wage: 25,
+      company: "Ms Hannah",
+      adress: "8700 Commerce Park Houston texas",
+      opening: "9:30AM",
+      closing: "8:30PM",
       pic: appIcons.cat4,
       text: "Plumber",
       shade: false
@@ -63,21 +113,11 @@ const HomeScreen = (props) => {
         <View style={
           props.shade === true ? styles.shadeStyle : styles.borderStyle
         }>
-          <Image resizeMode='contain' source={props.source} style={{
-            width: wp(7),
-            height: wp(7)
-          }} />
-
+          <Image resizeMode='contain' source={props.source} style={styles.renderCatImage} />
         </View>
-        <View style={{ marginTop: hp(.5) }}>
-          <Text style={{
-            color: colors.blackLight,
-            fontFamily: fontFamily.appTextRegular,
-            fontSize: 10,
-            textAlign: "center"
-          }}>{props.text}</Text>
+        <View style={styles.renderTextView}>
+          <Text style={styles.renderText}>{props.text}</Text>
         </View>
-
       </TouchableOpacity>
     )
   }
@@ -88,147 +128,77 @@ const HomeScreen = (props) => {
         keyboardShouldPersistTaps="always"
         contentContainerStyle={appStyles.scrollContainer}>
         <View style={[appStyles.flex1,]}>
-          <View style={{
-            backgroundColor: colors.backgrondLight,
-            //paddingVertical: hp(2.5),
-            paddingHorizontal: wp(4),
-            marginTop: hp(2)
-          }}>
-            <View style={
-              {
-                flexDirection: "row",
-                justifyContent: "space-between",
-                //alignItems: "flex-start"
-                marginTop: hp(2)
-                //paddingHorizontal: wp(4),
-
-              }}>
-              <Image resizeMode='contain' source={appIcons.fourbox} style={{
-                width: wp(5),
-                height: wp(5),
-              }} />
-              <View style={{ flexDirection: "row", }}>
-                <Text style={
-                  {
-                    color: colors.blackLight,
-                    fontFamily: fontFamily.appTextRegular,
-                    fontSize: 12
-
-                  }}>Current Location</Text>
-                <Image resizeMode='contain' source={appIcons.arrowDown} style={{
-                  width: wp(1.5),
-                  height: wp(1.5),
-                  alignSelf: "center",
-                  top: hp(-.4),
-                  marginLeft: wp(1.5),
-                  tintColor: colors.black
-                }} />
+          <View style={styles.mainView}>
+            <View style={styles.subView}>
+              <Image resizeMode='contain' source={appIcons.fourbox} style={styles.imageStyle} />
+              <View style={[appStyles.row]}>
+                <Text style={styles.locationText}>Current Location</Text>
+                <Image resizeMode='contain' source={appIcons.arrowDown} style={styles.downArrowIcon} />
               </View>
-              <View style={{
-                width: wp(8),
-                height: wp(8),
-                borderRadius: wp(5),
-                top: hp(-1)
-                // backgroundColor: "red"
-              }}>
-
-                <Image resizeMode='contain' source={appImages.profileImg} style={
-                  {
-                    width: wp(8),
-                    height: wp(8),
-                    borderRadius: wp(5),
-
-
-                  }} />
+              <View style={styles.profileImageView}>
+                <Image resizeMode='contain' source={appImages.profileImg} style={styles.profileImage} />
               </View>
-
-
             </View>
-            <View style={{
-              marginTop: hp(2.5)
-            }}>
-              <Text Text style={{
-                color: colors.black,
-                fontFamily: fontFamily.appTextRegular,
-                fontSize: 12
-              }}>{`Hi, Username`}</Text>
-              <Text style={{
-                color: colors.black,
-                width: wp(50),
-                fontFamily: fontFamily.appTextBold,
-                textAlign: "left",
-                fontSize: 14,
-              }}>What type of labour are you looking for</Text>
+            <View style={styles.userNameView}>
+              <Text Text style={styles.userNameText}>{`Hi, Username`}</Text>
+              <Text style={styles.subText}>What type of labour are you looking for</Text>
             </View>
-            <View style={{
-              width: wp(40),
-              //marginLeft: wp(4), 
-              marginTop: hp(3),
-
-            }}>
-              <Button containerStyle={
-                {
-                  height: hp(3.5),
-                  marginBottom: hp(2),
-                }
-              }
-                style={
-                  {
-                    fontSize: 12,
-                    fontFamily: fontFamily.appTextRegular
-                  }} >Post Service Project</Button>
+            <View style={styles.buttonView}>
+              <Button onPress={() => navigation.navigate(routes.category)} containerStyle={styles.containerStyle}
+                style={styles.buttonText} >Post Service Project</Button>
             </View>
           </View>
-          <View style={{
-            position: "absolute",
-            top: hp(8),
-            right: wp(-.6)
-          }}>
-            <Image resizeMode='contain' source={appImages.homeImage} style={{
-              width: wp(42),
-              height: wp(42)
-            }} />
+          <View style={styles.homeImageView}>
+            <Image resizeMode='contain' source={appImages.homeImage} style={styles.homeImage} />
           </View>
-          <View style={{
-            flexDirection: "row",
-            alignItems: "center",
-            paddingHorizontal: wp(4),
-            marginTop: hp(5.7),
-            alignSelf: "center",
-            borderRadius: wp(8),
-            height: hp(5.5),
-            width: wp(90),
-            backgroundColor: colors.whitish
-
-          }}>
+          <View style={styles.searchView}>
             <TextInput
               placeholder='Search Tradesman Services'
+              onChangeText={(text) => setIsSearch(text)}
               placeholderTextColor={colors.greyDark}
-              style={{
-                flex: 1,
-                color: colors.black,
-                fontFamily: fontFamily.appTextRegular,
-                fontSize: 13
-              }} />
-            <Image resizeMode='contain' source={appIcons.filter} style={{
-              width: wp(5.5),
-              height: wp(5.5)
-            }} />
+              style={styles.textInputStyle} />
+            <TouchableOpacity onPress={() => navigation.navigate(routes.filter)}>
+              <Image resizeMode='contain' source={appIcons.filter} style={styles.filterImage} />
+            </TouchableOpacity>
           </View>
-          <View style={{
-            marginTop: hp(1.5),
-            paddingHorizontal: wp(4)
-          }}>
+          {
+            isSearch == "" ?
+              <View style={styles.categoryView}>
+                <Text style={styles.categoryText}>Categories</Text>
+              </View> : null
+          }
+          {
+            isSearch == "" ?
+              <>
+                <View style={[appStyles.flex1]}>
+                  <FlatList
+                    horizontal
+                    data={categorArray}
+                    renderItem={({ item, index }) => <RenderCategory source={item.pic} text={item.text} shade={item.shade} />}
+                  />
+                </View>
+              </> : null
+          }
 
-            <Text style={{ color: colors.black, fontFamily: fontFamily.appTextBold }}>Categories</Text>
-          </View>
-
-          <View >
-            <FlatList
-
-              horizontal
-              data={categorArray}
-              renderItem={({ item, index }) => <RenderCategory source={item.pic} text={item.text} shade={item.shade} />}
+          <View style={[appStyles.flex1]}>
+            <FlatList data={categorArray}
+              ListHeaderComponent={() => {
+                return (
+                  <Text style={styles.nearByText}>{isSearch == "" ? "Nerarby you" : `Results for "${isSearch}"`} </Text>
+                )
+              }
+              }
+              renderItem={({ item, index }) => <SuggestionCard
+                source={item.labourPic}
+                rating={item.rating}
+                wage={item.wage}
+                company={item.company}
+                adress={item.adress}
+                opening={item.opening}
+                closing={item.closing}
+                work={item.text}
+              />
+              }
             />
           </View>
         </View>

@@ -1,12 +1,10 @@
 import React from 'react'
-import { FlatList } from 'react-native';
-import { Image } from 'react-native';
-import { Touchable } from 'react-native';
-import { View, SafeAreaView, StatusBar, Text, TouchableOpacity } from 'react-native'
+import { View, FlatList, Image, SafeAreaView, StatusBar, Text, TouchableOpacity } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { Header } from '../../../components';
 
-import { appIcons, appImages, colors, fontFamily, hp, routes, wp } from '../../../services'
+import { Header } from '../../../components';
+import { appIcons, appImages, colors, routes, } from '../../../services'
+import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
 
 const ChatScreen = ({ navigation }) => {
@@ -35,28 +33,19 @@ const ChatScreen = ({ navigation }) => {
     ]
     const UserCard = (props) => {
         return (
-            <TouchableOpacity onPress={props.onPress} style={{ marginBottom: hp(2.3) }}>
-                <View style={{ flexDirection: "row", justifyContent: "space-between", paddingHorizontal: wp(6), }}>
-
-                    <View style={{ flexDirection: "row", }}>
-                        <Image resizeMode='contain' source={props.source} style={{ width: wp(20), height: wp(20), borderRadius: wp(10) }} />
-                        <Image resizeMode='contain' source={appIcons.greendot} style={{
-                            position: "absolute",
-                            width: wp(3),
-                            height: wp(3),
-                            top: hp(8),
-                            left: wp(15.5)
-                        }} />
-                        <View style={{ marginLeft: wp(5) }}>
-                            <Text style={{ color: colors.black, fontFamily: fontFamily.appTextBold, fontSize: 13 }}>{props.name}</Text>
-                            <Text style={{ color: colors.black, fontFamily: fontFamily.appTextRegular, fontSize: 10, marginTop: hp(.5) }}>{props.message}</Text>
-
+            <TouchableOpacity onPress={props.onPress} style={styles.userCardMainView}>
+                <View style={styles.userCardSubView}>
+                    <View style={appStyles.row}>
+                        <Image resizeMode='contain' source={props.source} style={styles.imageStyle} />
+                        <Image resizeMode='contain' source={appIcons.greendot} style={styles.greenDotStyle} />
+                        <View style={styles.textView}>
+                            <Text style={styles.nameText}>{props.name}</Text>
+                            <Text style={styles.messageText}>{props.message}</Text>
                         </View>
                     </View>
-                    <Text style={{ color: colors.dateColor, fontSize: 11, fontFamily: fontFamily.appTextRegular }}>{props.date}</Text>
+                    <Text style={styles.dateText}>{props.date}</Text>
                 </View>
-                <View style={{ borderWidth: .5, width: wp(60), marginLeft: wp(31), marginTop: hp(1), borderColor: colors.borderColorLight }}></View>
-
+                <View style={styles.borderView}></View>
             </TouchableOpacity>
         )
     }
@@ -68,7 +57,7 @@ const ChatScreen = ({ navigation }) => {
                 keyboardShouldPersistTaps="always"
                 contentContainerStyle={appStyles.scrollContainer}>
                 <View style={[appStyles.flex1]}>
-                    <View style={{ marginTop: hp(3.5) }}>
+                    <View style={styles.flatListMainView}>
                         <FlatList data={chatData}
                             renderItem={({ item }) => <UserCard name={item.name} date={item.data} source={item.pic} message={item.message} onPress={() => navigation.navigate(routes.message)} />} />
                     </View>
@@ -77,5 +66,4 @@ const ChatScreen = ({ navigation }) => {
         </SafeAreaView>
     )
 }
-
 export default ChatScreen
