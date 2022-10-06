@@ -124,5 +124,4 @@ const MessageScreen = (props) => {
         </SafeAreaView>
     )
 }
-
 export default MessageScreen

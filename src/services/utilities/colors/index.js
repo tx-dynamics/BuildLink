@@ -18,6 +18,8 @@ export const colors = {
   borderColorLight: "#DEDEDE",
   backgrondLight: "#fef3ee",
   borderLight: "#EEEEEE",
-  catBorder: "#F7DBD3"
+  catBorder: "#F7DBD3",
+  calenderline: "#FFE0D2",
+  blue: "#35578B",
 
 }

@@ -60,6 +60,11 @@ const appIcons = {
     location: require(`${iconUrl}/location.png`),
     blacktime: require(`${iconUrl}/blacktime.png`),
     scrollmarker: require(`${iconUrl}/scrollmarker.png`),
+    leftarrow: require(`${iconUrl}/leftarrow.png`),
+    rightarrow: require(`${iconUrl}/rightarrow.png`),
+    calnderdownarrow: require(`${iconUrl}/calnderdownarrow.png`),
+    closebtn: require(`${iconUrl}/closebtn.png`),
+    calenderleft: require(`${iconUrl}/calenderleft.png`),
 
 
 }
