@@ -189,6 +189,7 @@ const HomeScreen = ({ navigation }) => {
               }
               }
               renderItem={({ item, index }) => <SuggestionCard
+                onPress={() => navigation.navigate(routes.serviceProvider)}
                 source={item.labourPic}
                 rating={item.rating}
                 wage={item.wage}

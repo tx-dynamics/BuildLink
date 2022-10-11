@@ -20,6 +20,9 @@ export const colors = {
   borderLight: "#EEEEEE",
   catBorder: "#F7DBD3",
   calenderline: "#FFE0D2",
+  serviceprovidor: "#FFD0C0",
   blue: "#35578B",
+  blueBox: "#6BA1D3",
+  blueLine: "#D2EAFF",
 
 }

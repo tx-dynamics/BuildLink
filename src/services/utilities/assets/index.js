@@ -65,6 +65,8 @@ const appIcons = {
     calnderdownarrow: require(`${iconUrl}/calnderdownarrow.png`),
     closebtn: require(`${iconUrl}/closebtn.png`),
     calenderleft: require(`${iconUrl}/calenderleft.png`),
+    labour: require(`${iconUrl}/labour.png`),
+    search: require(`${iconUrl}/search.png`),
 
 
 }

@@ -5,7 +5,7 @@ import appStyles from '../../services/utilities/appStyles'
 
 const SuggestionCard = (props) => {
     return (
-        <TouchableOpacity style={styles.mainView}>
+        <TouchableOpacity onPress={props.onPress} style={styles.mainView}>
             <Image resizeMode='contain' source={props.source} style={styles.mainImageView} />
             <View style={[appStyles.flex1]}>
                 <View style={styles.subView}>

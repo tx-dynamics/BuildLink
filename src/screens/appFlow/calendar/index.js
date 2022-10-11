@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { View, SafeAreaView, StatusBar, Text, Image } from 'react-native'
 import { Calendar } from 'react-native-calendars';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
@@ -7,8 +7,15 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { colors, wp, appIcons, hp, } from '../../../services'
 import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
+import CustomCalendar from '../../../components/customcalender';
 
 const CalendarScreen = (props) => {
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(() => {
+        const date = new Date();
+        date.setDate(date.getDate() + 5);
+        return date;
+    });
     var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
     const date = new Date()
     const PlanComponent = (props) => {
@@ -37,51 +44,23 @@ const CalendarScreen = (props) => {
             <KeyboardAwareScrollView keyboardShouldPersistTaps="always" contentContainerStyle={appStyles.scrollContainer}>
                 <View style={[appStyles.flex1,]}>
                     <View style={{}}>
-                        <Calendar
-
-                            enableSwipeMonths
-                            markingType={'period'}
-                            markedDates={{
-                                '2022-10-17': {
-                                    customContainerStyle: {
-                                        backgroundColor: colors.theme,
-                                        borderRadius: 5,
-                                        width: wp(7),
-                                        height: wp(7),
-                                        justifyContent: "flex-end",
-                                        top: hp(.7)
-
-                                    },
-                                    customTextStyle: { color: colors.white }
-                                },
-                                '2022-10-18': { customTextStyle: { color: "black", backgroundColor: colors.calenderline, width: wp(21), textAlign: "center", }, customContainerStyle: { borderRadius: 0, width: wp(25), } },
-                                '2022-10-19': { customTextStyle: { color: "black", backgroundColor: colors.calenderline, width: wp(15), textAlign: "center", }, customContainerStyle: { borderRadius: 0, width: wp(17.2), } },
-                                '2022-10-20': { customTextStyle: { color: "black", backgroundColor: colors.calenderline, width: wp(21), textAlign: "center", }, customContainerStyle: { borderRadius: 0, width: wp(25), } },
-                                '2022-10-21': {
-                                    customContainerStyle: {
-                                        backgroundColor: colors.theme,
-                                        borderRadius: 5,
-                                        width: wp(7),
-                                        height: wp(7),
-                                        justifyContent: "flex-end",
-                                        top: hp(.7)
-
-                                    },
-                                    customTextStyle: { color: colors.white }
-                                },
+                        <CustomCalendar
+                            lineTop={hp(-1.7)}
+                            boxColor={colors.theme}
+                            lineColor={colors.calenderline}
+                            //  {...{ showCal, setShowCal }}
+                            minDate={new Date()}
+                            startDate={startDate}
+                            endDate={endDate}
+                            startEndDateChange={(startData, endData) => {
+                                if (startData != null && endData != null) {
+                                    setStartDate(startData);
+                                    console.log(startData)
+                                    setEndDate(endData);
+                                }
                             }}
-                            style={styles.calenderView}
-                            renderHeader={(date) => {
-                                return (
-                                    <View style={styles.headerCalenderView}>
-                                        <Text style={styles.calHeaderText}>{`${date.getDate()}, ${months[date.getMonth()]} ${date.getFullYear()}`}</Text>
-                                    </View>
-                                )
-                            }}
-                            renderArrow={arrow => <Image resizeMode='contain' source={arrow == "left" ? appIcons.leftarrow : appIcons.rightarrow}
-                                style={styles.arrowView}
-                            />}
                         />
+
                     </View>
                     <Text style={styles.todaysPlanText}>Today's Plan</Text>
                     <PlanComponent backgroundColor={colors.themeSecondary} textColor={colors.themeSecondary} />

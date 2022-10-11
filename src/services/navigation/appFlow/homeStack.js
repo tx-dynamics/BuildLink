@@ -12,6 +12,8 @@ export class HomeStack extends Component {
                 <MyStack.Screen name={routes.requestDetail} component={App.RequestDetail} />
                 <MyStack.Screen name={routes.category} component={App.CategoryScreen} />
                 <MyStack.Screen name={routes.filter} component={App.FilterScreen} />
+                <MyStack.Screen name={routes.serviceProvider} component={App.ServiceProvider} />
+
 
             </MyStack.Navigator>
         )

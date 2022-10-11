@@ -29,6 +29,8 @@ export const routes = {
     message: "message",
     category: "category",
     filter: "filter",
+    serviceProvider: "serviceProvider",
+    maps: "maps"
 
 
 }

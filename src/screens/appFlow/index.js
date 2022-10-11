@@ -7,9 +7,10 @@ import RequestDetail from './requestDetail'
 import MessageScreen from './message'
 import CategoryScreen from './categories'
 import FilterScreen from './filterscreen'
+import ServiceProvider from './serviceproviderdetail'
 
 export {
     HomeScreen, ProfileScreen, ChatScreen, Calendar,
     EditProfile, RequestDetail, MessageScreen, CategoryScreen,
-    FilterScreen,
+    FilterScreen, ServiceProvider,
 }

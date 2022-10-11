@@ -3,7 +3,7 @@ import { View, SafeAreaView, Image, Text, StatusBar, TouchableOpacity } from 're
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import DatePicker from 'react-native-date-picker'
 
-import { appIcons, colors, hp, wp } from '../../../services'
+import { appIcons, colors, hp, routes, wp } from '../../../services'
 import { getDateTime } from '../../../services/helpingMethods';
 import { Button, Header, Input } from '../../../components';
 import { styles } from './styles';
@@ -125,7 +125,7 @@ const RequestDetail = ({ navigation }) => {
                             <View
                                 style={[styles.payRateTopView, { paddingLeft: payRateModal ? wp(7) : wp(4) }]}>
                                 <Text style={styles.textStyle}>Choose location</Text>
-                                <TouchableOpacity onPress={() => setPayRateModal(!payRateModal)}>
+                                <TouchableOpacity onPress={() => navigation.navigate(routes.maps)}>
                                     <Image source={appIcons.gps} style={styles.gpsIcon} />
                                 </TouchableOpacity>
                             </View>
