@@ -67,6 +67,13 @@ const appIcons = {
     calenderleft: require(`${iconUrl}/calenderleft.png`),
     labour: require(`${iconUrl}/labour.png`),
     search: require(`${iconUrl}/search.png`),
+    activelocation: require(`${iconUrl}/activelocation.png`),
+    inactivelocation: require(`${iconUrl}/inactivelocation.png`),
+    card: require(`${iconUrl}/card.png`),
+    applepay: require(`${iconUrl}/applepay.png`),
+    googlepay: require(`${iconUrl}/googlepay.png`),
+    paypal: require(`${iconUrl}/paypal.png`),
+
 
 
 }

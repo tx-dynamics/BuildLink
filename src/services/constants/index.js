@@ -30,7 +30,8 @@ export const routes = {
     category: "category",
     filter: "filter",
     serviceProvider: "serviceProvider",
-    maps: "maps"
+    maps: "maps",
+    paymentMathod: "paymentMathod",
 
 
 }

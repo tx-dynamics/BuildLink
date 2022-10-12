@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
-import { View, SafeAreaView, Image, Text, StatusBar, TouchableOpacity } from 'react-native'
+import { View, SafeAreaView, Image, Text, StatusBar, TouchableOpacity, Modal, TextInput } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import DatePicker from 'react-native-date-picker'
 
-import { appIcons, colors, hp, routes, wp } from '../../../services'
+import { appIcons, colors, fontFamily, hp, routes, wp } from '../../../services'
 import { getDateTime } from '../../../services/helpingMethods';
 import { Button, Header, Input } from '../../../components';
 import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
+import SubscriptionModal from '../../../components/subscriptionmodal';
 
 const RequestDetail = ({ navigation }) => {
     const [fromDateModal, setFromDateModal] = useState(false)
@@ -18,6 +19,8 @@ const RequestDetail = ({ navigation }) => {
     const [payRateModal, setPayRateModal] = useState(false)
     const [selectedRate, setSelectedRate] = useState({ id: 1 })
     const [selectedType, setSelectedType] = useState({ id: 1 })
+    const [modalVisible, setModalVisible] = useState(false)
+    const [requestVisible, setRequestVisible] = useState(false)
     const rateArray = [
         {
             id: 1,
@@ -45,11 +48,95 @@ const RequestDetail = ({ navigation }) => {
             value == 1 ? setFromDateModal(true) : settoDateModal(true)
         }, 10)
     }
+    const RequestSendModal = (props) => {
+        return (
+            <View style={{
+                backgroundColor: 100,
+                justifyContent: "center",
+                alignItems: "center",
+                flex: 1
+            }}><KeyboardAwareScrollView  >
+                    <View style={{
+                        width: wp(80),
+                        backgroundColor: "white",
+                        alignItems: "center",
+                        paddingHorizontal: wp(7),
+                        borderRadius: wp(5),
+                        paddingVertical: hp(4.5),
+                        marginTop: hp(22)
 
+                    }}>
+                        <Text style={{ fontSize: 17, color: colors.black, fontFamily: fontFamily.appTextBold }}>Request Sent</Text>
+                        <Text style={{ color: colors.blackLight, textAlign: "center", marginTop: hp(2) }}>Your request is sent to the persons, would you like to send a msg here?</Text>
+                        <View style={{
+                            backgroundColor: "white",
+                            flexDirection: "row",
+                            shadowColor: "#000",
+                            shadowOffset: {
+                                width: 0,
+                                height: 3,
+                            },
+                            shadowOpacity: 0.29,
+                            shadowRadius: 4.65,
+                            elevation: 7,
+                            alignItems: "center",
+                            paddingHorizontal: wp(2),
+                            borderRadius: wp(5),
+                            marginVertical: hp(2),
+                            marginTop: hp(30)
+                        }}>
+                            <TextInput
+                                multiline
+                                autoCorrect={false}
+                                autoCapitalize={'sentences'}
+                                placeholder='Type a message'
+                                placeholderTextColor={colors.greyDark}
+                                style={{
+                                    width: wp(62),
+                                    color: colors.black,
+                                    fontFamily: fontFamily.appTextRegular,
+                                    fontSize: 12,
+
+                                }} />
+                            <TouchableOpacity onPress={props.onPress}>
+                                <Image resizeMode='contain' source={appIcons.send}
+                                    style={{
+                                        width: wp(6),
+                                        height: wp(6)
+                                    }} />
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                </KeyboardAwareScrollView>
+            </View>
+        )
+    }
     return (
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
             <Header title={'Inquiry Details'} leftIconView leftIcon={appIcons.backArrow} onPress={() => navigation.goBack()} />
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+
+                    setModalVisible(!modalVisible);
+                }}
+            >
+                <SubscriptionModal btnPress={() => { setModalVisible(false), navigation.navigate(routes.paymentMathod) }} skipPress={() => { setRequestVisible(true), setModalVisible(false) }} />
+            </Modal>
+            <Modal
+                animationType="none"
+                transparent={true}
+                visible={requestVisible}
+                onRequestClose={() => {
+
+                    setRequestVisible(!requestVisible);
+                }}
+            >
+                <RequestSendModal onPress={() => { navigation.navigate(routes.homeScreen), setRequestVisible(false) }} />
+            </Modal>
             <KeyboardAwareScrollView
                 keyboardShouldPersistTaps="always"
                 contentContainerStyle={appStyles.scrollContainer}>
@@ -135,7 +222,7 @@ const RequestDetail = ({ navigation }) => {
                         </View>
                     </View>
                     <View style={[appStyles.flex1, appStyles.jcCenter]}>
-                        <Button style={{ fontSize: 16 }} onPress={() => navigation.goBack()} containerStyle={styles.buttonContainerStyle}>Send Request</Button>
+                        <Button style={{ fontSize: 16 }} onPress={() => setModalVisible(true)} containerStyle={styles.buttonContainerStyle}>Send Request</Button>
                     </View>
                 </View>
             </KeyboardAwareScrollView>
