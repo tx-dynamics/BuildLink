@@ -46,6 +46,7 @@ const CalendarScreen = (props) => {
                     <View style={{}}>
                         <CustomCalendar
                             lineTop={hp(-1.7)}
+                            marginRight={wp(3.5)}
                             boxColor={colors.theme}
                             lineColor={colors.calenderline}
                             //  {...{ showCal, setShowCal }}

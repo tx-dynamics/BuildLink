@@ -32,6 +32,8 @@ export const routes = {
     serviceProvider: "serviceProvider",
     maps: "maps",
     paymentMathod: "paymentMathod",
+    searchResult: "searchResult",
+    reviewFilter: "reviewFilter",
 
 
 }

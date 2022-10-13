@@ -40,7 +40,7 @@ export default function MapScreen(props) {
 
     }, [])
     const [isShow, setIsShow] = useState(false)
-    const [isIndex, setIsIndex] = useState(false)
+    const [isIndex, setIsIndex] = useState(null)
     const [mapData, setMapData] = useState([{
         isMarkerShow: true,
         latitude: 37.78830,

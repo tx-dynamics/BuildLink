@@ -72,6 +72,7 @@ export const styles = StyleSheet.create({
     selectedTextInput: {
         color: colors.black,
         fontFamily: fontFamily.appTextRegular,
+        width: wp(30),
         fontSize: 12
     },
     margintop: {
@@ -193,12 +194,12 @@ export const styles = StyleSheet.create({
         marginTop: hp(2),
         marginBottom: hp(2),
         backgroundColor: colors.theme,
-        width: wp(70),
+        width: wp(80),
         alignSelf: "center",
         borderRadius: wp(3),
     },
     btnContainerStyle: {
-        height: hp(5),
+        height: hp(6),
     },
     btnText: {
         fontSize: 14,

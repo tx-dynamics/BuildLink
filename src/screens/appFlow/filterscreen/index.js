@@ -7,7 +7,7 @@ import DatePicker from 'react-native-date-picker'
 import moment from 'moment/moment';
 
 import { Button, Header } from '../../../components';
-import { appIcons, colors, hp, wp } from '../../../services'
+import { appIcons, colors, hp, routes, wp } from '../../../services'
 import appStyles from '../../../services/utilities/appStyles'
 import { styles } from './styles';
 import CustomCalendar from '../../../components/customcalender';
@@ -77,7 +77,8 @@ const FilterScreen = (props) => {
                                         <Tradesmancomponent tradesman={item.text} />}
                                 />
                                 <TextInput
-                                    keyboardType='number-pad'
+                                    keyboardType='name-phone-pad'
+                                    multiline={true}
                                     placeholderTextColor={colors.greyDark}
                                     style={styles.selectedTextInput} />
                             </View>
@@ -122,6 +123,7 @@ const FilterScreen = (props) => {
                                 {showCalander ?
                                     <CustomCalendar
                                         lineTop={hp(-1.4)}
+                                        marginRight={wp(2)}
                                         boxColor={colors.theme}
                                         lineColor={colors.calenderline}
                                         //  {...{ showCal, setShowCal }}
@@ -178,7 +180,7 @@ const FilterScreen = (props) => {
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.buttonView}>
-                                <Button containerStyle={styles.btnContainerStyle} style={styles.btnText} >Review Filters</Button>
+                                <Button containerStyle={styles.btnContainerStyle} style={styles.btnText} onPress={() => props.navigation.navigate(routes.reviewFilter)} >Review Filters</Button>
                             </View>
                         </View>
                     </View>

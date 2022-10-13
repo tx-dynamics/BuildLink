@@ -108,8 +108,7 @@ const HomeScreen = ({ navigation }) => {
   }
   const RenderCategory = (props) => {
     return (
-      <TouchableOpacity>
-
+      <TouchableOpacity onPress={props.onPress}>
         <View style={
           props.shade === true ? styles.shadeStyle : styles.borderStyle
         }>
@@ -174,7 +173,7 @@ const HomeScreen = ({ navigation }) => {
                   <FlatList
                     horizontal
                     data={categorArray}
-                    renderItem={({ item, index }) => <RenderCategory source={item.pic} text={item.text} shade={item.shade} />}
+                    renderItem={({ item, index }) => <RenderCategory source={item.pic} text={item.text} shade={item.shade} onPress={() => navigation.navigate(routes.searchResult, { item: item })} />}
                   />
                 </View>
               </> : null
@@ -191,6 +190,7 @@ const HomeScreen = ({ navigation }) => {
               renderItem={({ item, index }) => <SuggestionCard
                 onPress={() => navigation.navigate(routes.serviceProvider)}
                 source={item.labourPic}
+                daylist={isSearch == "" ? false : true}
                 rating={item.rating}
                 wage={item.wage}
                 company={item.company}

@@ -1,9 +1,46 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { appIcons, appImages, colors, fontFamily, hp, wp } from '../../services'
 import appStyles from '../../services/utilities/appStyles'
 
 const SuggestionCard = (props) => {
+    const dayArray = [
+        {
+            text: "S",
+            dayOn: false
+        },
+        {
+            text: "M",
+            dayOn: true
+        },
+        {
+            text: "T",
+            dayOn: true
+        },
+        {
+            text: "W",
+            dayOn: true
+        },
+        {
+            text: "T",
+            dayOn: true
+        },
+        {
+            text: "F",
+            dayOn: true
+        },
+        {
+            text: "S",
+            dayOn: false
+        },
+    ]
+    const OnDayIndicator = (props) => {
+        return (
+            <View style={[styles.onDayView, { backgroundColor: props.dayOn ? colors.theme : colors.grey, }]}>
+                <Text style={{ fontSize: 6, color: props.dayOn ? colors.white : colors.blackLight }}>{props.text}</Text>
+            </View>
+        )
+    }
     return (
         <TouchableOpacity onPress={props.onPress} style={styles.mainView}>
             <Image resizeMode='contain' source={props.source} style={styles.mainImageView} />
@@ -33,6 +70,15 @@ const SuggestionCard = (props) => {
                     <Text style={styles.clockText}
                     >{`${props.opening} - ${props.closing}`}</Text>
                 </View>
+                {
+                    props.daylist &&
+                    <FlatList
+                        style={{ marginHorizontal: wp(3.5) }}
+                        data={dayArray}
+                        horizontal
+                        renderItem={({ item, index }) => <OnDayIndicator text={item.text} dayOn={item.dayOn} />}
+                    />
+                }
             </View>
         </TouchableOpacity>
     )
@@ -133,5 +179,15 @@ const styles = StyleSheet.create({
         fontSize: 8,
         fontFamily: fontFamily.appTextRegular,
         marginLeft: wp(1)
+    },
+    onDayView: {
+        width: wp(3),
+        height: wp(3),
+        borderRadius: wp(3),
+        alignItems: "center",
+        alignSelf: "center",
+        marginLeft: wp(1),
+        justifyContent: "center",
+        marginVertical: wp(1),
     }
 })

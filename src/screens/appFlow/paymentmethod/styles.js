@@ -70,5 +70,38 @@ export const styles = StyleSheet.create({
         alignSelf: "center",
         width: wp(45),
         marginTop: hp(2)
+    },
+    requestModalView: {
+        backgroundColor: 100,
+        justifyContent: "center",
+        alignItems: "center",
+        flex: 1
+    },
+    requestModalSubView: {
+        width: wp(80),
+        backgroundColor: "white",
+        alignItems: "center",
+        paddingHorizontal: wp(7),
+        borderRadius: wp(5),
+        paddingVertical: hp(15),
+        marginTop: hp(22)
+    },
+    subImage: {
+        width: wp(25),
+        height: wp(25)
+    },
+    textView: {
+        marginTop: hp(5),
+        alignItems: "center"
+    },
+    subsText: {
+        fontSize: 17,
+        color: colors.black,
+        fontFamily: fontFamily.appTextBold
+    },
+    successText: {
+        color: colors.blackLight,
+        textAlign: "center",
+        marginTop: hp(2)
     }
 })

@@ -87,7 +87,7 @@ const CategoryScreen = (props) => {
                     <View style={[appStyles.aiCenter]}>
                         <FlatList data={catArray}
                             numColumns={2}
-                            renderItem={({ item, index }) => <Categories source={item.pic} text={item.text} onPress={() => props.navigation.navigate(routes.homeScreen)} />}
+                            renderItem={({ item, index }) => <Categories source={item.pic} text={item.text} onPress={() => props.navigation.navigate(routes.searchResult, { item: item })} />}
                         />
                     </View>
                 </View>

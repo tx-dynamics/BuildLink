@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { View, SafeAreaView, StatusBar, Text, Image, TouchableOpacity } from 'react-native'
-import { Calendar } from 'react-native-calendars';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 
@@ -82,6 +81,7 @@ const ServiceProvider = (props) => {
                     </View>
                     <CustomCalendar
                         lineTop={hp(-1.7)}
+                        marginRight={wp(3.5)}
                         boxColor={colors.blueBox}
                         lineColor={colors.blueLine}
                         //  {...{ showCal, setShowCal }}

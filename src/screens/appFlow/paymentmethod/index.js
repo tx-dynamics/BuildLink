@@ -1,12 +1,21 @@
 import { FlatList, Image, Modal, SafeAreaView, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import appStyles from '../../../services/utilities/appStyles'
 import { appIcons, colors, fontFamily, hp, routes, wp, } from '../../../services'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Button, Header, Input } from '../../../components'
 import { styles } from './styles'
+import { useFocusEffect } from '@react-navigation/native'
 
 const PaymentMethod = ({ navigation }) => {
+    useFocusEffect(() => {
+        setTimeout(() => {
+            if (requestVisible == true) {
+                setRequestVisible(false)
+                navigation.navigate(routes.homeScreen)
+            }
+        }, 1500);
+    }, [])
     const [isIndex, setIsIndex] = useState(null)
     const [requestVisible, setRequestVisible] = useState(false)
     const data = [
@@ -52,35 +61,13 @@ const PaymentMethod = ({ navigation }) => {
     }
     const RequestSendModal = (props) => {
         return (
-            <View style={{
-                backgroundColor: 100,
-                justifyContent: "center",
-                alignItems: "center",
-                flex: 1
-            }}><KeyboardAwareScrollView  >
-                    <View style={{
-                        width: wp(80),
-                        backgroundColor: "white",
-                        alignItems: "center",
-                        paddingHorizontal: wp(7),
-                        borderRadius: wp(5),
-                        paddingVertical: hp(15),
-                        marginTop: hp(22)
-
-                    }}>
-                        <Image resizeMode='contain' source={appIcons.subscriptionIcon} style={{
-                            width: wp(25),
-                            height: wp(25)
-                        }} />
-                        <View style={{
-                            marginTop: hp(5),
-                            alignItems: "center"
-                        }}>
-
-                            <Text style={{ fontSize: 17, color: colors.black, fontFamily: fontFamily.appTextBold }}>Subscription Successfull</Text>
-                            <Text style={{ color: colors.blackLight, textAlign: "center", marginTop: hp(2) }}>You have succesfully sibscribed to the
-                                Buildlink community. Enjoy extra features and
-                                stay updated.</Text>
+            <View style={styles.requestModalView}>
+                <KeyboardAwareScrollView  >
+                    <View style={styles.requestModalSubView}>
+                        <Image resizeMode='contain' source={appIcons.subscriptionIcon} style={styles.subImage} />
+                        <View style={styles.textView}>
+                            <Text style={styles.subsText}>Subscription Successfull</Text>
+                            <Text style={styles.successText}>You have succesfully sibscribed to the Buildlink community. Enjoy extra features and stay updated.</Text>
                         </View>
                     </View>
                 </KeyboardAwareScrollView>
@@ -138,8 +125,6 @@ const PaymentMethod = ({ navigation }) => {
                         <Button onPress={() => setRequestVisible(true)} style={{ fontSize: 13 }} >Subscribe</Button>
                     </View>
                 </View>
-
-
             </KeyboardAwareScrollView>
         </SafeAreaView>
     )

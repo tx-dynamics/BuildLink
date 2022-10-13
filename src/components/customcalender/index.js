@@ -28,7 +28,8 @@ const CustomCalendar = ({
     startEndDateChange,
     boxColor,
     lineColor,
-    lineTop
+    lineTop,
+    marginRight
 
 }) => {
     const [dateList, setDateList] = useState([]);
@@ -157,7 +158,11 @@ const CustomCalendar = ({
         const listUI = [];
         for (let i = 0; i < 7; i++) {
             listUI.push(
-                <View key={i.toString()} style={{ flex: 1, alignItems: 'center', marginTop: hp(1), marginRight: wp(5) }}>
+                <View key={i.toString()} style={{
+                    flex: 1,
+                    alignItems: 'center',
+                    marginTop: hp(1),
+                }}>
                     <Text
                         style={{
                             fontSize: 12,
@@ -199,12 +204,13 @@ const CustomCalendar = ({
                                 top: lineTop,
 
 
-                                //alignItems: "center",
-                                //justifyContent: "center",
-                                //paddingVertical: 2,
-                                paddingLeft: isStartDateRadius(date) ? 0 : 0,
-                                // width: isStartDateRadius(date) ? wp(10) : 0,
-                                marginRight: isEndDateRadius(date) ? wp(7) : 0,
+                                alignItems: "center",
+                                justifyContent: "center",
+                                paddingVertical: 2,
+                                //paddingLeft: isStartDateRadius(date) ? 0 : 0,
+                                //width: isStartDateRadius(date) ? wp(10) : 0,
+                                marginRight: isEndDateRadius(date) ? marginRight : 0,
+                                marginLeft: isStartDateRadius(date) ? wp(3.2) : 0,
                                 backgroundColor:
                                     startDate != null && endDate != null
                                         ? getIsItStartAndEndDate(date) || getIsInRange(date)
@@ -221,16 +227,19 @@ const CustomCalendar = ({
                             style={[
                                 {
                                     ...StyleSheet.absoluteFillObject,
-                                    flex: 1,
-                                    // position: 'absolute',
+                                    //flex: 1,
+                                    position: 'absolute',
                                     // flexDirection: 'row',
-                                    padding: 2,
+                                    alignSelf: "center",
+                                    //marginRight: wp(2),
+                                    //padding: 2,
                                     borderRadius: 5,
+                                    left: wp(3.5),
                                     width: wp(6),
                                     height: wp(6),
                                     //borderWidth: getIsItStartAndEndDate(date) ? 2 : 0,
                                     //borderColor: getIsItStartAndEndDate(date)? 'white': 'transparent',
-                                    // overflow: 'hidden',
+                                    //overflow: 'hidden',
                                     backgroundColor: getIsItStartAndEndDate(date)
                                         ? boxColor
                                         : 'transparent',
@@ -261,8 +270,9 @@ const CustomCalendar = ({
                                     {
                                         flex: 1,
                                         alignSelf: "center",
+                                        //marginRight: wp(-7),
                                         alignItems: 'center',
-                                        justifyContent: 'center',
+                                        //justifyContent: 'center',
                                         opacity: !Config.isAndroid && pressed ? 0.4 : 1,
                                     },
                                 ]}
@@ -303,7 +313,7 @@ const CustomCalendar = ({
                             >
                                 <Text
                                     style={{
-                                        fontSize: 14,
+                                        fontSize: 13,
                                         fontFamily: getIsItStartAndEndDate(date)
                                             ? fontFamily.appTextBold
                                             : 'WorkSans-Regular',

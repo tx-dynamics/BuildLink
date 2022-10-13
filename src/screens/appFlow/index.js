@@ -9,10 +9,13 @@ import CategoryScreen from './categories'
 import FilterScreen from './filterscreen'
 import ServiceProvider from './serviceproviderdetail'
 import PaymentMethod from './paymentmethod'
+import SearchResult from './searchresult'
+import ReviewFilter from './reviewfilter'
 
 
 export {
     HomeScreen, ProfileScreen, ChatScreen, Calendar,
     EditProfile, RequestDetail, MessageScreen, CategoryScreen,
-    FilterScreen, ServiceProvider, PaymentMethod
+    FilterScreen, ServiceProvider, PaymentMethod, SearchResult,
+    ReviewFilter,
 }
