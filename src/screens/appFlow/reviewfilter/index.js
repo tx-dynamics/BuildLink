@@ -37,9 +37,9 @@ const ReviewFilter = (props) => {
                         flexDirection: "row",
                         alignItems: "center",
                         justifyContent: "space-between",
-                        borderBottomColor: "black",
+                        borderBottomColor: colors.whitish,
                         paddingVertical: hp(2),
-                        borderBottomWidth: .5
+                        borderBottomWidth: 1
                     }}>
                         <Text style={{
                             color: colors.black,
@@ -56,9 +56,9 @@ const ReviewFilter = (props) => {
                         flexDirection: "row",
                         alignItems: "center",
                         justifyContent: "space-between",
-                        borderBottomColor: "black",
+                        borderBottomColor: colors.whitish,
                         paddingVertical: hp(2),
-                        borderBottomWidth: .5
+                        borderBottomWidth: 1
                     }}>
                         <Text style={{
                             color: colors.black,
@@ -76,9 +76,9 @@ const ReviewFilter = (props) => {
                         flexDirection: "row",
                         alignItems: "center",
                         justifyContent: "space-between",
-                        borderBottomColor: "black",
+                        borderBottomColor: colors.whitish,
                         paddingVertical: hp(2),
-                        borderBottomWidth: .5
+                        borderBottomWidth: 1
                     }}>
                         <Text style={{
                             color: colors.black,

@@ -124,7 +124,7 @@ const RequestDetail = ({ navigation }) => {
                     setModalVisible(!modalVisible);
                 }}
             >
-                <SubscriptionModal btnPress={() => { setModalVisible(false), navigation.navigate(routes.paymentMathod) }} skipPress={() => { setRequestVisible(true), setModalVisible(false) }} />
+                <SubscriptionModal btnPress={() => { setModalVisible(false), navigation.navigate(routes.plans) }} skipPress={() => { setRequestVisible(true), setModalVisible(false) }} />
             </Modal>
             <Modal
                 animationType="none"
@@ -135,7 +135,7 @@ const RequestDetail = ({ navigation }) => {
                     setRequestVisible(!requestVisible);
                 }}
             >
-                <RequestSendModal onPress={() => { navigation.navigate(routes.homeScreen), setRequestVisible(false) }} />
+                <RequestSendModal onPress={() => { navigation.goBack(), setRequestVisible(false) }} />
             </Modal>
             <KeyboardAwareScrollView
                 keyboardShouldPersistTaps="always"

@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     tagView: {
         backgroundColor: colors.tagColor,
         paddingVertical: hp(0.5),
-        marginRight: wp(4),
+        marginRight: wp(3),
         paddingHorizontal: wp(3),
         borderRadius: wp(2),
         justifyContent: 'center',

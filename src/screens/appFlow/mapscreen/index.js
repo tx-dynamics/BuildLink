@@ -84,7 +84,7 @@ export default function MapScreen(props) {
     return (
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
-            <Header title={'Choose Location'} leftIconView={{}} leftIcon={appIcons.backArrow} onPress={() => navigation.goBack()} />
+            <Header title={'Choose Location'} leftIconView={{}} leftIcon={appIcons.backArrow} onPress={() => props.navigation.goBack()} />
             <KeyboardAwareScrollView keyboardShouldPersistTaps="always" contentContainerStyle={appStyles.scrollContainer}>
                 <View style={[appStyles.flex1, { borderRadius: 50, zIndex: 10 }]}>
                     <View style={[appStyles.row, {

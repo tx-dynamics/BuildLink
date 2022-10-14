@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { SafeAreaView } from 'react-native';
+import PlanScreen from './src/screens/appFlow/planscreen';
 import { MainNavigator } from './src/services/navigation';
 import appStyles from './src/services/utilities/appStyles';
 

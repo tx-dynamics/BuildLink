@@ -1,7 +1,7 @@
 import { FlatList, Image, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import appStyles from '../../../services/utilities/appStyles'
-import { appIcons, appImages, colors, fontFamily, hp, wp } from '../../../services'
+import { appIcons, appImages, colors, fontFamily, hp, routes, wp } from '../../../services'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import SuggestionCard from '../../../components/suggestioncard'
 
@@ -124,7 +124,7 @@ const SearchResult = (props) => {
                     <FlatList
                         data={categorArray}
                         renderItem={({ item, index }) => <SuggestionCard
-                            onPress={() => navigation.navigate(routes.serviceProvider)}
+                            onPress={() => props.navigation.navigate(routes.serviceProvider)}
                             source={item.labourPic}
                             rating={item.rating}
                             wage={item.wage}

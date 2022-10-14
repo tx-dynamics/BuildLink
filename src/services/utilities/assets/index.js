@@ -73,6 +73,9 @@ const appIcons = {
     applepay: require(`${iconUrl}/applepay.png`),
     googlepay: require(`${iconUrl}/googlepay.png`),
     paypal: require(`${iconUrl}/paypal.png`),
+    bronze: require(`${iconUrl}/bronze.png`),
+    silver: require(`${iconUrl}/silver.png`),
+    primium: require(`${iconUrl}/primium.png`),
 
 
 

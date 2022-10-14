@@ -82,7 +82,7 @@ const MessageScreen = (props) => {
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
             <View style={styles.marginTopView}>
-                <Header chatHeader chatTitle={"Zeeshan Ali"} rightIcon={appIcons.language} leftIcon={appIcons.backArrow} leftIconView />
+                <Header onPress={() => props.navigation.goBack()} chatHeader chatTitle={"Zeeshan Ali"} rightIcon={appIcons.language} leftIcon={appIcons.backArrow} leftIconView />
             </View>
             <View style={styles.borderView}></View>
             <KeyboardAwareScrollView

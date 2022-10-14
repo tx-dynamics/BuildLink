@@ -75,7 +75,7 @@ const CategoryScreen = (props) => {
     return (
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
-            <Header title={"Categories"} rightIcon={appIcons.cross} />
+            <Header title={"Categories"} rightIcon={appIcons.cross} onPressRightIcon={() => props.navigation.goBack()} />
             <KeyboardAwareScrollView
                 keyboardShouldPersistTaps="always"
                 contentContainerStyle={appStyles.scrollContainer}>

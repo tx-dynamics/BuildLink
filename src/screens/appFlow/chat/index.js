@@ -52,7 +52,7 @@ const ChatScreen = ({ navigation }) => {
     return (
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
-            <Header title={"Inbox"} leftIcon={appIcons.backArrow} leftIconView />
+            <Header onPress={() => navigation.goBack()} title={"Inbox"} leftIcon={appIcons.backArrow} leftIconView />
             <KeyboardAwareScrollView
                 keyboardShouldPersistTaps="always"
                 contentContainerStyle={appStyles.scrollContainer}>

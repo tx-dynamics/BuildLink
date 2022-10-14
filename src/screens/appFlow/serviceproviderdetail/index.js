@@ -30,9 +30,9 @@ const ServiceProvider = (props) => {
             <KeyboardAwareScrollView keyboardShouldPersistTaps="always" contentContainerStyle={appStyles.scrollContainer}>
                 <View style={[appStyles.flex1,]}>
                     <View style={styles.topView}>
-                        <View style={styles.arrowView}>
+                        <TouchableOpacity onPress={() => props.navigation.goBack()} style={styles.arrowView}>
                             <Image resizeMode='contain' source={appIcons.backArrow} style={styles.backArrowImage} />
-                        </View>
+                        </TouchableOpacity>
                         <View style={[appStyles.row, { justifyContent: "space-between", paddingHorizontal: wp(6), paddingVertical: hp(2) }]}>
                             <Image source={appImages.labourpic} style={styles.labourImage} />
                             <View>

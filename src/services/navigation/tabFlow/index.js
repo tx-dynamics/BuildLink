@@ -35,10 +35,14 @@ const TabButton = (props) => {
 
 export function TabNavigator() {
     return (
-        <Tab.Navigator
+        <Tab.Navigator tabBarOptions={{
+            showLabel: false,
+            keyboardHidesTabBar: true,
+        }}
             screenOptions={{
                 headerShown: false,
-                tabBarStyle: styles.barStyle
+                tabBarStyle: styles.barStyle,
+
             }}>
             {tabArray.map((item, index) => {
                 return (
