@@ -16,6 +16,7 @@ const appImages = {
     chatuser: require(`${imageUrl}/chatuser.png`),
     homeImage: require(`${imageUrl}/homeImage.png`),
     labourpic: require(`${imageUrl}/labourpic.png`),
+    laborFemale: require(`${imageUrl}/laborFemale.png`),
 }
 const appIcons = {
     apple: require(`${iconUrl}/apple.png`),
@@ -76,6 +77,8 @@ const appIcons = {
     bronze: require(`${iconUrl}/bronze.png`),
     silver: require(`${iconUrl}/silver.png`),
     primium: require(`${iconUrl}/primium.png`),
+    blackSend: require(`${iconUrl}/blackSend.png`),
+    flag: require(`${iconUrl}/flag.png`),
 
 
 

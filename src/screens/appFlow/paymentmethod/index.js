@@ -1,11 +1,12 @@
-import { FlatList, Image, Modal, SafeAreaView, StatusBar, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React, { useEffect, useState } from 'react'
-import appStyles from '../../../services/utilities/appStyles'
-import { appIcons, colors, fontFamily, hp, routes, wp, } from '../../../services'
+import { FlatList, Image, Modal, SafeAreaView, StatusBar, Text, TouchableOpacity, View } from 'react-native'
+import React, { useState } from 'react'
+
+import { appIcons, colors, hp, routes, } from '../../../services'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Button, Header, Input } from '../../../components'
 import { styles } from './styles'
 import { useFocusEffect } from '@react-navigation/native'
+import appStyles from '../../../services/utilities/appStyles'
 
 const PaymentMethod = ({ navigation }) => {
     useFocusEffect(() => {

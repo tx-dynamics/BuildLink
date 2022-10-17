@@ -102,5 +102,57 @@ export const styles = StyleSheet.create({
     inputContainerStyle: {
         borderRadius: 16,
         backgroundColor: colors.whitish
+    },
+    requestSendModalView: {
+        backgroundColor: 100,
+        justifyContent: "center",
+        alignItems: "center",
+        flex: 1
+    },
+    requestView: {
+        width: wp(80),
+        backgroundColor: "white",
+        alignItems: "center",
+        paddingHorizontal: wp(7),
+        borderRadius: wp(5),
+        paddingVertical: hp(4.5),
+        marginTop: hp(22)
+    },
+    requestText: {
+        fontSize: 17,
+        color: colors.black,
+        fontFamily: fontFamily.appTextBold
+    },
+    requestSentText: {
+        color: colors.blackLight,
+        textAlign: "center",
+        marginTop: hp(2)
+    },
+    TextInputView: {
+        backgroundColor: "white",
+        flexDirection: "row",
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+        elevation: 7,
+        alignItems: "center",
+        paddingHorizontal: wp(2),
+        borderRadius: wp(5),
+        marginVertical: hp(2),
+        marginTop: hp(30)
+    },
+    textInputStyle: {
+        width: wp(62),
+        color: colors.black,
+        fontFamily: fontFamily.appTextRegular,
+        fontSize: 12,
+    },
+    sendImg: {
+        width: wp(6),
+        height: wp(6)
     }
 })

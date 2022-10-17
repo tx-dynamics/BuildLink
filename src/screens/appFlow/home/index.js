@@ -103,9 +103,6 @@ const HomeScreen = ({ navigation }) => {
       shade: false
     },
   ]
-  const shade = {
-
-  }
   const RenderCategory = (props) => {
     return (
       <TouchableOpacity onPress={props.onPress}>
@@ -123,9 +120,7 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={[appStyles.safeContainer]} >
       <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
-      <KeyboardAwareScrollView
-        keyboardShouldPersistTaps="always"
-        contentContainerStyle={appStyles.scrollContainer}>
+      <KeyboardAwareScrollView keyboardShouldPersistTaps="always" contentContainerStyle={appStyles.scrollContainer}>
         <View style={[appStyles.flex1,]}>
           <View style={styles.mainView}>
             <View style={styles.subView}>
@@ -143,8 +138,7 @@ const HomeScreen = ({ navigation }) => {
               <Text style={styles.subText}>What type of labour are you looking for</Text>
             </View>
             <View style={styles.buttonView}>
-              <Button onPress={() => navigation.navigate(routes.category)} containerStyle={styles.containerStyle}
-                style={styles.buttonText} >Post Service Project</Button>
+              <Button onPress={() => navigation.navigate(routes.category)} containerStyle={styles.containerStyle} style={styles.buttonText} >Post Service Project</Button>
             </View>
           </View>
           <View style={styles.homeImageView}>
@@ -178,7 +172,6 @@ const HomeScreen = ({ navigation }) => {
                 </View>
               </> : null
           }
-
           <View style={[appStyles.flex1]}>
             <FlatList data={categorArray}
               ListHeaderComponent={() => {
@@ -207,5 +200,4 @@ const HomeScreen = ({ navigation }) => {
     </SafeAreaView >
   )
 }
-
 export default HomeScreen

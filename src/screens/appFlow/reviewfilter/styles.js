@@ -37,5 +37,73 @@ export const styles = StyleSheet.create({
     btnText: {
         fontSize: 14,
         fontFamily: fontFamily.appTextBold
+    },
+    topView: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        borderBottomColor: colors.whitish,
+        paddingVertical: hp(2),
+        borderBottomWidth: 1
+    },
+    areaRadiusText: {
+        color: colors.black,
+        fontFamily: fontFamily.appTextBold,
+        fontSize: 15
+    },
+    milesText: {
+        color: colors.black,
+        fontFamily: fontFamily.appTextRegular,
+        fontSize: 13
+    },
+    selectedTradesmanView: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        borderBottomColor: colors.whitish,
+        paddingVertical: hp(2),
+        borderBottomWidth: 1
+    },
+    selectedTradesmanText: {
+        color: colors.black,
+        fontFamily: fontFamily.appTextBold,
+        fontSize: 15
+    },
+    RateMainView: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-between",
+        borderBottomColor: colors.whitish,
+        paddingVertical: hp(2),
+        borderBottomWidth: 1
+    },
+    rateText: {
+        color: colors.black,
+        fontFamily: fontFamily.appTextBold,
+        fontSize: 15
+    },
+    fromPrice: {
+        color: colors.black,
+        fontFamily: fontFamily.appTextRegular,
+        fontSize: 13
+    },
+    toPrice: {
+        color: colors.black,
+        fontFamily: fontFamily.appTextRegular,
+        fontSize: 13
+    },
+    dateTimeRangeText: {
+        color: colors.black,
+        fontFamily: fontFamily.appTextBold,
+        fontSize: 15,
+        marginVertical: hp(2)
+    },
+    fromDate: {
+        color: colors.greyDark,
+        marginLeft: wp(5)
+    },
+    toDate: {
+        color: colors.greyDark,
+        marginLeft: wp(10)
     }
 })

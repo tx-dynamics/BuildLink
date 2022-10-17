@@ -1,9 +1,11 @@
 import { FlatList, Image, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import React from 'react'
-import appStyles from '../../../services/utilities/appStyles'
-import { appIcons, appImages, colors, fontFamily, hp, routes, wp } from '../../../services'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import React from 'react'
+
+import { appIcons, appImages, colors, fontFamily, hp, routes, wp } from '../../../services'
 import SuggestionCard from '../../../components/suggestioncard'
+import appStyles from '../../../services/utilities/appStyles'
+import { styes } from './styles'
 
 const SearchResult = (props) => {
     const categorArray = [
@@ -106,19 +108,10 @@ const SearchResult = (props) => {
                 keyboardShouldPersistTaps="always"
                 contentContainerStyle={appStyles.scrollContainer}>
                 <View style={[appStyles.flex1,]}>
-                    <View style={{
-                        flexDirection: "row",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        paddingHorizontal: wp(4),
-                        marginVertical: hp(2),
-                    }}>
-                        <Text style={{ color: "black", fontSize: 16, fontFamily: fontFamily.appTextBold }}>{`Results for "${props.route.params.item.text}"`}</Text>
+                    <View style={styes.mainTopView}>
+                        <Text style={styes.resultText}>{`Results for "${props.route.params.item.text}"`}</Text>
                         <TouchableOpacity onPress={() => props.navigation.goBack()}>
-                            <Image resizeMode='contain' source={appIcons.cross} style={{
-                                width: wp(4),
-                                height: wp(4)
-                            }} />
+                            <Image resizeMode='contain' source={appIcons.cross} style={styes.crossImg} />
                         </TouchableOpacity>
                     </View>
                     <FlatList
@@ -141,5 +134,3 @@ const SearchResult = (props) => {
 }
 
 export default SearchResult
-
-const styles = StyleSheet.create({})

@@ -84,5 +84,127 @@ export const styles = StyleSheet.create({
     btnText: {
         fontSize: 14,
         fontFamily: fontFamily.appTextBold
+    },
+    ratingText: {
+        color: colors.black,
+        fontSize: 11,
+    },
+    overAllText: {
+        color: colors.black,
+        fontSize: 13
+    },
+    overallnumText: {
+        color: colors.black,
+        fontSize: 17,
+        fontFamily: fontFamily.appTextBold
+    },
+    catText: {
+        color: colors.black,
+        fontSize: 18,
+        fontFamily: fontFamily.appTextBold
+    },
+    companyText: {
+        color: colors.black,
+        fontSize: 11,
+        fontFamily: fontFamily.appTextRegular
+    },
+    priceMainView: {
+        alignItems: "center",
+        marginLeft: wp(1)
+    },
+    dollarText: {
+        color: colors.greyDark,
+        fontSize: 10
+    },
+    priceText: {
+        color: colors.black,
+        fontSize: 16,
+        fontFamily: fontFamily.appTextBold
+    },
+    aboutMainView: {
+        paddingHorizontal: wp(6),
+        marginTop: hp(2),
+    },
+    aboutText: {
+        color: colors.black,
+        fontSize: 14,
+        fontFamily: fontFamily.appTextBold
+    },
+    aboutDetailView: {
+        backgroundColor: colors.whitish,
+        borderRadius: wp(5),
+        marginTop: hp(1)
+    },
+    detailText: {
+        color: colors.blackLight,
+        fontFamily: fontFamily.appTextRegular,
+        fontSize: 12,
+        paddingHorizontal: wp(3),
+        paddingVertical: hp(.75),
+    },
+    adressView: {
+        paddingHorizontal: wp(6),
+        marginTop: hp(3),
+    },
+    adressText: {
+        color: colors.black,
+        fontSize: 14,
+        fontFamily: fontFamily.appTextBold
+    },
+    locationView: {
+        backgroundColor: colors.whitish,
+        borderRadius: wp(5),
+        marginTop: hp(1),
+        flexDirection: "row",
+        alignItems: "center",
+        paddingHorizontal: wp(2)
+    },
+    locatoinImg: {
+        width: wp(3),
+        height: wp(3)
+    },
+    locationText: {
+        color: colors.blackLight,
+        fontFamily: fontFamily.appTextRegular,
+        fontSize: 12,
+        paddingVertical: hp(1.5),
+        marginHorizontal: wp(1)
+    },
+    availabiltyView: {
+        justifyContent: "space-between",
+        alignItems: "center",
+        paddingHorizontal: wp(6),
+        marginTop: hp(2)
+    },
+    availabiltyText: {
+        color: colors.black,
+        fontSize: 13,
+        fontFamily: fontFamily.appTextBold
+    },
+    downAroowImg: {
+        width: wp(4),
+        height: wp(4)
+    },
+    noteView: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    noteText: {
+        color: colors.blackLight,
+        fontFamily: fontFamily.appTextRegular,
+        fontSize: 11
+    },
+    noteSubView: {
+        height: wp(2),
+        width: wp(2),
+        backgroundColor: colors.theme,
+        borderRadius: 2,
+        marginHorizontal: wp(1)
+    },
+    occupiedText: {
+        color: colors.blackLight,
+        fontFamily: fontFamily.appTextRegular,
+        fontSize: 11
     }
 })

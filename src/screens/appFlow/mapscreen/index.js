@@ -1,44 +1,16 @@
 import { View, Text, SafeAreaView, StatusBar, Image, TextInput, TouchableOpacity, Pressable, FlatList } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { Button, Header } from '../../../components'
-import appStyles from '../../../services/utilities/appStyles'
-import { appIcons, appImages, colors, fontFamily, hp, routes, wp } from '../../../services'
 import { Marker } from 'react-native-maps';
 import MapView from 'react-native-maps'
+
+import { Button, Header } from '../../../components'
+import { appIcons, appImages, colors, hp, routes, wp } from '../../../services'
 import { styles } from './styles'
+import appStyles from '../../../services/utilities/appStyles'
 import MapWorkerCard from '../../../components/mapworkercard'
 
 export default function MapScreen(props) {
-    const mapArray = [
-        {
-            isMarkerShow: true,
-            latitude: 37.78830,
-            longitude: -122.4220,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-        },
-
-        {
-            isMarkerShow: false,
-            latitude: 37.77720,
-            longitude: -122.4120,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-        },
-
-        {
-            isMarkerShow: false,
-            latitude: 37.7720,
-            longitude: -122.4520,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-        }
-    ]
-    useEffect(() => {
-
-
-    }, [])
     const [isShow, setIsShow] = useState(false)
     const [isIndex, setIsIndex] = useState(null)
     const [mapData, setMapData] = useState([{
@@ -48,7 +20,6 @@ export default function MapScreen(props) {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
     },
-
     {
         isMarkerShow: false,
         latitude: 37.77720,
@@ -56,7 +27,6 @@ export default function MapScreen(props) {
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
     },
-
     {
         isMarkerShow: false,
         latitude: 37.7720,
@@ -72,84 +42,28 @@ export default function MapScreen(props) {
             setIsIndex(index)
         }
     }
-    let temp = []
-    // useEffect(() => {
-
-    //     temp.push({
-    //         lat: mapData.longitude
-    //     })
-    //     console.log(temp)
-
-    // }, [])
     return (
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
             <Header title={'Choose Location'} leftIconView={{}} leftIcon={appIcons.backArrow} onPress={() => props.navigation.goBack()} />
             <KeyboardAwareScrollView keyboardShouldPersistTaps="always" contentContainerStyle={appStyles.scrollContainer}>
-                <View style={[appStyles.flex1, { borderRadius: 50, zIndex: 10 }]}>
-                    <View style={[appStyles.row, {
-                        alignItems: "center",
-                        borderWidth: .5,
-                        borderColor: colors.theme,
-                        width: wp(90),
-                        alignSelf: "center",
-                        paddingHorizontal: wp(3),
-                        borderRadius: wp(7),
-                        marginBottom: hp(2)
-                    }]}>
-                        <Image resizeMode='contain' source={appIcons.search} style={{ width: wp(5), height: wp(5) }} />
-                        <TextInput style={{
-                            color: colors.black,
-                            width: wp(70),
-                            marginLeft: wp(2),
-                            fontFamily: fontFamily.appTextRegular
-                        }} placeholder='Search Area,City or State'
+                <View style={[appStyles.flex1, styles.topMainView]}>
+                    <View style={[appStyles.row, styles.searchView]}>
+                        <Image resizeMode='contain' source={appIcons.search} style={styles.searchImg} />
+                        <TextInput style={styles.searchTextinput} placeholder='Search Area,City or State'
                             placeholderTextColor={colors.greyDark} />
                         <TouchableOpacity onPress={() => setIsShow(!isShow)}>
-                            <Image resizeMode='contain' source={appIcons.calnderdownarrow} style={{
-                                width: wp(4),
-                                height: wp(4)
-                            }} />
+                            <Image resizeMode='contain' source={appIcons.calnderdownarrow} style={styles.dropDwonImg} />
                         </TouchableOpacity>
                     </View>
                     {
                         isShow &&
-                        <View style={{
-                            position: "absolute",
-                            height: hp(12),
-                            top: hp(7),
-                            width: wp(100),
-                            zIndex: 10,
-                            backgroundColor: colors.white,
-                            paddingHorizontal: wp(5),
-                            borderBottomLeftRadius: 20,
-                            borderBottomRightRadius: 20,
-
-
-                        }}>
+                        <View style={styles.gpsView}>
                             <TouchableOpacity style={[appStyles.row, { marginTop: hp(2) }]}>
-                                <Image resizeMode='contain' source={appIcons.gps} style={{
-                                    width: wp(5),
-                                    height: wp(5)
-                                }} />
-                                <Text style={{
-                                    color: colors.black,
-                                    marginLeft: wp(10),
-                                    fontFamily: fontFamily.appTextRegular
-                                }}>
-                                    Use Current Location
-                                </Text>
+                                <Image resizeMode='contain' source={appIcons.gps} style={styles.gpsImg} />
+                                <Text style={styles.currentLocationText}>Use Current Location</Text>
                             </TouchableOpacity>
-                            <Text style={{
-                                color: colors.black,
-                                marginTop: hp(3),
-                                marginLeft: wp(15),
-                                fontFamily: fontFamily.appTextBold,
-                                borderBottomLeftRadius: 50
-                            }}>
-                                Reccent Locations
-                            </Text>
-
+                            <Text style={styles.recentLocationText}>Reccent Locations</Text>
                         </View>
                     }
                     <MapView
@@ -185,24 +99,16 @@ export default function MapScreen(props) {
                                     }
                                     <View>
                                         <Image resizeMode='contain' style={styles.pinStyle} source={index == isIndex ? appIcons.activelocation : appIcons.inactivelocation} />
-
                                     </View>
                                 </Marker>
                             )
                         })}
                     </MapView>
-                    <View style={{
-                        width: wp(40),
-                        position: "absolute",
-                        alignSelf: "center",
-                        bottom: hp(7)
-                    }}>
-
+                    <View style={styles.btnView}>
                         <Button
                             onPress={() => props.navigation.navigate(routes.requestDetail)}
                             containerStyle={{ borderRadius: wp(4) }}
                             style={{ fontSize: 15 }}
-
                         >Confirm</Button>
                     </View>
                 </View>

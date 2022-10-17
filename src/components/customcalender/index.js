@@ -1,11 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { StyleSheet, View, Text, Pressable, Platform, Image } from 'react-native';
 import { appIcons, colors, fontFamily, hp, wp } from '../../services';
-//import Config from '../Config';
 import Config from '../../services/config';
-
-
-
 const monthNames = [
     'January',
     'February',

@@ -1,6 +1,6 @@
-import React from 'react'
 import { FlatList, Image, SafeAreaView, StatusBar, Text, TouchableOpacity, View } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import React from 'react'
 
 import { appIcons, colors, routes, } from '../../../services'
 import { Header } from '../../../components'

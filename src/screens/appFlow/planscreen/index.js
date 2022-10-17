@@ -1,11 +1,10 @@
-import { Animated, Dimensions, FlatList, Image, StatusBar, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
+import { SafeAreaView, Animated, Dimensions, FlatList, Image, StatusBar, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
 import React, { useRef } from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import appStyles from '../../../services/utilities/appStyles'
-import { appIcons, colors, fontFamily, hp, routes, wp } from '../../../services'
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import { Button, Header } from '../../../components'
 import Carousel from 'react-native-snap-carousel'
+import { appIcons, colors, hp, routes, wp } from '../../../services'
+import { Button, Header } from '../../../components'
+import { styles } from './styles'
+import appStyles from '../../../services/utilities/appStyles'
 
 const PlanScreen = ({ navigation }) => {
     const carouselRef = useRef(1);
@@ -56,91 +55,24 @@ const PlanScreen = ({ navigation }) => {
     ]
     const CheckComponenet = (props) => {
         return (
-            <View style={{
-                marginTop: hp(2.5),
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-                paddingHorizontal: wp(3),
-                //marginVertical: hp(.5)
-            }}>
-                <Text style={{
-                    color: colors.black,
-                    fontSize: 12,
-                    fontFamily: fontFamily.appTextRegular
-
-                }}>{props.text}</Text>
-                <Image source={props.source} resizeMode="contain" style={{
-                    width: wp(4.5),
-                    height: wp(4.5),
-
-                }} />
+            <View style={styles.checkComponentView}>
+                <Text style={styles.checkText}>{props.text}</Text>
+                <Image source={props.source} resizeMode="contain" style={styles.checkImg} />
             </View>
         )
     }
     const RenderPlan = (props) => {
         return (
             <TouchableWithoutFeedback style={{}}>
-                <View style={{
-                    backgroundColor: props.backgroundColor,
-                    width: wp(70),
-                    height: hp(16),
-                    alignSelf: "center",
-                    alignItems: "center",
-                    borderRadius: wp(2),
-                    marginTop: hp(6),
-                    //zIndex: 40
-                }}>
-                    <View style={{
-                        top: hp(-5),
-                        width: wp(20),
-                        height: wp(20),
-                        justifyContent: "center",
-                        borderRadius: wp(20),
-                        alignItems: "center",
-                        alignSelf: "center",
-                        backgroundColor: colors.white,
-                        shadowColor: "#000",
-                        shadowOffset: {
-                            width: 0,
-                            height: 3,
-                        },
-                        shadowOpacity: 0.29,
-                        shadowRadius: 4.65,
-                        elevation: 7,
-                    }}>
-                        <Image resizeMode='contain' source={props.source} style={{
-                            width: wp(12),
-                            height: wp(12)
-                        }} />
+                <View style={[styles.renderPlanView, { backgroundColor: props.backgroundColor, }]}>
+                    <View style={styles.renderImgView}>
+                        <Image resizeMode='contain' source={props.source} style={styles.renderImg} />
                     </View>
-                    <Text style={{
-                        top: hp(-3),
-                        color: colors.white,
-                        fontFamily: fontFamily.appTextBold,
-                        fontSize: 12
-                    }}>PREMIUM</Text>
-                    <View style={{
-                        flexDirection: "row",
-                        top: hp(-2),
-                        alignItems: "baseline",
-                        marginLeft: wp(14)
-                    }}>
-                        <Text style={{
-                            color: colors.white,
-                            fontSize: 11,
-                            fontFamily: fontFamily.appTextRegular
-                        }}>$ </Text>
-                        <Text style={{
-                            color: colors.white,
-                            fontFamily: fontFamily.appTextBold,
-                            fontSize: 19
-                        }}>16</Text>
-                        <Text style={{
-                            color: colors.white,
-                            fontSize: 11,
-                            fontFamily: fontFamily.appTextRegular
-                        }}> / Month</Text>
+                    <Text style={styles.preimiumText}>PREMIUM</Text>
+                    <View style={styles.priceView}>
+                        <Text style={styles.dollarText}>$</Text>
+                        <Text style={styles.priceText}>16</Text>
+                        <Text style={styles.dollarText}> / Month</Text>
                     </View>
                 </View>
             </TouchableWithoutFeedback>
@@ -150,30 +82,13 @@ const PlanScreen = ({ navigation }) => {
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
             <TouchableOpacity onPress={() => navigation.goBack()}>
-                <Text style={{
-                    color: colors.theme,
-                    paddingHorizontal: wp(5),
-                    marginTop: hp(2),
-                    fontFamily: fontFamily.appTextBold,
-                    alignSelf: "flex-end"
-                }}>Skip</Text>
+                <Text style={styles.skipText}>Skip</Text>
             </TouchableOpacity>
             <Header title={"Choose your plan"} />
-            <Text style={{
-                color: colors.blackLight,
-                paddingHorizontal: wp(10),
-                fontFamily: fontFamily.appTextRegular,
-                fontSize: 13,
-                textAlign: "center",
-            }}>Start with a <Text style={{
-                color: colors.theme,
-                fontFamily: fontFamily.appTextRegular,
-                fontSize: 13,
-            }}>14 days free trial</Text> and you can upgrade and downgrade anytime</Text>
+            <Text style={styles.startText}>Start with a <Text style={styles.themeText}>14 days free trial</Text> and you can upgrade and downgrade anytime</Text>
             {/* <KeyboardAwareScrollView keyboardShouldPersistTaps="always" contentContainerStyle={appStyles.scrollContainer}> */}
             <View style={[appStyles.flex1, { marginTop: hp(4), }]}>
                 <View style={{
-
                 }}>
                     <Carousel
                         layout={'stack'}
@@ -184,21 +99,12 @@ const PlanScreen = ({ navigation }) => {
                         swipeThreshold={10}
                         inactiveSlideShift={100}
                         layoutCardOffset={20}
-
                         ref={carouselRef}
                         data={colorData}
                         renderItem={({ item }) =>
                             <>
                                 <RenderPlan backgroundColor={item.color} source={item.pic} />
-                                <View style={{
-                                    width: wp(70),
-                                    top: hp(-2),
-                                    zIndex: -1,
-                                    alignSelf: "center",
-                                    borderRadius: wp(2),
-                                    backgroundColor: colors.white,
-                                    elevation: 7,
-                                }}>
+                                <View style={styles.flatListView}>
                                     <FlatList
                                         ListHeaderComponent={() => <View style={{ marginTop: hp(2) }}></View>}
                                         ListFooterComponent={() => <View style={{ marginBottom: hp(10) }}></View>}
@@ -208,15 +114,9 @@ const PlanScreen = ({ navigation }) => {
                                 </View>
                             </>
                         }
-
                     />
                 </View>
-
-                <View style={{
-                    width: wp(50),
-                    alignSelf: "center",
-                    marginTop: hp(3)
-                }}>
+                <View style={styles.btnView}>
                     <Button onPress={() => navigation.navigate(routes.paymentMathod)} style={{ fontSize: 14 }} containerStyle={{ height: hp(6) }} >Subscribe Now</Button>
                 </View>
             </View>
@@ -224,7 +124,4 @@ const PlanScreen = ({ navigation }) => {
         </SafeAreaView>
     )
 }
-
 export default PlanScreen
-
-const styles = StyleSheet.create({})

@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, SafeAreaView, StatusBar, Text, FlatList, Image, TextInput, TouchableOpacity } from 'react-native'
+import { View, SafeAreaView, StatusBar, Text, Image, TextInput, TouchableOpacity } from 'react-native'
 import { AutoScrollFlatList } from 'react-native-autoscroll-flatlist';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { Header } from '../../../components';
 
-import { appIcons, appImages, colors, fontFamily, hp, wp } from '../../../services'
-import appStyles from '../../../services/utilities/appStyles'
+import { appIcons, appImages, colors, wp } from '../../../services'
 import { styles } from './styles';
+import appStyles from '../../../services/utilities/appStyles'
 
 const MessageScreen = (props) => {
     let chatRef = React.createRef();
@@ -29,31 +29,31 @@ const MessageScreen = (props) => {
         {
             user: 1,
             pic: appImages.chatuser,
-            messsage: 'Good sdfsdfsdfsdfsdfsdfb  sdgsdf  sdfsdfsdf  dfsdfsdfsdfsdf  sdfsdfsdfsdfsd  sdfsf sdfsdfsdfsdfsdfsdfsdfsdfd'
+            messsage: 'Good'
         },
         {
             user: 2,
-            messsage: 'How are youfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff sdfsdfsdf sdfsdf?',
+            messsage: 'How are you',
             pic: appImages.dummyImg
         },
         {
             user: 1,
             pic: appImages.chatuser,
-            messsage: 'Good sdfsdfsdfsdfsdfsdfb  sdgsdf  sdfsdfsdf  dfsdfsdfsdfsdf  sdfsdfsdfsdfsd  sdfsf sdfsdfsdfsdfsdfsdfsdfsdfd'
+            messsage: 'Good'
         },
         {
             user: 2,
-            messsage: 'How are youfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff sdfsdfsdf sdfsdf?',
+            messsage: 'How are you',
             pic: appImages.dummyImg
         },
         {
             user: 1,
             pic: appImages.chatuser,
-            messsage: 'Good sdfsdfsdfsdfsdfsdfb  sdgsdf  sdfsdfsdf  dfsdfsdfsdfsdf  sdfsdfsdfsdfsd  sdfsf sdfsdfsdfsdfsdfsdfsdfsdfd'
+            messsage: 'Good'
         },
         {
             user: 2,
-            messsage: 'How are youfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff sdfsdfsdf sdfsdf?',
+            messsage: 'How are you',
             pic: appImages.dummyImg
         },
 

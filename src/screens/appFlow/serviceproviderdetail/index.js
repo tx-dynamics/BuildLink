@@ -3,12 +3,12 @@ import { View, SafeAreaView, StatusBar, Text, Image, TouchableOpacity } from 're
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 
-import { colors, wp, appIcons, hp, appImages, fontFamily, routes, } from '../../../services'
+import { colors, wp, appIcons, hp, appImages, routes, } from '../../../services'
 import { styles } from './styles';
-import appStyles from '../../../services/utilities/appStyles'
-import { Button, Header } from '../../../components';
+import { Button, } from '../../../components';
 import CustomCalendar from '../../../components/customcalender';
 import DatePicker from 'react-native-date-picker';
+import appStyles from '../../../services/utilities/appStyles'
 import moment from 'moment/moment';
 
 const ServiceProvider = (props) => {
@@ -39,52 +39,49 @@ const ServiceProvider = (props) => {
                                 <View style={[appStyles.row]} >
                                     <View style={[appStyles.row, styles.ratingView]} >
                                         <Image resizeMode='contain' source={appIcons.star} style={styles.starStyle} />
-                                        <Text style={{ color: colors.black, fontSize: 11 }}>  4.5</Text>
+                                        <Text style={styles.ratingText}>  4.5</Text>
                                     </View>
                                 </View>
                                 <View style={[appStyles.row, styles.ratingView]}>
-                                    <Text style={{ color: colors.black, fontSize: 13 }}>Overall Jobs:</Text>
-                                    <Text style={{ color: colors.black, fontSize: 17, fontFamily: fontFamily.appTextBold }}> 46</Text>
+                                    <Text style={styles.overAllText}>Overall Jobs:</Text>
+                                    <Text style={styles.overallnumText}> 46</Text>
                                 </View>
-                                <Text style={{ color: colors.black, fontSize: 18, fontFamily: fontFamily.appTextBold }}>House Plumber</Text>
-                                <Text style={{ color: colors.black, fontSize: 11, fontFamily: fontFamily.appTextRegular }}>{`By Mr. Hannah`}</Text>
-                                <View style={[appStyles.row, { alignItems: "center", marginLeft: wp(1) }]}>
-                                    <Text style={{ color: colors.greyDark, fontSize: 10 }}>$ </Text>
-                                    <Text style={{ color: colors.black, fontSize: 16, fontFamily: fontFamily.appTextBold }} >24</Text>
-                                    <Text style={{ color: colors.greyDark, fontSize: 10 }}> /hr</Text>
+                                <Text style={styles.catText}>House Plumber</Text>
+                                <Text style={styles.companyText}>{`By Mr. Hannah`}</Text>
+                                <View style={[appStyles.row, styles.priceMainView]}>
+                                    <Text style={styles.dollarText}>$ </Text>
+                                    <Text style={styles.priceText} >24</Text>
+                                    <Text style={styles.dollarText}> /hr</Text>
                                 </View>
                             </View>
                         </View>
                     </View>
-                    <View style={{ paddingHorizontal: wp(6), marginTop: hp(2), }}>
-                        <Text style={{ color: colors.black, fontSize: 14, fontFamily: fontFamily.appTextBold }}>About</Text>
-                        <View style={{ backgroundColor: colors.whitish, borderRadius: wp(5), marginTop: hp(1) }}>
-                            <Text style={{ color: colors.blackLight, fontFamily: fontFamily.appTextRegular, fontSize: 12, paddingHorizontal: wp(3), paddingVertical: hp(.75), }}>
+                    <View style={styles.aboutMainView}>
+                        <Text style={styles.aboutText}>About</Text>
+                        <View style={styles.aboutDetailView}>
+                            <Text style={styles.detailText}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing
                                 elit. Proin posuere tempus ultricies. Nullam iaculis,
                                 Lorem ipsum dolor sit amet,
                             </Text>
                         </View>
                     </View>
-                    <View style={{ paddingHorizontal: wp(6), marginTop: hp(3), }}>
-                        <Text style={{ color: colors.black, fontSize: 14, fontFamily: fontFamily.appTextBold }}>Address</Text>
-                        <View style={{ backgroundColor: colors.whitish, borderRadius: wp(5), marginTop: hp(1), flexDirection: "row", alignItems: "center", paddingHorizontal: wp(2) }}>
-                            <Image source={appIcons.location} style={{ width: wp(3), height: wp(3) }} />
-                            <Text style={{ color: colors.blackLight, fontFamily: fontFamily.appTextRegular, fontSize: 12, paddingVertical: hp(1.5), marginHorizontal: wp(1) }}>
-                                8700 Commerce park houston texas, 770134
-                            </Text>
+                    <View style={styles.adressView}>
+                        <Text style={styles.adressText}>Address</Text>
+                        <View style={styles.locationView}>
+                            <Image source={appIcons.location} style={styles.locatoinImg} />
+                            <Text style={styles.locationText}>8700 Commerce park houston texas, 770134</Text>
                         </View>
                     </View>
-                    <View style={[appStyles.row, { justifyContent: "space-between", alignItems: "center", paddingHorizontal: wp(6), marginTop: hp(2) }]}>
-                        <Text style={{ color: colors.black, fontSize: 13, fontFamily: fontFamily.appTextBold }} >Availibility</Text>
-                        <Image resizeMode='contain' source={appIcons.calnderdownarrow} style={{ width: wp(4), height: wp(4) }} />
+                    <View style={[appStyles.row, styles.availabiltyView]}>
+                        <Text style={styles.availabiltyText} >Availibility</Text>
+                        <Image resizeMode='contain' source={appIcons.calnderdownarrow} style={styles.downAroowImg} />
                     </View>
                     <CustomCalendar
                         lineTop={hp(-1.7)}
                         marginRight={wp(3.5)}
                         boxColor={colors.blueBox}
                         lineColor={colors.blueLine}
-                        //  {...{ showCal, setShowCal }}
                         minDate={new Date()}
                         startDate={startDate}
                         endDate={endDate}
@@ -96,22 +93,10 @@ const ServiceProvider = (props) => {
                             }
                         }}
                     />
-                    <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
-                        <Text style={{
-                            color: colors.blackLight,
-                            fontFamily: fontFamily.appTextRegular,
-                            fontSize: 11
-                        }}>
-                            Note: Dates with
-                        </Text>
-                        <View style={{ height: wp(2), width: wp(2), backgroundColor: colors.theme, borderRadius: 2, marginHorizontal: wp(1) }}></View>
-                        <Text style={{
-                            color: colors.blackLight,
-                            fontFamily: fontFamily.appTextRegular,
-                            fontSize: 11
-                        }}>
-                            are occupied
-                        </Text>
+                    <View style={styles.noteView}>
+                        <Text style={styles.noteText}>Note: Dates with</Text>
+                        <View style={styles.noteSubView}></View>
+                        <Text style={styles.occupiedText}>are occupied</Text>
                     </View>
                     <Text style={styles.timeRangeText}>Time Range</Text>
                     <View style={styles.timeRangeView}>

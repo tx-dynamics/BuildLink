@@ -50,60 +50,21 @@ const RequestDetail = ({ navigation }) => {
     }
     const RequestSendModal = (props) => {
         return (
-            <View style={{
-                backgroundColor: 100,
-                justifyContent: "center",
-                alignItems: "center",
-                flex: 1
-            }}><KeyboardAwareScrollView  >
-                    <View style={{
-                        width: wp(80),
-                        backgroundColor: "white",
-                        alignItems: "center",
-                        paddingHorizontal: wp(7),
-                        borderRadius: wp(5),
-                        paddingVertical: hp(4.5),
-                        marginTop: hp(22)
-
-                    }}>
-                        <Text style={{ fontSize: 17, color: colors.black, fontFamily: fontFamily.appTextBold }}>Request Sent</Text>
-                        <Text style={{ color: colors.blackLight, textAlign: "center", marginTop: hp(2) }}>Your request is sent to the persons, would you like to send a msg here?</Text>
-                        <View style={{
-                            backgroundColor: "white",
-                            flexDirection: "row",
-                            shadowColor: "#000",
-                            shadowOffset: {
-                                width: 0,
-                                height: 3,
-                            },
-                            shadowOpacity: 0.29,
-                            shadowRadius: 4.65,
-                            elevation: 7,
-                            alignItems: "center",
-                            paddingHorizontal: wp(2),
-                            borderRadius: wp(5),
-                            marginVertical: hp(2),
-                            marginTop: hp(30)
-                        }}>
+            <View style={styles.requestSendModalView}>
+                <KeyboardAwareScrollView  >
+                    <View style={styles.requestView}>
+                        <Text style={styles.requestText}>Request Sent</Text>
+                        <Text style={styles.requestSentText}>Your request is sent to the persons, would you like to send a msg here?</Text>
+                        <View style={styles.TextInputView}>
                             <TextInput
                                 multiline
                                 autoCorrect={false}
                                 autoCapitalize={'sentences'}
                                 placeholder='Type a message'
                                 placeholderTextColor={colors.greyDark}
-                                style={{
-                                    width: wp(62),
-                                    color: colors.black,
-                                    fontFamily: fontFamily.appTextRegular,
-                                    fontSize: 12,
-
-                                }} />
+                                style={styles.textInputStyle} />
                             <TouchableOpacity onPress={props.onPress}>
-                                <Image resizeMode='contain' source={appIcons.send}
-                                    style={{
-                                        width: wp(6),
-                                        height: wp(6)
-                                    }} />
+                                <Image resizeMode='contain' source={appIcons.send} style={styles.sendImg} />
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -120,7 +81,6 @@ const RequestDetail = ({ navigation }) => {
                 transparent={true}
                 visible={modalVisible}
                 onRequestClose={() => {
-
                     setModalVisible(!modalVisible);
                 }}
             >
@@ -131,7 +91,6 @@ const RequestDetail = ({ navigation }) => {
                 transparent={true}
                 visible={requestVisible}
                 onRequestClose={() => {
-
                     setRequestVisible(!requestVisible);
                 }}
             >

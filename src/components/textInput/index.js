@@ -10,14 +10,17 @@ export const Input = props => {
             <View style={[appStyles.row]}>
                 <Text style={[styles.titleStyle, props.titleStyle]}>{props.children}</Text>
             </View>
-            <View style={[styles.input, props.containerStyle]} >
+            <View style={[styles.input, props.containerStyle, { paddingHorizontal: props.paddingHorizontal ? props.paddingHorizontal : wp(5) }]} >
+                {props.flag &&
+                    <Image source={appIcons.flag} style={styles.flagIcon} />
+                }
                 <TextInput
                     style={[styles.inputTextStyle, props.inputStyle]}
                     selectionColor={colors.theme}
                     value={props.value}
                     autoCapitalize="none"
                     placeholder={props.placeholder}
-                    placeholderTextColor={colors.greyLight}
+                    placeholderTextColor={props.placeholderTextColor ? props.placeholderTextColor : colors.greyLight}
                     secureTextEntry={props.secureTextEntry}
                     keyboardType={props.keyboardType}
                     editable={props.editable}
@@ -35,6 +38,11 @@ export const Input = props => {
                         <Image source={props.check ? appIcons.greenTick : null} style={styles.icon} />
                     </View>
                 }
+                {props.drop &&
+                    <TouchableOpacity onPress={props.onPressEye}>
+                        <Image source={appIcons.arrowDown} style={styles.dropIcon} />
+                    </TouchableOpacity>
+                }
             </View>
         </View>
 
@@ -42,6 +50,12 @@ export const Input = props => {
 };
 
 const styles = StyleSheet.create({
+    flagIcon: {
+        width: wp(6),
+        height: wp(6),
+        resizeMode: "contain",
+        left: wp(-1)
+    },
     inputTextStyle: {
         flex: 1,
         fontFamily: fontFamily.appTextRegular,
@@ -52,6 +66,13 @@ const styles = StyleSheet.create({
     icon: {
         width: wp(6),
         height: wp(6),
+        resizeMode: 'contain'
+    },
+    dropIcon: {
+        width: wp(4),
+        height: wp(4),
+        //left: wp(2),
+        tintColor: colors.black,
         resizeMode: 'contain'
     },
     formInput: {

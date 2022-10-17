@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { View, SafeAreaView, StatusBar, Text, TextInput, Image, TouchableOpacity, FlatList } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { Calendar } from 'react-native-calendars';
 import MultiSlider from '@ptomasroos/react-native-multi-slider';
 import DatePicker from 'react-native-date-picker'
 import moment from 'moment/moment';

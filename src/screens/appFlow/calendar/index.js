@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { View, SafeAreaView, StatusBar, Text, Image } from 'react-native'
-import { Calendar } from 'react-native-calendars';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-
 
 import { colors, wp, appIcons, hp, } from '../../../services'
 import { styles } from './styles';
