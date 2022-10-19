@@ -25,5 +25,6 @@ export const colors = {
   blueBox: "#6BA1D3",
   blueLine: "#D2EAFF",
   borderLine: "#CCCCCC",
+  catColor: "#FFDCB4"
 
 }

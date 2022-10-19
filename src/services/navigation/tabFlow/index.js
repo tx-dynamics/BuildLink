@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { StyleSheet, Image, View, TouchableOpacity, Platform } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
@@ -12,6 +12,12 @@ import { hp, wp } from '../../constants'
 const Tab = createBottomTabNavigator()
 
 const tabArray = [
+    { route: 'Homee', icon: appIcons.home, component: HomeStack, color: colors.theme },
+    { route: 'Calendarr', icon: appIcons.calendar, component: CalendarStack, color: colors.theme },
+    { route: 'Chatt', icon: appIcons.chat, component: ChatStack, color: colors.theme },
+    { route: 'Profilee', icon: appIcons.profile, component: ProfileStack, color: colors.theme },
+]
+const skillArray = [
     { route: 'Homee', icon: appIcons.home, component: HomeStack, color: colors.theme },
     { route: 'Calendarr', icon: appIcons.calendar, component: CalendarStack, color: colors.theme },
     { route: 'Chatt', icon: appIcons.chat, component: ChatStack, color: colors.theme },
@@ -33,7 +39,10 @@ const TabButton = (props) => {
     )
 }
 
-export function TabNavigator() {
+export function TabNavigator(props) {
+    useEffect(() => {
+        console.log(props.route.params.skilledValue)
+    }, [])
     return (
         <Tab.Navigator tabBarOptions={{
             showLabel: false,

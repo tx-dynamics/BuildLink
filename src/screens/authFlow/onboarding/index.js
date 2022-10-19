@@ -118,7 +118,7 @@ const OnboardingScreen = ({ navigation }) => {
     const transform4 = [{ translateX: translate4 }]
 
     const onPress = () => {
-        index === 3 ? navigation.navigate(routes.login) :
+        index === 3 ? navigation.navigate(routes.accountSelection) :
             swiperRef.current._swiper.scrollToIndex({ index: index + 1 })
     }
 

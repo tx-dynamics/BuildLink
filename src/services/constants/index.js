@@ -34,7 +34,8 @@ export const routes = {
     paymentMathod: "paymentMathod",
     searchResult: "searchResult",
     reviewFilter: "reviewFilter",
-    plans: "plans"
+    plans: "plans",
+    accountSelection: "accountSelection",
 
 
 }

@@ -17,6 +17,12 @@ const appImages = {
     homeImage: require(`${imageUrl}/homeImage.png`),
     labourpic: require(`${imageUrl}/labourpic.png`),
     laborFemale: require(`${imageUrl}/laborFemale.png`),
+    eventPic: require(`${imageUrl}/eventPic.png`),
+    eventPic2: require(`${imageUrl}/eventPic2.jpg`),
+    eventPic3: require(`${imageUrl}/eventPic3.jpg`),
+    workPic: require(`${imageUrl}/workPic.jpg`),
+    workPic2: require(`${imageUrl}/workPic2.jpg`),
+    workPic3: require(`${imageUrl}/workPic3.png`),
 }
 const appIcons = {
     apple: require(`${iconUrl}/apple.png`),
@@ -79,6 +85,25 @@ const appIcons = {
     primium: require(`${iconUrl}/primium.png`),
     blackSend: require(`${iconUrl}/blackSend.png`),
     flag: require(`${iconUrl}/flag.png`),
+    addImage: require(`${iconUrl}/addImage.png`),
+    review1: require(`${iconUrl}/review1.png`),
+    review2: require(`${iconUrl}/review2.png`),
+    review3: require(`${iconUrl}/review3.png`),
+    greyStar: require(`${iconUrl}/greyStar.png`),
+    forward: require(`${iconUrl}/forward.png`),
+    redHeart: require(`${iconUrl}/redHeart.png`),
+    heartGrey: require(`${iconUrl}/heartGrey.png`),
+    bookmark: require(`${iconUrl}/bookmark.png`),
+    comment: require(`${iconUrl}/comment.png`),
+    notification: require(`${iconUrl}/notification.png`),
+    addGrey: require(`${iconUrl}/addGrey.png`),
+    plumber1: require(`${iconUrl}/plumber1.jpg`),
+    plumber2: require(`${iconUrl}/plumber2.jpg`),
+    plumber3: require(`${iconUrl}/plumber3.jpg`),
+    plumber4: require(`${iconUrl}/plumber4.png`),
+    plumber5: require(`${iconUrl}/plumber5.png`),
+    plumber6: require(`${iconUrl}/plumber6.png`),
+    plumber7: require(`${iconUrl}/plumber7.png`),
 
 
 

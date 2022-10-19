@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, SafeAreaView, StatusBar, Text, ImageBackground, Image, TouchableOpacity, FlatList } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
@@ -8,7 +8,7 @@ import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
 import Button from '../../../components/button';
 
-const Signin = ({ navigation }) => {
+const Signin = (props) => {
   const [isText, setIsText] = useState("")
   const [isPassword, setIsPassword] = useState(true)
 
@@ -35,6 +35,10 @@ const Signin = ({ navigation }) => {
       route: routes.signup
     },
   ]
+  const skilledValue = props.route.params.isSkilled
+  useEffect(() => {
+    console.log(skilledValue)
+  }, [])
   return (
     <SafeAreaView style={[appStyles.safeContainer]} >
       <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
@@ -59,7 +63,7 @@ const Signin = ({ navigation }) => {
             <Input placeholder={"Password"} secureTextEntry={isPassword} eye onPressEye={() => setIsPassword(!isPassword)}  >Password</Input>
           </View>
           <View style={styles.buttonView}>
-            <Button onPress={() => navigation.navigate(routes.tab)} containerStyle={styles.buttonStyle} style={{ fontSize: 14 }} >Login</Button>
+            <Button onPress={() => props.navigation.navigate(routes.tab, { skilledValue })} containerStyle={styles.buttonStyle} style={{ fontSize: 14 }} >Login</Button>
           </View>
           <View style={styles.signUpView}>
             <Text style={styles.signUpText}>Or, sign up with</Text>
@@ -67,7 +71,7 @@ const Signin = ({ navigation }) => {
           <View style={styles.flatListView}>
             <FlatList data={socialLoginArray}
               horizontal
-              renderItem={({ item }) => <TouchableOpacity onPress={() => navigation.navigate(item.route)} style={styles.socialImagesView}>
+              renderItem={({ item }) => <TouchableOpacity onPress={() => props.navigation.navigate(item.route)} style={styles.socialImagesView}>
                 <Image resizeMode='contain' style={styles.socailImageStyle} source={item.pic} />
               </TouchableOpacity>
               } />

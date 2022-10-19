@@ -13,6 +13,7 @@ export const AuthNavigation = () => {
             <AuthStack.Screen name={routes.login} component={Auth.Signin} />
             <AuthStack.Screen name={routes.signup} component={Auth.Signup} />
             <AuthStack.Screen name={routes.onboarding} component={Auth.Onboarding} />
+            <AuthStack.Screen name={routes.accountSelection} component={Auth.AccountSelection} />
             <AuthStack.Screen name={routes.verification} component={Auth.Verification} />
             <AuthStack.Screen name={routes.confirmPhone} component={Auth.ConfirmPhone} />
         </AuthStack.Navigator>
