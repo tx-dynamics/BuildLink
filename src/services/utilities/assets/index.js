@@ -104,6 +104,7 @@ const appIcons = {
     plumber5: require(`${iconUrl}/plumber5.png`),
     plumber6: require(`${iconUrl}/plumber6.png`),
     plumber7: require(`${iconUrl}/plumber7.png`),
+    community: require(`${iconUrl}/community.png`),
 
 
 

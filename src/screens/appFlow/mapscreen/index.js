@@ -106,7 +106,7 @@ export default function MapScreen(props) {
                     </MapView>
                     <View style={styles.btnView}>
                         <Button
-                            onPress={() => props.navigation.navigate(routes.requestDetail)}
+                            onPress={() => props.navigation.goBack()}
                             containerStyle={{ borderRadius: wp(4) }}
                             style={{ fontSize: 15 }}
                         >Confirm</Button>

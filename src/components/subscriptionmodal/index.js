@@ -7,9 +7,11 @@ const SubscriptionModal = (props) => {
     return (
         <View style={[appStyles.flex1, styles.mainView]}>
             <View style={styles.modalMainView}>
-                <TouchableOpacity onPress={props.skipPress} style={styles.skipView}>
-                    <Text style={styles.skipText}>Skip</Text>
-                </TouchableOpacity>
+                {props.skip &&
+                    <TouchableOpacity onPress={props.skipPress} style={styles.skipView}>
+                        <Text style={styles.skipText}>Skip</Text>
+                    </TouchableOpacity>
+                }
                 <View style={{ alignItems: "center", paddingHorizontal: wp(9.5), }}>
                     <Image resizeMode='contain' source={appIcons.subscriptionIcon} style={styles.subImage} />
                     <Text style={styles.subscriptionText}>Subscription Alert</Text>

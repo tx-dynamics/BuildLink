@@ -8,6 +8,9 @@ import { CalendarStack } from '../appFlow/CalendarStack'
 import { ProfileStack } from '../appFlow/profileStack'
 import { appIcons, colors } from '../../utilities'
 import { hp, wp } from '../../constants'
+import { SkilledHomeStack } from '../appFlow/SkilledHomaeStack'
+import CommunityScreen from '../../../screens/appFlow/communityscreen'
+import { SkilledProfile } from '../../../screens/appFlow'
 
 const Tab = createBottomTabNavigator()
 
@@ -18,10 +21,11 @@ const tabArray = [
     { route: 'Profilee', icon: appIcons.profile, component: ProfileStack, color: colors.theme },
 ]
 const skillArray = [
-    { route: 'Homee', icon: appIcons.home, component: HomeStack, color: colors.theme },
+    { route: 'Homee', icon: appIcons.home, component: SkilledHomeStack, color: colors.theme },
+    { route: 'Community', icon: appIcons.community, component: CommunityScreen, color: colors.theme },
     { route: 'Calendarr', icon: appIcons.calendar, component: CalendarStack, color: colors.theme },
     { route: 'Chatt', icon: appIcons.chat, component: ChatStack, color: colors.theme },
-    { route: 'Profilee', icon: appIcons.profile, component: ProfileStack, color: colors.theme },
+    { route: 'skillProfile', icon: appIcons.profile, component: SkilledProfile, color: colors.theme },
 ]
 
 const TabButton = (props) => {
@@ -40,8 +44,9 @@ const TabButton = (props) => {
 }
 
 export function TabNavigator(props) {
+    const Skilled = props.route.params.skilledValue
     useEffect(() => {
-        console.log(props.route.params.skilledValue)
+        console.log(Skilled)
     }, [])
     return (
         <Tab.Navigator tabBarOptions={{
@@ -53,7 +58,16 @@ export function TabNavigator(props) {
                 tabBarStyle: styles.barStyle,
 
             }}>
-            {tabArray.map((item, index) => {
+            {Skilled ? skillArray.map((item, index) => {
+                return (
+                    <Tab.Screen key={index} name={item.route} component={item.component}
+                        options={{
+                            tabBarShowLabel: false,
+                            tabBarButton: (props) => <TabButton {...props} item={item} />
+                        }}
+                    />
+                )
+            }) : tabArray.map((item, index) => {
                 return (
                     <Tab.Screen key={index} name={item.route} component={item.component}
                         options={{

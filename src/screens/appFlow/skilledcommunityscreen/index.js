@@ -9,6 +9,7 @@ import appStyles from '../../../services/utilities/appStyles'
 import EventComponent from '../../../components/eventscomponent';
 import SocialComponent from '../../../components/socialComponent';
 import TrainingComponent from '../../../components/trainingcomponent';
+import { styles } from './styles';
 
 const CommunityScreen = (props) => {
     const [isStart, setIsStart] = useState(Math.ceil(4))
@@ -111,44 +112,12 @@ const CommunityScreen = (props) => {
     ]
     const ReviewComponent = (props) => {
         return (
-            <View style={{
-                backgroundColor: colors.whitish,
-                alignItems: "center",
-                justifyContent: "center",
-                width: wp(26),
-                height: hp(11),
-                borderRadius: wp(2),
-                paddingHorizontal: wp(3),
-                marginHorizontal: wp(3),
-            }}>
-                <View style={{
-                    justifyContent: "center",
-                    alignItems: "center",
-                    width: wp(12),
-                    height: wp(12),
-                    //position: "absolute",
-                    top: hp(-2),
-                }}>
-
-                    <Image resizeMode='contain' source={props.source} style={{
-
-                        width: wp(11),
-                        height: wp(11),
-                    }} />
+            <View style={styles.reviewCompView}>
+                <View style={styles.sourceView}>
+                    <Image resizeMode='contain' source={props.source} style={styles.sourceImg} />
                 </View>
-                <Text style={{
-                    fontSize: 7,
-                    fontFamily: fontFamily.appTextBold,
-                    color: colors.black,
-                    bottom: wp(5.5),
-                }}>{props.name}</Text>
-                <Text style={{
-                    fontSize: 7,
-                    fontFamily: fontFamily.appTextRegular,
-                    color: colors.black,
-                    textAlign: "center",
-                    bottom: wp(5.5),
-                }}>Lorem ipsum dolor sit amet, consectetur adipiscing</Text>
+                <Text style={styles.nameText}>{props.name}</Text>
+                <Text style={styles.titleText}>Lorem ipsum dolor sit amet, consectetur adipiscing</Text>
                 <View style={{ bottom: hp(2.2) }}>
                     <StarRating
                         disabled={true}

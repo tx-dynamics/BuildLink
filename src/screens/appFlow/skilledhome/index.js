@@ -278,7 +278,7 @@ const SkilledHome = ({ navigation }) => {
                             keyExtractor={item => item.id}
                             data={projectsArray}
                             renderItem={(item) =>
-                                <SkilledNearby tagArray={item.item.tagsArray} image={item.item.image} title={item.item.title} company={item.item.company} date={item.item.date} time={item.item.time} />
+                                <SkilledNearby onPress={() => navigation.navigate(routes.skillApply)} tagArray={item.item.tagsArray} image={item.item.image} title={item.item.title} company={item.item.company} date={item.item.date} time={item.item.time} />
                             }
                         />
                     </View>

@@ -7,6 +7,7 @@ import { routes } from '../constants';
 import { TabNavigator } from './tabFlow/index'
 import MapScreen from '../../screens/appFlow/mapscreen';
 import PlanScreen from '../../screens/appFlow/planscreen';
+import { SkilledApply } from '../../screens/appFlow';
 
 const MyStack = createStackNavigator()
 export const MainNavigator = () => {
@@ -17,6 +18,7 @@ export const MainNavigator = () => {
                 <MyStack.Screen name={routes.tab} component={TabNavigator} />
                 <MyStack.Screen name={routes.maps} component={MapScreen} />
                 <MyStack.Screen name={routes.plans} component={PlanScreen} />
+                <MyStack.Screen name={routes.skillApply} component={SkilledApply} />
             </MyStack.Navigator>
         </NavigationContainer>
     )

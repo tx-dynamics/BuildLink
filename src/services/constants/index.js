@@ -36,6 +36,8 @@ export const routes = {
     reviewFilter: "reviewFilter",
     plans: "plans",
     accountSelection: "accountSelection",
+    skilledHome: "skilledHome",
+    skillApply: "skillApply"
 
 
 }

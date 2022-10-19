@@ -84,7 +84,7 @@ const RequestDetail = ({ navigation }) => {
                     setModalVisible(!modalVisible);
                 }}
             >
-                <SubscriptionModal btnPress={() => { setModalVisible(false), navigation.navigate(routes.plans) }} skipPress={() => { setRequestVisible(true), setModalVisible(false) }} />
+                <SubscriptionModal skip btnPress={() => { setModalVisible(false), navigation.navigate(routes.plans) }} skipPress={() => { setRequestVisible(true), setModalVisible(false) }} />
             </Modal>
             <Modal
                 animationType="none"

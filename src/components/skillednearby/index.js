@@ -51,7 +51,7 @@ const SkilledNearby = props => {
                 <View style={{
                     width: wp(16)
                 }}>
-                    <Button style={{ fontSize: 10 }} containerStyle={styles.btcContainer} >Apply</Button>
+                    <Button onPress={props.onPress} style={{ fontSize: 10 }} containerStyle={styles.btcContainer} >Apply</Button>
                 </View>
             </View>
         </View>
