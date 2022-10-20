@@ -37,7 +37,10 @@ export const routes = {
     plans: "plans",
     accountSelection: "accountSelection",
     skilledHome: "skilledHome",
-    skillApply: "skillApply"
+    skillApply: "skillApply",
+    skilledProfile: "skilledProfile",
+    notification: "notification",
+    community: "community"
 
 
 }

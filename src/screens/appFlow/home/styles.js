@@ -121,25 +121,7 @@ export const styles = StyleSheet.create({
         height: wp(42)
     },
     searchView: {
-        flexDirection: "row",
-        alignItems: "center",
-        paddingHorizontal: wp(4),
-        marginTop: hp(5.7),
-        alignSelf: "center",
-        borderRadius: wp(8),
-        height: hp(5.5),
-        width: wp(90),
-        backgroundColor: colors.whitish
-    },
-    textInputStyle: {
-        flex: 1,
-        color: colors.black,
-        fontFamily: fontFamily.appTextRegular,
-        fontSize: 13
-    },
-    filterImage: {
-        width: wp(5.5),
-        height: wp(5.5)
+        marginTop: hp(5.8)
     },
     categoryView: {
         marginTop: hp(1.5),

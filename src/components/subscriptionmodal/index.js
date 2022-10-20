@@ -1,7 +1,7 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import appStyles from '../../services/utilities/appStyles'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { appIcons, colors, fontFamily, hp, wp } from '../../services'
+import appStyles from '../../services/utilities/appStyles'
 
 const SubscriptionModal = (props) => {
     return (
@@ -10,8 +10,7 @@ const SubscriptionModal = (props) => {
                 {props.skip &&
                     <TouchableOpacity onPress={props.skipPress} style={styles.skipView}>
                         <Text style={styles.skipText}>Skip</Text>
-                    </TouchableOpacity>
-                }
+                    </TouchableOpacity>}
                 <View style={{ alignItems: "center", paddingHorizontal: wp(9.5), }}>
                     <Image resizeMode='contain' source={appIcons.subscriptionIcon} style={styles.subImage} />
                     <Text style={styles.subscriptionText}>Subscription Alert</Text>
@@ -19,7 +18,6 @@ const SubscriptionModal = (props) => {
                     <TouchableOpacity onPress={props.btnPress}>
                         <Image resizeMode='contain' source={appIcons.subscribeButton} style={styles.subBtn} />
                     </TouchableOpacity>
-
                 </View>
             </View>
         </View>
@@ -42,13 +40,10 @@ const styles = StyleSheet.create({
         paddingVertical: hp(3),
         marginTop: hp(3),
         borderRadius: wp(5),
-
-
     },
     skipView: {
         alignItems: "flex-end",
         paddingHorizontal: wp(5)
-
     },
     skipText: {
         color: colors.theme,

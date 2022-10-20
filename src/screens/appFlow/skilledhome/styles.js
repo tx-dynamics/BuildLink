@@ -2,50 +2,6 @@ import { StyleSheet } from 'react-native';
 import { colors, wp, hp, fontFamily } from '../../../services';
 
 export const styles = StyleSheet.create({
-    shadeStyle: {
-        width: wp(12),
-        height: wp(12),
-        shadowColor: "red",
-        shadowOffset: {
-            width: 0,
-            height: 2,
-        },
-        shadowOpacity: 0.23,
-        shadowRadius: 2.62,
-        elevation: 4,
-        backgroundColor: "white",
-        borderRadius: wp(12 / 2),
-        marginHorizontal: wp(3),
-        borderColor: colors.borderLight,
-        alignItems: "center",
-        justifyContent: "center",
-        marginTop: hp(2)
-    },
-    borderStyle: {
-        width: wp(12),
-        height: wp(12),
-        backgroundColor: "white",
-        borderWidth: 1,
-        borderRadius: wp(12 / 2),
-        marginHorizontal: wp(3),
-        borderColor: colors.borderLight,
-        alignItems: "center",
-        justifyContent: "center",
-        marginTop: hp(2)
-    },
-    renderCatImage: {
-        width: wp(7),
-        height: wp(7)
-    },
-    renderTextView: {
-        marginTop: hp(.5),
-    },
-    renderText: {
-        color: colors.blackLight,
-        fontFamily: fontFamily.appTextRegular,
-        fontSize: 10,
-        textAlign: "center"
-    },
     mainView: {
         backgroundColor: colors.backgrondLight,
         paddingHorizontal: wp(4),
@@ -122,25 +78,7 @@ export const styles = StyleSheet.create({
         height: wp(40)
     },
     searchView: {
-        flexDirection: "row",
-        alignItems: "center",
-        paddingHorizontal: wp(4),
         marginTop: hp(2),
-        alignSelf: "center",
-        borderRadius: wp(8),
-        height: hp(5.5),
-        width: wp(90),
-        backgroundColor: colors.whitish
-    },
-    textInputStyle: {
-        flex: 1,
-        color: colors.black,
-        fontFamily: fontFamily.appTextRegular,
-        fontSize: 13
-    },
-    filterImage: {
-        width: wp(5.5),
-        height: wp(5.5)
     },
     categoryText: {
         color: colors.black,
@@ -159,5 +97,4 @@ export const styles = StyleSheet.create({
     container: {
         alignSelf: "center",
     },
-
 })

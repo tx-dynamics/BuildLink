@@ -22,7 +22,6 @@ const BottomSheet = React.forwardRef((props, ref) => {
                         backgroundColor: props.bgColor ? props.bgColor : colors.white,
                     },
                 ]}
-
                 ref={ref}>
                 <View
                     style={{

@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { View, SafeAreaView, StatusBar, Text, Image, TextInput, FlatList, TouchableOpacity } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import { Button, ProjectView } from '../../../components';
+import { Button } from '../../../components';
 import { appIcons, appImages, colors, hp, routes, wp, } from '../../../services'
 import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
-import SuggestionCard from '../../../components/suggestioncard';
 import CustomCalendar from '../../../components/customcalender';
 import SkilledNearby from '../../../components/skillednearby';
+import SearchFilter from '../../../components/filtersearch';
 
 const SkilledHome = ({ navigation }) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -107,113 +107,6 @@ const SkilledHome = ({ navigation }) => {
             ]
         },
     ]
-    const categorArray = [
-        {
-            id: 1,
-            labourPic: appImages.labourpic,
-            rating: 4.6,
-            wage: 25,
-            company: "Ms Hannah",
-            adress: "8700 Commerce Park Houston texas",
-            opening: "9:30AM",
-            closing: "8:30PM",
-            pic: appIcons.cat1,
-            text: "Plumber",
-            shade: true
-        },
-        {
-            id: 2,
-            labourPic: appImages.labourpic,
-            rating: 4.6,
-            wage: 25,
-            company: "Ms Hannah",
-            adress: "8700 Commerce Park Houston texas",
-            opening: "9:30AM",
-            closing: "8:30PM",
-            pic: appIcons.cat2,
-            text: "Cleaning",
-            shade: true
-        },
-        {
-            id: 3,
-            labourPic: appImages.labourpic,
-            rating: 4.6,
-            wage: 25,
-            company: "Ms Hannah",
-            adress: "8700 Commerce Park Houston texas",
-            opening: "9:30AM",
-            closing: "8:30PM",
-            pic: appIcons.cat3,
-            text: "Laundry",
-            shade: false
-        },
-        {
-            id: 4,
-            labourPic: appImages.labourpic,
-            rating: 4.6,
-            wage: 25,
-            company: "Ms Hannah",
-            adress: "8700 Commerce Park Houston texas",
-            opening: "9:30AM",
-            closing: "8:30PM",
-            pic: appIcons.cat4,
-            text: "Repairing",
-            shade: false
-        },
-        {
-            id: 5,
-            labourPic: appImages.labourpic,
-            rating: 4.6,
-            wage: 25,
-            company: "Ms Hannah",
-            adress: "8700 Commerce Park Houston texas",
-            opening: "9:30AM",
-            closing: "8:30PM",
-            pic: appIcons.cat5,
-            text: "Polishing",
-            shade: false
-        },
-        {
-            id: 6,
-            labourPic: appImages.labourpic,
-            rating: 4.6,
-            wage: 25,
-            company: "Ms Hannah",
-            adress: "8700 Commerce Park Houston texas",
-            opening: "9:30AM",
-            closing: "8:30PM",
-            pic: appIcons.cat4,
-            text: "Painting",
-            shade: false
-        },
-        {
-            id: 7,
-            labourPic: appImages.labourpic,
-            rating: 4.6,
-            wage: 25,
-            company: "Ms Hannah",
-            adress: "8700 Commerce Park Houston texas",
-            opening: "9:30AM",
-            closing: "8:30PM",
-            pic: appIcons.cat4,
-            text: "Plumber",
-            shade: false
-        },
-    ]
-    const RenderCategory = (props) => {
-        return (
-            <TouchableOpacity onPress={props.onPress}>
-                <View style={
-                    props.shade === true ? styles.shadeStyle : styles.borderStyle
-                }>
-                    <Image resizeMode='contain' source={props.source} style={styles.renderCatImage} />
-                </View>
-                <View style={styles.renderTextView}>
-                    <Text style={styles.renderText}>{props.text}</Text>
-                </View>
-            </TouchableOpacity>
-        )
-    }
     return (
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
@@ -235,21 +128,14 @@ const SkilledHome = ({ navigation }) => {
                             <Text style={styles.subText}>What type of labour are you looking for</Text>
                         </View>
                         <View style={styles.buttonView}>
-                            <Button onPress={() => navigation.navigate(routes.category)} containerStyle={styles.containerStyle} style={styles.buttonText} >Get Start</Button>
+                            <Button containerStyle={styles.containerStyle} style={styles.buttonText} >Get Start</Button>
                         </View>
                     </View>
                     <View style={styles.homeImageView}>
                         <Image resizeMode='contain' source={appImages.laborFemale} style={styles.homeImage} />
                     </View>
                     <View style={styles.searchView}>
-                        <TextInput
-                            placeholder='Search Tradesman Services'
-                            onChangeText={(text) => setIsSearch(text)}
-                            placeholderTextColor={colors.greyDark}
-                            style={styles.textInputStyle} />
-                        <TouchableOpacity onPress={() => navigation.navigate(routes.filter)}>
-                            <Image resizeMode='contain' source={appIcons.filter} style={styles.filterImage} />
-                        </TouchableOpacity>
+                        <SearchFilter placeholder={"Search with categories"} />
                     </View>
                     <Text style={styles.categoryText}>Your Timeline</Text>
                     <View style={{ height: hp(47) }}>
@@ -268,9 +154,7 @@ const SkilledHome = ({ navigation }) => {
                                     console.log(startData)
                                     setEndDate(endData);
                                 }
-                            }}
-                        />
-
+                            }} />
                     </View>
                     <Text style={styles.nearByText}>Nearby you</Text>
                     <View style={styles.container}>

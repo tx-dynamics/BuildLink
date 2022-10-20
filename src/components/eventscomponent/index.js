@@ -1,9 +1,9 @@
 import { Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import { appImages, appIcons, colors, hp, wp, fontFamily } from '../../services'
+
+import { appIcons, colors, hp, wp, fontFamily } from '../../services'
 
 const EventComponent = (props) => {
-
     return (
         <View style={styles.mainView}>
             <Image resizeMode='contain' source={props.source} style={styles.sourceImg} />

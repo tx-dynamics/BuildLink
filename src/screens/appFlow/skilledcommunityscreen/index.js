@@ -1,15 +1,15 @@
-import { FlatList, Image, SafeAreaView, StatusBar, StyleSheet, Text, View } from 'react-native'
+import { FlatList, Image, SafeAreaView, StatusBar, Text, View } from 'react-native'
 import React, { useState } from 'react'
 import StarRating from 'react-native-star-rating';
 
 import { appIcons, colors, fontFamily, hp, wp, appImages } from '../../../services'
 import { Button, Header } from '../../../components'
+import { styles } from './styles';
 import SearchFilter from '../../../components/filtersearch'
 import appStyles from '../../../services/utilities/appStyles'
 import EventComponent from '../../../components/eventscomponent';
 import SocialComponent from '../../../components/socialComponent';
 import TrainingComponent from '../../../components/trainingcomponent';
-import { styles } from './styles';
 
 const CommunityScreen = (props) => {
     const [isStart, setIsStart] = useState(Math.ceil(4))
@@ -38,9 +38,9 @@ const CommunityScreen = (props) => {
     }
     const dataArray = [
         {
-            name: "Sean Paul",
+            name: "Sean Paull",
             pic: appIcons.review1,
-            rating: 2
+            rating: 3
         },
         {
             name: "Jeff Whittie",
@@ -65,9 +65,9 @@ const CommunityScreen = (props) => {
     ]
     const eventArray = [
         {
-            name: "Dennis Reynolds",
+            name: "Dennis Reynold",
             source: appImages.eventPic,
-            time: "2 hrs ago",
+            time: "1 hrs ago",
             userPic: appImages.labourpic,
             socialPic: appImages.workPic,
             date: "SAT, AUG 12 AT 11 AM",
@@ -98,7 +98,7 @@ const CommunityScreen = (props) => {
             likes: "5.2k"
         },
         {
-            name: "Dennis Reynoldwwwwwwwwwwws",
+            name: "Dennis Reynolds",
             source: appImages.eventPic2,
             time: "2 hrs ago",
             userPic: appImages.labourpic,
@@ -108,7 +108,6 @@ const CommunityScreen = (props) => {
             adress: "Houston tower, 87500",
             likes: "5.2k"
         },
-
     ]
     const ReviewComponent = (props) => {
         return (
@@ -142,46 +141,30 @@ const CommunityScreen = (props) => {
                 <View style={{ marginTop: hp(3), }}>
                     <SearchFilter placeholder={"Search with categories"} />
                 </View>
-                <Text style={{
-                    color: colors.black,
-                    fontFamily: fontFamily.appTextBold, marginTop: hp(1)
-                }}>Community reviews</Text>
-                <View style={{}}>
-
+                <Text style={styles.communityReviewText}>Community reviews</Text>
+                <View>
                     <FlatList
                         contentContainerStyle={{ paddingTop: hp(3), }}
                         data={dataArray}
                         horizontal
-                        renderItem={({ item }) => <ReviewComponent source={item.pic} name={item.name} rating={item.rating} />}
-                    />
+                        renderItem={({ item }) => <ReviewComponent source={item.pic} name={item.name} rating={item.rating} />} />
                 </View>
-
-                <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: hp(4), marginBottom: hp(2) }}>
+                <View style={styles.btnView}>
                     <Button onPress={() => EventComp()} style={{ fontSize: 11, color: isEvent ? colors.white : colors.black, fontFamily: isEvent ? fontFamily.appTextBold : fontFamily.appTextMedium }} themeColor={isEvent ? colors.theme : colors.whitish} containerStyle={{ width: wp(30), height: wp(9) }}>Events</Button>
                     <Button onPress={() => SocialComp()} style={{ fontSize: 11, color: isSocial ? colors.white : colors.black, fontFamily: isSocial ? fontFamily.appTextBold : fontFamily.appTextMedium }} themeColor={isSocial ? colors.theme : colors.whitish} containerStyle={{ width: wp(22), height: wp(9) }}>Social</Button>
                     <Button onPress={() => TrainingComp()} style={{ fontSize: 11, color: isTraining ? colors.white : colors.black, fontFamily: isTraining ? fontFamily.appTextBold : fontFamily.appTextMedium }} themeColor={isTraining ? colors.theme : colors.whitish} containerStyle={{ width: wp(30), height: wp(9) }}>Trainings</Button>
-                </View>
-                {
-                    isEvent ?
-                        <FlatList data={eventArray}
-                            showsVerticalScrollIndicator={false}
-                            renderItem={({ item }) => <EventComponent source={item.source} date={item.date} likes={item.likes} title={item.title} adress={item.adress} />}
-                        /> : null
-                }
-                {
-                    isSocial ?
-                        <FlatList data={eventArray}
-                            showsVerticalScrollIndicator={false}
-                            renderItem={({ item }) => <SocialComponent source={item.socialPic} time={item.time} userPic={item.userPic} userName={item.name} />}
-                        /> : null
-                }
-                {
-                    isTraining ?
-                        <FlatList data={eventArray}
-                            showsVerticalScrollIndicator={false}
-                            renderItem={({ item }) => <TrainingComponent source={item.source} date={item.date} likes={item.likes} title={item.title} adress={item.adress} />}
-                        /> : null
-                }
+                </View>{isEvent ?
+                    <FlatList data={eventArray}
+                        showsVerticalScrollIndicator={false}
+                        renderItem={({ item }) => <EventComponent source={item.source} date={item.date} likes={item.likes} title={item.title} adress={item.adress} />} /> : null}
+                {isSocial ?
+                    <FlatList data={eventArray}
+                        showsVerticalScrollIndicator={false}
+                        renderItem={({ item }) => <SocialComponent source={item.socialPic} time={item.time} userPic={item.userPic} userName={item.name} />} /> : null}
+                {isTraining ?
+                    <FlatList data={eventArray}
+                        showsVerticalScrollIndicator={false}
+                        renderItem={({ item }) => <TrainingComponent source={item.source} date={item.date} likes={item.likes} title={item.title} adress={item.adress} />} /> : null}
             </View>
         </SafeAreaView >
     )

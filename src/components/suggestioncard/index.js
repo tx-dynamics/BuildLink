@@ -1,6 +1,6 @@
 import { FlatList, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import { appIcons, appImages, colors, fontFamily, hp, wp } from '../../services'
+import { appIcons, colors, fontFamily, hp, wp } from '../../services'
 import appStyles from '../../services/utilities/appStyles'
 
 const SuggestionCard = (props) => {

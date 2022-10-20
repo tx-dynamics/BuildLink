@@ -14,11 +14,14 @@ import ReviewFilter from './reviewfilter'
 import SkilledHome from './skilledhome'
 import SkilledApply from './skilledapply'
 import SkilledProfile from './skilledprofile'
+import NotificationScreen from './notification'
+import CommunityScreen from './skilledcommunityscreen'
 
 
 export {
     HomeScreen, ProfileScreen, ChatScreen, Calendar,
     EditProfile, RequestDetail, MessageScreen, CategoryScreen,
     FilterScreen, ServiceProvider, PaymentMethod, SearchResult,
-    ReviewFilter, SkilledHome, SkilledApply, SkilledProfile
+    ReviewFilter, SkilledHome, SkilledApply, SkilledProfile,
+    NotificationScreen, CommunityScreen
 }

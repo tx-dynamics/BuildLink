@@ -1,5 +1,6 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native'
+import { View, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
+
 import { appIcons, colors, fontFamily, hp, routes, wp } from '../../services'
 
 const SearchFilter = (props) => {
@@ -10,7 +11,7 @@ const SearchFilter = (props) => {
                 onChangeText={props.onChangeText}
                 placeholderTextColor={colors.greyDark}
                 style={styles.textInputStyle} />
-            <TouchableOpacity onPress={() => props.navigation.navigate(routes.filter)}>
+            <TouchableOpacity onPress={props.onPress}>
                 <Image resizeMode='contain' source={appIcons.filter} style={styles.filterImage} />
             </TouchableOpacity>
         </View>

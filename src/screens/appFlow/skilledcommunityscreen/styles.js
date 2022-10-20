@@ -35,5 +35,15 @@ export const styles = StyleSheet.create({
         color: colors.black,
         textAlign: "center",
         bottom: wp(5.5),
+    },
+    communityReviewText: {
+        color: colors.black,
+        fontFamily: fontFamily.appTextBold, marginTop: hp(1)
+    },
+    btnView: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: hp(4),
+        marginBottom: hp(2)
     }
 })

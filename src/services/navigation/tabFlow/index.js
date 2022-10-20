@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { StyleSheet, Image, View, TouchableOpacity, Platform } from 'react-native'
+import { StyleSheet, Image, View, TouchableOpacity, } from 'react-native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { ChatStack } from '../appFlow/ChatStack'
@@ -9,8 +9,8 @@ import { ProfileStack } from '../appFlow/profileStack'
 import { appIcons, colors } from '../../utilities'
 import { hp, wp } from '../../constants'
 import { SkilledHomeStack } from '../appFlow/SkilledHomaeStack'
-import CommunityScreen from '../../../screens/appFlow/communityscreen'
-import { SkilledProfile } from '../../../screens/appFlow'
+import { SkilledProfileStack } from '../appFlow/SkilledProfileStack'
+import { SkilledCommunityStack } from '../appFlow/SkilledCommunityStack'
 
 const Tab = createBottomTabNavigator()
 
@@ -22,10 +22,10 @@ const tabArray = [
 ]
 const skillArray = [
     { route: 'Homee', icon: appIcons.home, component: SkilledHomeStack, color: colors.theme },
-    { route: 'Community', icon: appIcons.community, component: CommunityScreen, color: colors.theme },
+    { route: 'Community', icon: appIcons.community, component: SkilledCommunityStack, color: colors.theme },
     { route: 'Calendarr', icon: appIcons.calendar, component: CalendarStack, color: colors.theme },
     { route: 'Chatt', icon: appIcons.chat, component: ChatStack, color: colors.theme },
-    { route: 'skillProfile', icon: appIcons.profile, component: SkilledProfile, color: colors.theme },
+    { route: 'skillProfile', icon: appIcons.profile, component: SkilledProfileStack, color: colors.theme },
 ]
 
 const TabButton = (props) => {

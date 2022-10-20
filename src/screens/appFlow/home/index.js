@@ -7,6 +7,7 @@ import { appIcons, appImages, colors, routes, } from '../../../services'
 import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
 import SuggestionCard from '../../../components/suggestioncard';
+import SearchFilter from '../../../components/filtersearch';
 
 const HomeScreen = ({ navigation }) => {
   const [isSearch, setIsSearch] = useState("")
@@ -145,14 +146,7 @@ const HomeScreen = ({ navigation }) => {
             <Image resizeMode='contain' source={appImages.homeImage} style={styles.homeImage} />
           </View>
           <View style={styles.searchView}>
-            <TextInput
-              placeholder='Search Tradesman Services'
-              onChangeText={(text) => setIsSearch(text)}
-              placeholderTextColor={colors.greyDark}
-              style={styles.textInputStyle} />
-            <TouchableOpacity onPress={() => navigation.navigate(routes.filter)}>
-              <Image resizeMode='contain' source={appIcons.filter} style={styles.filterImage} />
-            </TouchableOpacity>
+            <SearchFilter placeholder={"Search with categories"} onPress={() => navigation.navigate(routes.filter)} />
           </View>
           {
             isSearch == "" ?
