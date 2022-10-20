@@ -64,10 +64,10 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     container: {
-        backgroundColor: colors.white,
         paddingLeft: wp(6),
         paddingRight: wp(3),
-        height: wp(15),
+        zIndex: -10,
+        marginTop: hp(2.5),
         width: wp(100),
         justifyContent: 'center',
     },

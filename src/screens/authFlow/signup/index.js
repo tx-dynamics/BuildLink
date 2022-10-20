@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, SafeAreaView, StatusBar, Text, Image, TouchableOpacity, FlatList } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
@@ -12,7 +12,7 @@ const Signup = (props) => {
   const selectedData = [
     {
       id: 1,
-      name: "Trandesman"
+      name: "Tradesman"
     },
     {
       id: 2,
@@ -23,6 +23,11 @@ const Signup = (props) => {
   const [isText, setIsText] = useState("")
   const [isPassword, setIsPassword] = useState(true)
   const [isConfirmPassword, setIsConfirmPassword] = useState(true)
+
+  const skilledValue = props.route.params.skilledValue
+  useEffect(() => {
+    console.log(skilledValue)
+  }, [])
 
   const checkTick = isText.length >= 7 ? true : false
   const SelectedCard = (props) => {
@@ -62,16 +67,16 @@ const Signup = (props) => {
                 style={isSelected.id === item.id ? styles.selectImageStyle : styles.unselectImageStyle} />} />
           </View>
           <View style={styles.textInputView}>
-            <Input placeholder={"Usernamr/Email"} keyboardType={"email-address"} check={checkTick} onChangeText={(text) => setIsText(text)} value={isText} >Username/Email</Input>
+            <Input placeholder={"Username/Email"} keyboardType={"email-address"} check={checkTick} onChangeText={(text) => setIsText(text)} value={isText} >Username/Email</Input>
           </View>
           <View style={styles.passwordView}>
             <Input placeholder={"Password"} secureTextEntry={isPassword} eye onPressEye={() => setIsPassword(!isPassword)}  >Password</Input>
           </View>
           <View style={styles.passwordView}>
-            <Input placeholder={"Confirm password"} secureTextEntry={isConfirmPassword} eye onPressEye={() => setIsConfirmPassword(!isConfirmPassword)}  >Confirm Password</Input>
+            <Input placeholder={"Confirm Password"} secureTextEntry={isConfirmPassword} eye onPressEye={() => setIsConfirmPassword(!isConfirmPassword)}  >Confirm Password</Input>
           </View>
           <View style={styles.buttonView}>
-            <Button onPress={() => props.navigation.navigate(routes.confirmPhone)} containerStyle={styles.buttonStyle} style={{ fontSize: 14 }} >Sign Up</Button>
+            <Button onPress={() => props.navigation.navigate(routes.confirmPhone, { skilledValue })} containerStyle={styles.buttonStyle} style={{ fontSize: 14 }} >Sign Up</Button>
           </View>
         </View>
       </KeyboardAwareScrollView>

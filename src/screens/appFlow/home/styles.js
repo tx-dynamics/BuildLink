@@ -49,7 +49,7 @@ export const styles = StyleSheet.create({
     mainView: {
         backgroundColor: colors.backgrondLight,
         paddingHorizontal: wp(4),
-        marginTop: hp(2)
+        marginTop: hp(1)
     },
     subView: {
         flexDirection: "row",
@@ -89,7 +89,8 @@ export const styles = StyleSheet.create({
     },
     userNameText: {
         color: colors.black,
-        fontFamily: fontFamily.appTextRegular,
+        fontWeight: "400",
+        //fontFamily: fontFamily.appTextRegular,
         fontSize: 12
     },
     subText: {
@@ -121,11 +122,11 @@ export const styles = StyleSheet.create({
         height: wp(42)
     },
     searchView: {
-        marginTop: hp(5.8)
+        marginTop: hp(6.5)
     },
     categoryView: {
         marginTop: hp(1.5),
-        paddingHorizontal: wp(4)
+        paddingHorizontal: wp(5.4)
     },
     categoryText: {
         color: colors.black,
@@ -133,9 +134,9 @@ export const styles = StyleSheet.create({
     },
     nearByText: {
         color: colors.black,
-        fontFamily: fontFamily.appTextBold,
         fontSize: 13,
-        paddingHorizontal: wp(4),
+        fontFamily: fontFamily.appTextBold,
+        paddingHorizontal: wp(5.4),
         marginTop: hp(2),
         marginBottom: hp(2)
     }

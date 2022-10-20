@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { fontFamily, hp, wp } from "../../../services";
+import { colors, fontFamily, hp, wp } from "../../../services";
 
 export const styes = StyleSheet.create({
     mainTopView: {
@@ -8,10 +8,11 @@ export const styes = StyleSheet.create({
         justifyContent: "space-between",
         paddingHorizontal: wp(4),
         marginVertical: hp(2),
+        marginTop: hp(5)
     },
     resultText: {
-        color: "black",
-        fontSize: 16,
+        color: colors.blackLight,
+        fontSize: 16.5,
         fontFamily: fontFamily.appTextBold
     },
     crossImg: {

@@ -115,7 +115,7 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         paddingHorizontal: wp(4),
-        marginBottom: hp(1),
+        marginVertical: hp(1),
     },
     bottomView2: {
         flexDirection: "row",

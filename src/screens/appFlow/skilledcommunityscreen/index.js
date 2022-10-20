@@ -12,30 +12,8 @@ import SocialComponent from '../../../components/socialComponent';
 import TrainingComponent from '../../../components/trainingcomponent';
 
 const CommunityScreen = (props) => {
-    const [isStart, setIsStart] = useState(Math.ceil(4))
-    const [isEvent, setIsEvent] = useState(false)
-    const [isSocial, setIsSocial] = useState(true)
-    const [isTraining, setIsTraining] = useState(false)
+    const [isEvent, setIsEvent] = useState("Social")
 
-    const EventComp = () => {
-        setIsEvent(true)
-        setIsSocial(false)
-        setIsTraining(false)
-    }
-    const SocialComp = () => {
-        setIsEvent(false)
-        setIsSocial(true)
-        setIsTraining(false)
-    }
-    const TrainingComp = () => {
-        setIsEvent(false)
-        setIsSocial(false)
-        setIsTraining(true)
-    }
-
-    const onStarRatingPress = (rating) => {
-        setIsStart(rating)
-    }
     const dataArray = [
         {
             name: "Sean Paull",
@@ -120,15 +98,11 @@ const CommunityScreen = (props) => {
                 <View style={{ bottom: hp(2.2) }}>
                     <StarRating
                         disabled={true}
-                        emptyStarColor={"#9C9C9C"}
-                        fullStarColor={"green"}
                         fullStar={appIcons.star}
                         emptyStar={appIcons.greyStar}
-                        starStyle={{ width: wp(2.2), height: wp(2.2), marginHorizontal: wp(.4) }}
+                        starStyle={styles.startStyle}
                         maxStars={5}
-                        rating={props.rating}
-                        selectedStar={(rating) => onStarRatingPress(rating)}
-                    />
+                        rating={props.rating} />
                 </View>
             </View>
         )
@@ -150,18 +124,18 @@ const CommunityScreen = (props) => {
                         renderItem={({ item }) => <ReviewComponent source={item.pic} name={item.name} rating={item.rating} />} />
                 </View>
                 <View style={styles.btnView}>
-                    <Button onPress={() => EventComp()} style={{ fontSize: 11, color: isEvent ? colors.white : colors.black, fontFamily: isEvent ? fontFamily.appTextBold : fontFamily.appTextMedium }} themeColor={isEvent ? colors.theme : colors.whitish} containerStyle={{ width: wp(30), height: wp(9) }}>Events</Button>
-                    <Button onPress={() => SocialComp()} style={{ fontSize: 11, color: isSocial ? colors.white : colors.black, fontFamily: isSocial ? fontFamily.appTextBold : fontFamily.appTextMedium }} themeColor={isSocial ? colors.theme : colors.whitish} containerStyle={{ width: wp(22), height: wp(9) }}>Social</Button>
-                    <Button onPress={() => TrainingComp()} style={{ fontSize: 11, color: isTraining ? colors.white : colors.black, fontFamily: isTraining ? fontFamily.appTextBold : fontFamily.appTextMedium }} themeColor={isTraining ? colors.theme : colors.whitish} containerStyle={{ width: wp(30), height: wp(9) }}>Trainings</Button>
-                </View>{isEvent ?
+                    <Button onPress={() => setIsEvent("Event")} style={{ fontSize: 11, color: isEvent === "Event" ? colors.white : colors.black, fontFamily: isEvent === "Event" ? fontFamily.appTextBold : fontFamily.appTextMedium }} themeColor={isEvent === "Event" ? colors.theme : colors.whitish} containerStyle={{ width: wp(30), height: wp(9) }}>Events</Button>
+                    <Button onPress={() => setIsEvent("Social")} style={{ fontSize: 11, color: isEvent === "Social" ? colors.white : colors.black, fontFamily: isEvent === "Social" ? fontFamily.appTextBold : fontFamily.appTextMedium }} themeColor={isEvent === "Social" ? colors.theme : colors.whitish} containerStyle={{ width: wp(22), height: wp(9) }}>Social</Button>
+                    <Button onPress={() => setIsEvent("Training")} style={{ fontSize: 11, color: isEvent === "Training" ? colors.white : colors.black, fontFamily: isEvent === "Training" ? fontFamily.appTextBold : fontFamily.appTextMedium }} themeColor={isEvent === "Training" ? colors.theme : colors.whitish} containerStyle={{ width: wp(30), height: wp(9) }}>Trainings</Button>
+                </View>{isEvent === "Event" ?
                     <FlatList data={eventArray}
                         showsVerticalScrollIndicator={false}
                         renderItem={({ item }) => <EventComponent source={item.source} date={item.date} likes={item.likes} title={item.title} adress={item.adress} />} /> : null}
-                {isSocial ?
+                {isEvent === "Social" ?
                     <FlatList data={eventArray}
                         showsVerticalScrollIndicator={false}
                         renderItem={({ item }) => <SocialComponent source={item.socialPic} time={item.time} userPic={item.userPic} userName={item.name} />} /> : null}
-                {isTraining ?
+                {isEvent === "Training" ?
                     <FlatList data={eventArray}
                         showsVerticalScrollIndicator={false}
                         renderItem={({ item }) => <TrainingComponent source={item.source} date={item.date} likes={item.likes} title={item.title} adress={item.adress} />} /> : null}

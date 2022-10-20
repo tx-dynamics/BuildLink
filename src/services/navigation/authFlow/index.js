@@ -16,6 +16,7 @@ export const AuthNavigation = () => {
             <AuthStack.Screen name={routes.accountSelection} component={Auth.AccountSelection} />
             <AuthStack.Screen name={routes.verification} component={Auth.Verification} />
             <AuthStack.Screen name={routes.confirmPhone} component={Auth.ConfirmPhone} />
+            <AuthStack.Screen name={routes.forget} component={Auth.ForgetPassword} />
         </AuthStack.Navigator>
     )
 }

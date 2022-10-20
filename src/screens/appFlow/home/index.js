@@ -3,7 +3,7 @@ import { View, SafeAreaView, StatusBar, Text, Image, TextInput, FlatList, Toucha
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 import { Button } from '../../../components';
-import { appIcons, appImages, colors, routes, } from '../../../services'
+import { appIcons, appImages, colors, routes, wp, } from '../../../services'
 import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
 import SuggestionCard from '../../../components/suggestioncard';
@@ -16,13 +16,13 @@ const HomeScreen = ({ navigation }) => {
       id: 1,
       labourPic: appImages.labourpic,
       rating: 4.6,
-      wage: 25,
+      wage: 24,
       company: "Ms Hannah",
       adress: "8700 Commerce Park Houston texas",
       opening: "9:30AM",
       closing: "8:30PM",
       pic: appIcons.cat1,
-      text: "Plumber",
+      text: "House Plumber",
       shade: true
     },
     {
@@ -146,7 +146,7 @@ const HomeScreen = ({ navigation }) => {
             <Image resizeMode='contain' source={appImages.homeImage} style={styles.homeImage} />
           </View>
           <View style={styles.searchView}>
-            <SearchFilter placeholder={"Search with categories"} onPress={() => navigation.navigate(routes.filter)} />
+            <SearchFilter onChangeText={(text) => setIsSearch(text)} placeholder={"Search with categories"} onPress={() => navigation.navigate(routes.filter)} />
           </View>
           {
             isSearch == "" ?
@@ -157,9 +157,10 @@ const HomeScreen = ({ navigation }) => {
           {
             isSearch == "" ?
               <>
-                <View style={[appStyles.flex1]}>
+                <View style={[appStyles.flex1, { paddingHorizontal: wp(1.9) }]}>
                   <FlatList
                     horizontal
+                    showsHorizontalScrollIndicator={false}
                     data={categorArray}
                     renderItem={({ item, index }) => <RenderCategory source={item.pic} text={item.text} shade={item.shade} onPress={() => navigation.navigate(routes.searchResult, { item: item })} />}
                   />
@@ -170,7 +171,7 @@ const HomeScreen = ({ navigation }) => {
             <FlatList data={categorArray}
               ListHeaderComponent={() => {
                 return (
-                  <Text style={styles.nearByText}>{isSearch == "" ? "Nerarby you" : `Results for "${isSearch}"`} </Text>
+                  <Text style={styles.nearByText}>{isSearch == "" ? "Nearby you" : `Results for "${isSearch}"`} </Text>
                 )
               }
               }

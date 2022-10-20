@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { View, SafeAreaView, StatusBar, Text, ImageBackground, Image, TouchableOpacity, FlatList } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
-import { appIcons, appImages, colors, routes } from '../../../services'
+import { appIcons, appImages, colors, fontFamily, hp, routes, wp } from '../../../services'
 import { Input } from '../../../components/textInput';
 import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
@@ -57,11 +57,14 @@ const Signin = (props) => {
             <Text style={styles.loginText}>Login</Text>
           </View>
           <View style={styles.textInputView}>
-            <Input placeholder={"Usernamr/Email"} keyboardType={"email-address"} check={checkTick} onChangeText={(text) => setIsText(text)} value={isText} >Username/Email</Input>
+            <Input placeholder={"Username/Email"} keyboardType={"email-address"} check={checkTick} onChangeText={(text) => setIsText(text)} value={isText} >Username/Email</Input>
           </View>
           <View style={styles.passwordView}>
             <Input placeholder={"Password"} secureTextEntry={isPassword} eye onPressEye={() => setIsPassword(!isPassword)}  >Password</Input>
           </View>
+          <TouchableOpacity onPress={() => props.navigation.navigate(routes.forget)} style={{ paddingHorizontal: wp(7), marginTop: hp(1) }}>
+            <Text style={{ color: colors.theme, alignSelf: "flex-end", fontFamily: fontFamily.appTextRegular, fontSize: 11, textDecorationLine: 'underline' }}>Forgot Password?</Text>
+          </TouchableOpacity>
           <View style={styles.buttonView}>
             <Button onPress={() => props.navigation.navigate(routes.tab, { skilledValue })} containerStyle={styles.buttonStyle} style={{ fontSize: 14 }} >Login</Button>
           </View>
@@ -71,7 +74,7 @@ const Signin = (props) => {
           <View style={styles.flatListView}>
             <FlatList data={socialLoginArray}
               horizontal
-              renderItem={({ item }) => <TouchableOpacity onPress={() => props.navigation.navigate(item.route)} style={styles.socialImagesView}>
+              renderItem={({ item }) => <TouchableOpacity onPress={() => props.navigation.navigate(item.route, { skilledValue: skilledValue })} style={styles.socialImagesView}>
                 <Image resizeMode='contain' style={styles.socailImageStyle} source={item.pic} />
               </TouchableOpacity>
               } />

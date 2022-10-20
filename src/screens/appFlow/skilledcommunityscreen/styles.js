@@ -45,5 +45,10 @@ export const styles = StyleSheet.create({
         justifyContent: "space-between",
         marginTop: hp(4),
         marginBottom: hp(2)
+    },
+    startStyle: {
+        width: wp(2.2),
+        height: wp(2.2),
+        marginHorizontal: wp(.4)
     }
 })

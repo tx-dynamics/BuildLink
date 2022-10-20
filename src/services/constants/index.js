@@ -40,7 +40,8 @@ export const routes = {
     skillApply: "skillApply",
     skilledProfile: "skilledProfile",
     notification: "notification",
-    community: "community"
+    community: "community",
+    forget: "forget",
 
 
 }

@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     otp: {
         width: wp(12.3),
         height: hp(6.2),
-        fontFamily: fontFamily.appTextRegular,
+        fontFamily: fontFamily.appTextMedium,
         fontSize: 16,
         borderWidth: 0,
         borderRadius: 8,
@@ -50,16 +50,17 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "space-between",
         marginTop: hp(5),
-        paddingHorizontal: wp(33),
+        paddingHorizontal: wp(33.5),
     },
     timeText: {
         color: colors.black,
-        fontSize: 12,
-        fontFamily: fontFamily.appTextRegular
+        fontSize: 12.5,
+        fontWeight: "400"
+        //fontFamily: fontFamily.appTextRegular
     },
     resendText: {
         color: colors.greyDark,
         fontFamily: fontFamily.appTextSemiBold,
-        fontSize: 13
+        fontSize: 12.5
     },
 })

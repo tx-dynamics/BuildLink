@@ -1,5 +1,5 @@
 import OTPInputView from '@twotalltotems/react-native-otp-input';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { View, SafeAreaView, StatusBar, Text, TouchableOpacity, Image } from 'react-native'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Button from '../../../components/button';
@@ -9,6 +9,10 @@ import appStyles from '../../../services/utilities/appStyles'
 import { styles } from './styles';
 
 const Verification = (props) => {
+    const skilledValue = props.route.params.skilledValue
+    useEffect(() => {
+        console.log(skilledValue)
+    }, [])
     return (
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
@@ -34,10 +38,10 @@ const Verification = (props) => {
                         />
                     </View>
                     <View style={styles.buttonView}>
-                        <Button onPress={() => props.navigation.navigate(routes.tab)} containerStyle={styles.buttonStyle} style={{ fontSize: 13 }} >Verify OTP</Button>
+                        <Button onPress={() => props.navigation.navigate(routes.tab, { skilledValue })} containerStyle={styles.buttonStyle} style={{ fontSize: 13 }} >Verify OTP</Button>
                     </View>
                     <View style={styles.lastTextView}>
-                        <Text style={styles.timeText}>27Sec</Text>
+                        <Text style={styles.timeText}>27sec</Text>
                         <TouchableOpacity>
                             <Text style={styles.resendText}> resend OTP?</Text>
                         </TouchableOpacity>

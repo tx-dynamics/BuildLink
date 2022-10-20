@@ -56,6 +56,11 @@ const MessageScreen = (props) => {
             messsage: 'How are you',
             pic: appImages.dummyImg
         },
+        {
+            user: 2,
+            messsage: 'How are you',
+            pic: appImages.dummyImg
+        },
 
     ]
     const renderCard = ({ item, index }) => (

@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
         backgroundColor: colors.white,
         alignSelf: 'center',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     imageStyle: {
         width: wp(32),

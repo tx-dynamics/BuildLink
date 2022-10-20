@@ -5,7 +5,8 @@ import Onboarding from './onboarding'
 import Verification from './verification'
 import ConfirmPhone from './confirmPhone'
 import AccountSelection from './accountSelection'
+import ForgetPassword from './forgotpassword'
 export {
     Splash, Signin, Signup, Onboarding, Verification,
-    ConfirmPhone, AccountSelection
+    ConfirmPhone, AccountSelection, ForgetPassword
 }

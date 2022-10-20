@@ -122,18 +122,21 @@ const styles = StyleSheet.create({
     },
     wageDollarText: {
         color: colors.blackLight,
-        fontSize: 7,
-        fontFamily: fontFamily.appTextRegular
+        fontSize: 6.5,
+        fontFamily: fontFamily.appTextRegular,
+        paddingTop: hp(.2),
+        paddingRight: wp(.3)
     },
     wageText: {
         color: colors.black,
         fontFamily: fontFamily.appTextBold,
-        fontSize: 13
+        fontSize: 13.5
     },
     wageHrText: {
         color: colors.blackLight,
         fontSize: 8,
         fontFamily: fontFamily.appTextRegular,
+        paddingTop: hp(.9)
     },
     workView: {
         marginTop: hp(-1.5),
@@ -141,7 +144,7 @@ const styles = StyleSheet.create({
     },
     workText: {
         color: colors.black,
-        fontSize: 13,
+        fontSize: 12,
         fontFamily: fontFamily.appTextBold
     },
     companyText: {
@@ -166,19 +169,20 @@ const styles = StyleSheet.create({
     },
     timingView: {
         flexDirection: "row",
-        marginTop: .5,
+        marginTop: hp(.4),
         alignItems: "center",
-        paddingHorizontal: wp(1),
+        paddingHorizontal: wp(1.2),
     },
     clockIcon: {
-        width: wp(3),
-        height: wp(3)
+        width: wp(2.7),
+        height: wp(2.7)
     },
     clockText: {
         color: colors.blackLight,
         fontSize: 8,
         fontFamily: fontFamily.appTextRegular,
-        marginLeft: wp(1)
+        marginLeft: wp(1),
+
     },
     onDayView: {
         width: wp(3),

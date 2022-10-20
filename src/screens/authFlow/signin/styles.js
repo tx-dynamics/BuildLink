@@ -4,7 +4,7 @@ import { colors, fontFamily, hp, wp } from '../../../services';
 export const styles = StyleSheet.create({
     bgImageView: {
         alignItems: "center",
-        marginTop: hp(.5)
+        top: -5
     },
     bgStyle: {
         width: wp(101.5),
@@ -19,17 +19,17 @@ export const styles = StyleSheet.create({
     },
     titleView: {
         marginTop: hp(-2),
-        marginLeft: wp(4)
+        marginLeft: wp(5)
     },
     welcomeText: {
         color: colors.blackLight,
         fontFamily: fontFamily.appTextRegular,
-        fontSize: 12
+        fontSize: 12.1
     },
     loginText: {
         color: colors.blackLight,
         fontFamily: fontFamily.appTextBold,
-        fontSize: 20
+        fontSize: 20.07
     },
     textInputView: {
         alignItems: "center",
@@ -37,11 +37,13 @@ export const styles = StyleSheet.create({
     },
     passwordView: {
         alignItems: "center",
-        marginTop: hp(.5)
+        marginTop: hp(.5),
+        height: hp(10)
+
     },
     buttonView: {
         alignSelf: "center",
-        marginTop: hp(4.5)
+        marginTop: hp(4)
     },
     buttonStyle: {
         width: wp(40),

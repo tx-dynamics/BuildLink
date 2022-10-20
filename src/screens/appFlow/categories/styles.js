@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         borderColor: colors.catBorder,
         borderWidth: 1,
         alignItems: "center",
-        marginTop: hp(3)
+        marginVertical: hp(3)
     },
     catSubView: {
         backgroundColor: colors.grey,
@@ -32,7 +32,8 @@ export const styles = StyleSheet.create({
         marginTop: hp(2)
     },
     subView: {
-        marginTop: hp(1),
+        marginTop: hp(1.2),
+
     },
     adressText: {
         color: colors.blackLight,
