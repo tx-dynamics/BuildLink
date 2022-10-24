@@ -92,7 +92,7 @@ const FilterScreen = (props) => {
                                         nonCollidingMultiSliderValue[0],
                                         nonCollidingMultiSliderValue[1],
                                     ]}
-                                    sliderLength={wp(90)}
+                                    sliderLength={wp(88.5)}
                                     onValuesChange={nonCollidingMultiSliderValuesChange}
                                     min={0}
                                     max={100}

@@ -145,7 +145,7 @@ const RequestDetail = ({ navigation }) => {
                         <View style={styles.bottomMargin}>
                             <View style={[appStyles.rowBtw, { zIndex: 1 }]}>
                                 <View style={styles.payRateTopView}>
-                                    <Text style={styles.textStyle}>Contractor Type</Text>
+                                    <Text style={styles.textStyle1}>Contractor Type</Text>
                                     <TouchableOpacity onPress={() => setPayRateModal(!payRateModal)}>
                                         <Image source={appIcons.arrowDown} style={styles.arrowDown} />
                                     </TouchableOpacity>

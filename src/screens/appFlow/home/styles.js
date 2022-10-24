@@ -134,7 +134,6 @@ export const styles = StyleSheet.create({
     },
     nearByText: {
         color: colors.black,
-        fontSize: 13,
         fontFamily: fontFamily.appTextBold,
         paddingHorizontal: wp(5.4),
         marginTop: hp(2),

@@ -84,13 +84,15 @@ export const styles = StyleSheet.create({
         fontFamily: fontFamily.appTextBold
     },
     multiSliderView: {
-        alignSelf: "center",
-        marginTop: hp(-1)
+        //        alignSelf: "center",
+        marginTop: hp(-1),
+        width: wp(80)
     },
     multiSelectorSelected: {
         borderWidth: .2,
-        width: 0,
         height: 0,
+        width: wp(100),
+        // marginHorizontal: 15,
         borderColor: colors.theme,
     },
     multiSelectorUnSelected: {
@@ -101,7 +103,11 @@ export const styles = StyleSheet.create({
     },
     scrollLabel: {
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        //backgroundColor: "red",
+        //width: wp(2),
+
+        alignSelf: "center"
     },
     scrollMarkerImage: {
         width: wp(3),
@@ -154,7 +160,7 @@ export const styles = StyleSheet.create({
     timeRangeView: {
         flexDirection: "row",
         alignItems: "center",
-        //paddingHorizontal: wp(1),
+        paddingHorizontal: wp(8),
         justifyContent: "space-between",
         marginTop: hp(2),
     },

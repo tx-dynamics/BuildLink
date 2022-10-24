@@ -10,7 +10,7 @@ export const styles = StyleSheet.create({
         borderRadius: wp(1.5),
         justifyContent: "space-between",
         paddingHorizontal: wp(2),
-        marginHorizontal: wp(1.6)
+        marginHorizontal: wp(1.7)
     },
     tradesmanText: {
         color: colors.black,
@@ -110,6 +110,6 @@ export const styles = StyleSheet.create({
         fontSize: 12,
         fontFamily: fontFamily.appTextRegular,
         color: colors.greyDark,
-        paddingLeft: wp(11)
+        paddingLeft: wp(12)
     }
 })

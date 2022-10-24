@@ -44,7 +44,7 @@ const CommunityScreen = (props) => {
     const eventArray = [
         {
             name: "Dennis Reynold",
-            source: appImages.eventPic,
+            source: appImages.eventPic2,
             time: "1 hrs ago",
             userPic: appImages.labourpic,
             socialPic: appImages.workPic,
@@ -118,6 +118,7 @@ const CommunityScreen = (props) => {
                 <Text style={styles.communityReviewText}>Community reviews</Text>
                 <View>
                     <FlatList
+                        showsHorizontalScrollIndicator={false}
                         contentContainerStyle={{ paddingTop: hp(3), }}
                         data={dataArray}
                         horizontal

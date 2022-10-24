@@ -44,7 +44,7 @@ const SuggestionCard = (props) => {
     return (
         <TouchableOpacity onPress={props.onPress} style={styles.mainView}>
             <Image resizeMode='contain' source={props.source} style={styles.mainImageView} />
-            <View style={[appStyles.flex1]}>
+            <View style={[appStyles.flex1, { paddingLeft: wp(1.2) }]}>
                 <View style={styles.subView}>
                     <View style={[appStyles.row]}>
                         <Image resizeMode='contain' source={appIcons.star} style={styles.starIconStyle} />
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
         color: colors.blackLight,
         fontSize: 6.5,
         fontFamily: fontFamily.appTextRegular,
-        paddingTop: hp(.2),
+        paddingTop: hp(.33),
         paddingRight: wp(.3)
     },
     wageText: {
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         color: colors.blackLight,
         fontSize: 8,
         fontFamily: fontFamily.appTextRegular,
-        paddingTop: hp(.9)
+        paddingTop: hp(.84)
     },
     workView: {
         marginTop: hp(-1.5),

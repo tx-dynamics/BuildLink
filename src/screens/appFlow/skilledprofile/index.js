@@ -22,22 +22,22 @@ const SkilledProfile = (props) => {
             pic: appIcons.plumber1
         },
         {
-            pic: appIcons.plumber1
+            pic: appIcons.plumber2
         },
         {
             pic: appIcons.plumber3
         },
         {
-            pic: appIcons.plumber4
+            pic: appIcons.plumber1
         },
         {
-            pic: appIcons.plumber4
+            pic: appIcons.plumber2
         },
         {
-            pic: appIcons.plumber4
+            pic: appIcons.plumber3
         },
         {
-            pic: appIcons.plumber4
+            pic: appIcons.plumber1
         },
     ]
     const RenderCategories = (props) => {
@@ -50,7 +50,7 @@ const SkilledProfile = (props) => {
     const RenderPastWork = (props) => {
         return (
             <View style={styles.renderPastWorkView}>
-                <Image resizeMode='contain' source={props.source} style={styles.renderPastWorkImg} />
+                <Image resizeMode='cover' source={props.source} style={styles.renderPastWorkImg} />
             </View>
         )
     }

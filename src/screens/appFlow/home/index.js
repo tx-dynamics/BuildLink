@@ -14,7 +14,7 @@ const HomeScreen = ({ navigation }) => {
   const categorArray = [
     {
       id: 1,
-      labourPic: appImages.labourpic,
+      labourPic: appImages.chatuser,
       rating: 4.6,
       wage: 24,
       company: "Ms Hannah",

@@ -32,7 +32,13 @@ export const styles = StyleSheet.create({
         color: colors.greyLight,
         fontSize: 14,
         fontFamily: fontFamily.appTextRegular,
-        paddingLeft: wp(4)
+        paddingLeft: wp(3)
+    },
+    textStyle1: {
+        color: colors.greyLight,
+        fontSize: 14,
+        fontFamily: fontFamily.appTextRegular,
+        paddingLeft: wp(7)
     },
     toTextStyle: {
         color: colors.blackLight,
@@ -45,6 +51,7 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.whitish,
         borderRadius: wp(4),
         alignItems: 'center',
+        //paddingLeft: wp(1),
         paddingRight: wp(5),
         justifyContent: 'space-between',
         flexDirection: 'row'

@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     },
     renderPastWorkView: {
         paddingRight: wp(6),
-        marginVertical: hp(1.5)
+        marginVertical: hp(1.35)
     },
     renderPastWorkImg: {
         width: wp(42),

@@ -42,7 +42,7 @@ export const styles = StyleSheet.create({
     timeRangeView: {
         flexDirection: "row",
         alignItems: "center",
-        paddingHorizontal: wp(5),
+        paddingHorizontal: wp(8.2),
         justifyContent: "space-between",
         marginTop: hp(2),
     },
@@ -181,7 +181,7 @@ export const styles = StyleSheet.create({
     },
     availabiltyText: {
         color: colors.black,
-        fontSize: 13,
+        // fontSize: 13,
         fontFamily: fontFamily.appTextBold
     },
     downAroowImg: {
