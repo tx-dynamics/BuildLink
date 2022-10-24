@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     },
     timingView: {
         flexDirection: "row",
-        marginTop: .5,
+        marginTop: hp(.5),
         alignItems: "center",
         paddingHorizontal: wp(1),
     },

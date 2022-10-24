@@ -266,6 +266,7 @@ const CustomCalendar = ({
                                     {
                                         flex: 1,
                                         alignSelf: "center",
+                                        paddingTop: hp(.2),
                                         //marginRight: wp(-7),
                                         alignItems: 'center',
                                         //justifyContent: 'center',
@@ -357,7 +358,7 @@ const CustomCalendar = ({
 
     return (
         <View style={{ paddingHorizontal: 8, paddingVertical: 4 }}>
-            <View style={{ flexDirection: 'row', justifyContent: "space-between", alignItems: "center" }}>
+            <View style={{ flexDirection: 'row', justifyContent: "space-between", alignItems: "center", paddingHorizontal: wp(1) }}>
                 <View style={styles.arrowContainerStyle}>
                     <Pressable
                         style={({ pressed }) => [

@@ -21,7 +21,7 @@ const CalendarScreen = (props) => {
             <View style={styles.ph3}>
                 <View style={styles.planCompView}>
                     <View>
-                        <Text style={[styles.dateText, { color: props.textColor }]}>{`0${date.getDate()}`}</Text>
+                        <Text style={[styles.dateText, { color: props.textColor }]}>{`${date.getDate()}`}</Text>
                         <Text style={[styles.monthText, { color: props.textColor }]}>{`${months[date.getMonth()]}`}</Text>
                     </View>
                     <View style={[styles.projectView, { backgroundColor: props.backgroundColor }]}>
@@ -41,7 +41,7 @@ const CalendarScreen = (props) => {
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
             <KeyboardAwareScrollView keyboardShouldPersistTaps="always" contentContainerStyle={appStyles.scrollContainer}>
                 <View style={[appStyles.flex1,]}>
-                    <View style={{}}>
+                    <View style={{ marginTop: hp(2.5) }}>
                         <CustomCalendar
                             lineTop={hp(-1.7)}
                             marginRight={wp(3.5)}
@@ -63,10 +63,12 @@ const CalendarScreen = (props) => {
                     </View>
                     <Text style={styles.todaysPlanText}>Today's Plan</Text>
                     <PlanComponent backgroundColor={colors.themeSecondary} textColor={colors.themeSecondary} />
-                    <Text style={styles.upcomingText}>Upcoming Plans</Text>
-                    <PlanComponent backgroundColor={colors.blue} textColor={colors.blue} />
-                    <PlanComponent backgroundColor={colors.blue} textColor={colors.blue} />
-                    <PlanComponent backgroundColor={colors.blue} textColor={colors.blue} />
+                    <View style={{ marginBottom: hp(2) }}>
+                        <Text style={styles.upcomingText}>Upcoming Projects</Text>
+                        <PlanComponent backgroundColor={colors.blue} textColor={colors.blue} />
+                        <PlanComponent backgroundColor={colors.blue} textColor={colors.blue} />
+                        <PlanComponent backgroundColor={colors.blue} textColor={colors.blue} />
+                    </View>
                 </View>
             </KeyboardAwareScrollView>
         </SafeAreaView>

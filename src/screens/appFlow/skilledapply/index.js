@@ -4,7 +4,7 @@ import CountryPicker from 'react-native-country-picker-modal'
 import ImagePicker from 'react-native-image-crop-picker';
 
 import appStyles from '../../../services/utilities/appStyles'
-import { appIcons, colors, hp, routes, } from '../../../services'
+import { appIcons, colors, hp, routes, wp, } from '../../../services'
 import { Button, Header, Input } from '../../../components'
 import { styles } from './styles'
 import SubscriptionModal from '../../../components/subscriptionmodal';
@@ -40,7 +40,7 @@ const SkilledApply = (props) => {
     return (
         <SafeAreaView style={[appStyles.safeContainer]} >
             <StatusBar backgroundColor={colors.white} barStyle={'dark-content'} />
-            <Header title={'Apply'} leftIconView leftIcon={appIcons.backArrow} onPress={() => props.navigation.goBack()} />
+            <Header leftIconPadding={wp(1.2)} title={'Apply'} leftIconView leftIcon={appIcons.backArrow} onPress={() => props.navigation.goBack()} />
             <Modal
                 animationType="none"
                 transparent={true}
@@ -52,7 +52,7 @@ const SkilledApply = (props) => {
                 <SubscriptionModal btnPress={() => { setModalVisible(false) }} skipPress={() => { setRequestVisible(true), setModalVisible(false) }} />
             </Modal>
             <View style={[appStyles.flex1, styles.paddingView]}>
-                <View >
+                <View style={{ marginTop: hp(2.5) }}>
                     <Input placeholder={"Enter your name"} containerStyle={styles.nameTextInput} titleStyle={styles.titleText} >Name</Input>
                     <Text style={styles.phoneText}>Phone Number</Text>
                     <View style={styles.subView}>
@@ -79,7 +79,7 @@ const SkilledApply = (props) => {
                     <Text style={styles.yourWorkText}>Your Work</Text>
                     <View style={{ marginTop: hp(1) }}>
                         <FlatList
-                            style={{}}
+                            showsHorizontalScrollIndicator={false}
                             data={skillPic}
                             horizontal
                             ListFooterComponent={({ item }) =>

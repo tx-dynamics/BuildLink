@@ -42,8 +42,8 @@ export const styles = StyleSheet.create({
         fontFamily: fontFamily.appTextRegular
     },
     borderView: {
-        borderWidth: .5,
-        width: wp(60),
+        borderWidth: .35,
+        width: wp(63.2),
         marginLeft: wp(31),
         marginTop: hp(1),
         borderColor: colors.borderColorLight

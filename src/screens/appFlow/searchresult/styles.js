@@ -6,17 +6,19 @@ export const styes = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        paddingHorizontal: wp(4),
+        paddingHorizontal: wp(5.2),
         marginVertical: hp(2),
         marginTop: hp(5)
     },
     resultText: {
         color: colors.blackLight,
-        fontSize: 16.5,
+        fontSize: 16.2,
         fontFamily: fontFamily.appTextBold
     },
     crossImg: {
-        width: wp(4),
-        height: wp(4)
+        width: wp(3.5),
+        height: wp(3.5),
+        paddingRight: wp(5),
+        //backgroundColor: "red"
     }
 })

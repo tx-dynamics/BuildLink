@@ -92,7 +92,7 @@ const FilterScreen = (props) => {
                                         nonCollidingMultiSliderValue[0],
                                         nonCollidingMultiSliderValue[1],
                                     ]}
-                                    sliderLength={280}
+                                    sliderLength={wp(90)}
                                     onValuesChange={nonCollidingMultiSliderValuesChange}
                                     min={0}
                                     max={100}
@@ -106,7 +106,7 @@ const FilterScreen = (props) => {
                                                 <Image resizeMode='contain' source={appIcons.scrollmarker} style={styles.scrollMarkerImage} />
                                             </View>
                                             <View style={styles.viewTop}>
-                                                <Text style={styles.labelText}>{`$ ${sliderOneValue}/hr`}</Text>
+                                                <Text style={styles.labelText}>{`$${sliderOneValue}/hr`}</Text>
                                             </View>
                                         </View>
                                     }

@@ -44,11 +44,9 @@ export const styles = StyleSheet.create({
         paddingVertical: hp(2),
         backgroundColor: colors.whitish,
         borderRadius: wp(4),
-        paddingLeft: wp(4),
         alignItems: 'center',
         paddingRight: wp(5),
         justifyContent: 'space-between',
-        paddingHorizontal: wp(2),
         flexDirection: 'row'
     },
     rateModelTopView: {
@@ -56,16 +54,20 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
+
+
+
+
     },
     selectionIcon: {
-        width: wp(5),
-        height: wp(4),
+        width: wp(2.5),
+        height: wp(2.5),
         resizeMode: 'contain'
     },
     rateTextStyle: {
         fontFamily: fontFamily.appTextRegular,
         fontSize: 14,
-        paddingLeft: wp(2),
+        paddingLeft: wp(3.5),
         color: colors.blackLight
     },
     buttonContainerStyle: {

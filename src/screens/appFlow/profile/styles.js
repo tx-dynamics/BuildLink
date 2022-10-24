@@ -4,7 +4,7 @@ import { fontFamily, hp, wp, colors } from '../../../services';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: wp(6),
+        //paddingHorizontal: wp(6),
         paddingVertical: hp(1.5)
     },
     myProjectTopView: {

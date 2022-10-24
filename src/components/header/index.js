@@ -5,15 +5,17 @@ import { appIcons, appImages, colors, fontFamily, hp, wp } from '../../services'
 import appStyles from '../../services/utilities/appStyles'
 
 const Header = props => {
-    const { chatHeader, leftIcon, title, chatTitle, onPressRightIcon, titleStyle, onPress, shadow, rightIcon, leftIconView } = props
+    const { chatHeader, leftIcon, title, chatTitle, onPressRightIcon, titleStyle, onPress, leftIconPadding, shadow, rightIcon, leftIconView } = props
     return (
         <View style={[styles.container, shadow && styles.shadow]}>
-            <View style={[appStyles.rowBtw]}>
-                <TouchableOpacity style={[leftIconView && styles.arrowView, { width: wp(6) }]} onPress={onPress}>
-                    {leftIcon &&
-                        <Image style={styles.iconStyle} source={leftIcon} />
-                    }
-                </TouchableOpacity>
+            <View style={[appStyles.rowBtw,]}>
+                <View style={{}}>
+                    <TouchableOpacity style={[leftIconView && styles.arrowView, { width: wp(6), right: leftIconPadding }]} onPress={onPress}>
+                        {leftIcon &&
+                            <Image style={styles.iconStyle} source={leftIcon} />
+                        }
+                    </TouchableOpacity>
+                </View>
                 {
                     chatHeader ?
                         <View style={styles.chatHeaderMainView}>
@@ -44,7 +46,8 @@ const styles = StyleSheet.create({
         borderRadius: wp(1.5),
         backgroundColor: colors.whitish,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+
     },
     textViewStyle: {
         alignItems: 'center',

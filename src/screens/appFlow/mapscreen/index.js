@@ -63,7 +63,7 @@ export default function MapScreen(props) {
                                 <Image resizeMode='contain' source={appIcons.gps} style={styles.gpsImg} />
                                 <Text style={styles.currentLocationText}>Use Current Location</Text>
                             </TouchableOpacity>
-                            <Text style={styles.recentLocationText}>Reccent Locations</Text>
+                            <Text style={styles.recentLocationText}>Recent Locations</Text>
                         </View>
                     }
                     <MapView

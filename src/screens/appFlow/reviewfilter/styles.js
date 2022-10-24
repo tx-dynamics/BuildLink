@@ -9,19 +9,20 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         borderRadius: wp(1.5),
         justifyContent: "space-between",
-        paddingHorizontal: wp(1),
-        marginHorizontal: wp(1)
+        paddingHorizontal: wp(2),
+        marginHorizontal: wp(1.6)
     },
     tradesmanText: {
         color: colors.black,
         fontSize: 12,
     },
     trademanToucView: {
-        paddingHorizontal: wp(2),
+        marginLeft: wp(1.9),
+        paddingTop: hp(.37)
     },
     tradesmanImage: {
-        width: wp(3),
-        height: wp(3)
+        width: wp(2.7),
+        height: wp(2.7)
     },
     buttonView: {
         marginTop: hp(45),
@@ -78,14 +79,15 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 1
     },
     rateText: {
-        color: colors.black,
+        color: colors.blackLight,
         fontFamily: fontFamily.appTextBold,
         fontSize: 15
     },
     fromPrice: {
-        color: colors.black,
+        color: colors.blackLight,
         fontFamily: fontFamily.appTextRegular,
-        fontSize: 13
+        fontSize: 13,
+        marginRight: wp(3)
     },
     toPrice: {
         color: colors.black,
@@ -100,10 +102,14 @@ export const styles = StyleSheet.create({
     },
     fromDate: {
         color: colors.greyDark,
-        marginLeft: wp(5)
+        paddingLeft: wp(7),
+        fontSize: 12,
+        fontFamily: fontFamily.appTextRegular
     },
     toDate: {
+        fontSize: 12,
+        fontFamily: fontFamily.appTextRegular,
         color: colors.greyDark,
-        marginLeft: wp(10)
+        paddingLeft: wp(11)
     }
 })

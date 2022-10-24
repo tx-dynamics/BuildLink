@@ -8,9 +8,9 @@ import { styles } from './styles';
 import appStyles from '../../../services/utilities/appStyles'
 
 const EditProfile = ({ navigation }) => {
-    const [name, setName] = useState('Jeff Vanah')
-    const [email, setEmail] = useState('Jeff169@gmail.com')
-    const [password, setPassword] = useState('123123123')
+    const [name, setName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     return (
         <SafeAreaView style={[appStyles.safeContainer]} >
@@ -20,9 +20,9 @@ const EditProfile = ({ navigation }) => {
                 keyboardShouldPersistTaps="always"
                 contentContainerStyle={appStyles.scrollContainer}>
                 <View style={styles.container}>
-                    <Input value={name} onChangeText={(text) => setName(text)} containerStyle={styles.inputContainerStyle} inputStyle={styles.inputTextStyle}>Name</Input>
-                    <Input value={email} onChangeText={(text) => setEmail(text)} containerStyle={styles.inputContainerStyle} inputStyle={styles.inputTextStyle}>Email</Input>
-                    <Input secureTextEntry value={password} onChangeText={(text) => setPassword(text)} containerStyle={styles.inputContainerStyle} inputStyle={styles.inputTextStyle}>Password</Input>
+                    <Input placeholder={"Jeff Vanah"} value={name} onChangeText={(text) => setName(text)} containerStyle={styles.inputContainerStyle} inputStyle={styles.inputTextStyle}>Name</Input>
+                    <Input placeholder={"Jeff169@gmail.com"} value={email} onChangeText={(text) => setEmail(text)} containerStyle={styles.inputContainerStyle} inputStyle={styles.inputTextStyle}>Email</Input>
+                    <Input placeholder={"Password"} secureTextEntry value={password} onChangeText={(text) => setPassword(text)} containerStyle={styles.inputContainerStyle} inputStyle={styles.inputTextStyle}>Password</Input>
                     <View style={{ justifyContent: 'center', flex: 1 }}>
                         <Button onPress={() => navigation.goBack()} containerStyle={styles.buttonContainerStyle}>Update</Button>
                     </View>

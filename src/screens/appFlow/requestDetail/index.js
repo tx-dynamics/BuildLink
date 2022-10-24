@@ -51,7 +51,7 @@ const RequestDetail = ({ navigation }) => {
     const RequestSendModal = (props) => {
         return (
             <View style={styles.requestSendModalView}>
-                <KeyboardAwareScrollView  >
+                <KeyboardAwareScrollView showsVerticalScrollIndicator={false} >
                     <View style={styles.requestView}>
                         <Text style={styles.requestText}>Request Sent</Text>
                         <Text style={styles.requestSentText}>Your request is sent to the persons, would you like to send a msg here?</Text>
@@ -118,7 +118,7 @@ const RequestDetail = ({ navigation }) => {
                         <Text style={styles.heading}>Pay Rate</Text>
                         <View style={appStyles.rowBtw}>
                             <View
-                                style={[styles.payRateTopView, { paddingLeft: payRateModal ? wp(7) : wp(4) }]}>
+                                style={[styles.payRateTopView, { paddingLeft: wp(4) }]}>
                                 {!payRateModal ?
                                     <Text style={styles.textStyle}>Select pay and contractor type</Text>
                                     :
@@ -169,7 +169,7 @@ const RequestDetail = ({ navigation }) => {
                         <Text style={styles.heading}>Loaction</Text>
                         <View style={appStyles.rowBtw}>
                             <View
-                                style={[styles.payRateTopView, { paddingLeft: payRateModal ? wp(7) : wp(4) }]}>
+                                style={[styles.payRateTopView, { paddingLeft: wp(4) }]}>
                                 <Text style={styles.textStyle}>Choose location</Text>
                                 <TouchableOpacity onPress={() => navigation.navigate(routes.maps)}>
                                     <Image source={appIcons.gps} style={styles.gpsIcon} />

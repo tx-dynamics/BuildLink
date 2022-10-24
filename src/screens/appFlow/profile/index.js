@@ -119,6 +119,7 @@ const ProfileScreen = ({ navigation }) => {
             </View>
             <View style={styles.container}>
                 <FlatList
+                    showsVerticalScrollIndicator={false}
                     keyExtractor={item => item.id}
                     data={projectsArray}
                     renderItem={(item) =>

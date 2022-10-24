@@ -49,22 +49,22 @@ const styles = StyleSheet.create({
     dateText: {
         color: colors.black,
         fontFamily: fontFamily.appTextRegular,
-        fontSize: 8,
+        fontSize: 9,
     },
     forwardImg: {
-        width: wp(4),
-        height: wp(4),
+        width: wp(5),
+        height: wp(5),
     },
     titleText: {
         color: colors.black,
         fontFamily: fontFamily.appTextBold,
-        fontSize: 10,
+        fontSize: 11,
         marginTop: hp(-.5)
     },
     adressText: {
         color: colors.black,
         fontFamily: fontFamily.appTextRegular,
-        fontSize: 7
+        fontSize: 8
     },
     redHeartView: {
         flexDirection: "row",
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     },
     likeText: {
         color: colors.black,
-        fontSize: 7,
+        fontSize: 8,
         fontFamily: fontFamily.appTextRegular,
         marginLeft: wp(1.5)
     }

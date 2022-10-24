@@ -23,6 +23,7 @@ const appImages = {
     workPic: require(`${imageUrl}/workPic.jpg`),
     workPic2: require(`${imageUrl}/workPic2.jpg`),
     workPic3: require(`${imageUrl}/workPic3.png`),
+    plumber: require(`${imageUrl}/plumber.jpg`),
 }
 const appIcons = {
     apple: require(`${iconUrl}/apple.png`),

@@ -85,6 +85,7 @@ export const styles = StyleSheet.create({
         fontFamily: fontFamily.appTextRegular,
         fontSize: 13,
         textAlign: "center",
+        marginTop: hp(2)
     },
     themeText: {
         color: colors.theme,

@@ -40,17 +40,20 @@ const PlanScreen = ({ navigation }) => {
         {
             id: 1,
             color: colors.theme,
-            pic: appIcons.primium
+            pic: appIcons.primium,
+            text: "PREMIUM"
         },
         {
             id: 2,
             color: "#2AA9F0",
-            pic: appIcons.bronze
+            pic: appIcons.bronze,
+            text: "BRONZE"
         },
         {
             id: 2,
             color: "#54A76B",
-            pic: appIcons.silver
+            pic: appIcons.silver,
+            text: "SILVER"
         },
     ]
     const CheckComponenet = (props) => {
@@ -68,7 +71,7 @@ const PlanScreen = ({ navigation }) => {
                     <View style={styles.renderImgView}>
                         <Image resizeMode='contain' source={props.source} style={styles.renderImg} />
                     </View>
-                    <Text style={styles.preimiumText}>PREMIUM</Text>
+                    <Text style={styles.preimiumText}>{props.text}</Text>
                     <View style={styles.priceView}>
                         <Text style={styles.dollarText}>$</Text>
                         <Text style={styles.priceText}>16</Text>
@@ -103,7 +106,7 @@ const PlanScreen = ({ navigation }) => {
                         data={colorData}
                         renderItem={({ item }) =>
                             <>
-                                <RenderPlan backgroundColor={item.color} source={item.pic} />
+                                <RenderPlan backgroundColor={item.color} source={item.pic} text={item.text} />
                                 <View style={styles.flatListView}>
                                     <FlatList
                                         ListHeaderComponent={() => <View style={{ marginTop: hp(2) }}></View>}

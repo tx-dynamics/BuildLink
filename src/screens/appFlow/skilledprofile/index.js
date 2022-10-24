@@ -22,7 +22,7 @@ const SkilledProfile = (props) => {
             pic: appIcons.plumber1
         },
         {
-            pic: appIcons.plumber2
+            pic: appIcons.plumber1
         },
         {
             pic: appIcons.plumber3
@@ -31,13 +31,13 @@ const SkilledProfile = (props) => {
             pic: appIcons.plumber4
         },
         {
-            pic: appIcons.plumber5
+            pic: appIcons.plumber4
         },
         {
-            pic: appIcons.plumber6
+            pic: appIcons.plumber4
         },
         {
-            pic: appIcons.plumber7
+            pic: appIcons.plumber4
         },
     ]
     const RenderCategories = (props) => {
@@ -105,7 +105,7 @@ const SkilledProfile = (props) => {
                 </View>
                 <View style={styles.pastWorkView}>
                     <Text style={styles.pastWorkText}>Past Work</Text>
-                    <Image resizeMode='contain' source={appIcons.addGrey} style={styles.addImg} />
+                    <Image resizeMode='center' source={appIcons.addGrey} style={styles.addImg} />
                 </View>
                 <View style={[appStyles.flex1]}>
                     <FlatList

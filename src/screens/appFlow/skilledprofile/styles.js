@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     },
     renderPastWorkView: {
         paddingRight: wp(6),
-        marginBottom: hp(1.5)
+        marginVertical: hp(1.5)
     },
     renderPastWorkImg: {
         width: wp(42),
@@ -112,7 +112,7 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
-        marginVertical: hp(2)
+        marginTop: hp(2)
     },
     pastWorkText: {
         color: colors.black,

@@ -22,7 +22,7 @@ const HomeScreen = ({ navigation }) => {
       opening: "9:30AM",
       closing: "8:30PM",
       pic: appIcons.cat1,
-      text: "House Plumber",
+      text: "Plumber",
       shade: true
     },
     {

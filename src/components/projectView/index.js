@@ -6,41 +6,43 @@ import appStyles from '../../services/utilities/appStyles'
 
 const ProjectView = props => {
     return (
-        <View style={styles.container}>
-            <View style={styles.topHalf}>
-                <View style={{ width: wp(14) }}>
-                    <Image source={props.image} style={styles.profileImg} />
-                </View>
-                <View style={{ flex: 1, paddingLeft: wp(2) }}>
-                    <View style={appStyles.rowBtw}>
-                        <Text style={styles.title}>{props.title}</Text>
-                        <TouchableOpacity>
-                            <Image source={appIcons.more} style={styles.moreIcon} />
-                        </TouchableOpacity>
+        <View style={{ alignItems: "center", flex: 1, width: wp(100) }}>
+            <View style={styles.container}>
+                <View style={styles.topHalf}>
+                    <View style={{ width: wp(14) }}>
+                        <Image source={props.image} style={styles.profileImg} />
                     </View>
-                    <Text style={styles.companyName}>{props.company}</Text>
-                    <View style={styles.dateTopView}>
-                        <View style={styles.dateView}>
-                            <Image source={appIcons.date} style={styles.dateIcon} />
-                            <Text style={styles.dateText}>{props.date}</Text>
+                    <View style={{ flex: 1, paddingLeft: wp(2) }}>
+                        <View style={appStyles.rowBtw}>
+                            <Text style={styles.title}>{props.title}</Text>
+                            <TouchableOpacity>
+                                <Image source={appIcons.more} style={styles.moreIcon} />
+                            </TouchableOpacity>
                         </View>
-                        <View style={styles.dateView}>
-                            <Image source={appIcons.time} style={styles.dateIcon} />
-                            <Text style={styles.dateText}>{props.time}</Text>
+                        <Text style={styles.companyName}>{props.company}</Text>
+                        <View style={styles.dateTopView}>
+                            <View style={styles.dateView}>
+                                <Image source={appIcons.date} style={styles.dateIcon} />
+                                <Text style={styles.dateText}>{props.date}</Text>
+                            </View>
+                            <View style={styles.dateView}>
+                                <Image source={appIcons.time} style={styles.dateIcon} />
+                                <Text style={styles.dateText}>{props.time}</Text>
+                            </View>
                         </View>
                     </View>
                 </View>
+                <FlatList
+                    keyExtractor={item => item.id}
+                    data={props.tagArray}
+                    style={styles.secondHalf}
+                    renderItem={(item) =>
+                        <View style={styles.tagView}>
+                            <Text style={styles.tagText}>{item.item.name}</Text>
+                        </View>
+                    }
+                />
             </View>
-            <FlatList
-                keyExtractor={item => item.id}
-                data={props.tagArray}
-                style={styles.secondHalf}
-                renderItem={(item) =>
-                    <View style={styles.tagView}>
-                        <Text style={styles.tagText}>{item.item.name}</Text>
-                    </View>
-                }
-            />
         </View>
     )
 }
@@ -48,6 +50,7 @@ const ProjectView = props => {
 const styles = StyleSheet.create({
     container: {
         paddingHorizontal: wp(4),
+
         marginBottom: hp(2),
         paddingVertical: hp(1.8),
         width: wp(90),

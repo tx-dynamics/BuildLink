@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         marginLeft: wp(4),
         alignItems: "center",
-        marginBottom: wp(6)
+        marginBottom: wp(6),
+
     },
     senderImage: {
         width: wp(8),
@@ -22,7 +23,7 @@ export const styles = StyleSheet.create({
     },
     messageView: {
         justifyContent: "center",
-        width: wp(76),
+        width: wp(80),
         paddingVertical: hp(1.2),
         marginLeft: wp(1.5),
         borderRadius: wp(5),
@@ -45,7 +46,7 @@ export const styles = StyleSheet.create({
     view1: {
         justifyContent: "center",
         // marginTop: hp(4),
-        width: wp(75),
+        width: wp(80),
         marginLeft: wp(4),
         paddingVertical: hp(1.2),
         borderRadius: wp(5),
@@ -87,7 +88,7 @@ export const styles = StyleSheet.create({
         width: wp(85),
         alignSelf: "center",
         borderColor: colors.borderColorLight,
-        marginTop: hp(-1),
+        marginTop: hp(1.5),
     },
     dateView: {
         alignSelf: "center",
@@ -134,6 +135,7 @@ export const styles = StyleSheet.create({
     },
     textInputStyle: {
         width: wp(60),
+        paddingLeft: wp(6),
         fontSize: 12,
         fontFamily: fontFamily.appTextRegular,
         color: colors.black

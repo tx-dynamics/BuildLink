@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
         width: wp(12)
     },
     bottomIcon: {
-        width: wp(4),
-        height: wp(4)
+        width: wp(4.5),
+        height: wp(4.5)
     },
     userProfileView: {
         zIndex: 20,

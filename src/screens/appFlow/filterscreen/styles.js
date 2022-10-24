@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
         alignItems: "center",
         borderRadius: wp(1.5),
         justifyContent: "space-between",
-        paddingHorizontal: wp(1),
+        paddingHorizontal: wp(2.2),
         marginHorizontal: wp(1)
     },
     tradesmanText: {
@@ -17,11 +17,12 @@ export const styles = StyleSheet.create({
         fontSize: 12,
     },
     trademanToucView: {
-        paddingHorizontal: wp(2),
+        marginLeft: wp(1.9),
+        paddingTop: hp(.37)
     },
     tradesmanImage: {
-        width: wp(3),
-        height: wp(3)
+        width: wp(2.7),
+        height: wp(2.7),
     },
     topView: {
         paddingHorizontal: wp(5),
@@ -117,7 +118,7 @@ export const styles = StyleSheet.create({
     dateRangeView: {
         flexDirection: "row",
         justifyContent: "space-between",
-        paddingHorizontal: wp(2),
+        //paddingHorizontal: wp(2),
     },
     daterangeText: {
         color: colors.black,
@@ -153,7 +154,7 @@ export const styles = StyleSheet.create({
     timeRangeView: {
         flexDirection: "row",
         alignItems: "center",
-        paddingHorizontal: wp(10),
+        //paddingHorizontal: wp(1),
         justifyContent: "space-between",
         marginTop: hp(2),
     },

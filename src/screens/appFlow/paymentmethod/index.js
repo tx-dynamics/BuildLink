@@ -67,8 +67,8 @@ const PaymentMethod = ({ navigation }) => {
                     <View style={styles.requestModalSubView}>
                         <Image resizeMode='contain' source={appIcons.subscriptionIcon} style={styles.subImage} />
                         <View style={styles.textView}>
-                            <Text style={styles.subsText}>Subscription Successfull</Text>
-                            <Text style={styles.successText}>You have succesfully sibscribed to the Buildlink community. Enjoy extra features and stay updated.</Text>
+                            <Text style={styles.subsText}>Subscription Successful</Text>
+                            <Text style={styles.successText}>You have succesfully subscribed to the Buildlink community. Enjoy extra features and stay updated.</Text>
                         </View>
                     </View>
                 </KeyboardAwareScrollView>

@@ -48,15 +48,15 @@ const ReviewFilter = (props) => {
                     </View>
                     <View style={styles.RateMainView}>
                         <Text style={styles.rateText}>Rate/hr</Text>
-                        <View style={[appStyles.row]}>
+                        <View style={[appStyles.row,]}>
                             <Text style={styles.fromPrice}>$10/hr</Text>
                             <Text style={styles.toPrice}>  $24/hr</Text>
                         </View>
                     </View>
                     <Text style={styles.dateTimeRangeText} >Date & Time Range</Text>
                     <View style={[appStyles.row]}>
-                        <Text style={styles.fromDate}>22,July,2022 , 6:35PM</Text>
-                        <Text style={styles.toDate}>25,July,2022 , 6:35PM</Text>
+                        <Text style={styles.fromDate}>22, July 2022 , 6:35PM</Text>
+                        <Text style={styles.toDate}>25, July 2022 , 6:35PM</Text>
                     </View>
                     <View style={styles.buttonView}>
                         <Button containerStyle={styles.btnContainerStyle} style={styles.btnText} onPress={() => props.navigation.navigate(routes.homeScreen)} >Apply Filter</Button>

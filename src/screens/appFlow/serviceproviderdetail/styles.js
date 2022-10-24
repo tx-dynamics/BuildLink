@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.serviceprovidor,
         paddingVertical: hp(2),
         paddingHorizontal: wp(2),
-        marginTop: hp(2)
+        marginTop: hp(1)
     },
     backArrowImage: {
         width: wp(3),
@@ -36,12 +36,13 @@ export const styles = StyleSheet.create({
     },
     timeRangeText: {
         color: colors.black,
+        paddingHorizontal: wp(5.5),
         fontFamily: fontFamily.appTextBold
     },
     timeRangeView: {
         flexDirection: "row",
         alignItems: "center",
-        paddingHorizontal: wp(10),
+        paddingHorizontal: wp(5),
         justifyContent: "space-between",
         marginTop: hp(2),
     },
@@ -114,7 +115,9 @@ export const styles = StyleSheet.create({
     },
     dollarText: {
         color: colors.greyDark,
-        fontSize: 10
+        fontFamily: fontFamily.appTextRegular,
+        fontSize: 10,
+        paddingTop: 5
     },
     priceText: {
         color: colors.black,
@@ -199,6 +202,7 @@ export const styles = StyleSheet.create({
         height: wp(2),
         width: wp(2),
         backgroundColor: colors.theme,
+
         borderRadius: 2,
         marginHorizontal: wp(1)
     },
