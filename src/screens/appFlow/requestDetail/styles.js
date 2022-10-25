@@ -51,7 +51,6 @@ export const styles = StyleSheet.create({
         backgroundColor: colors.whitish,
         borderRadius: wp(4),
         alignItems: 'center',
-        //paddingLeft: wp(1),
         paddingRight: wp(5),
         justifyContent: 'space-between',
         flexDirection: 'row'
@@ -61,10 +60,6 @@ export const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-
-
-
-
     },
     selectionIcon: {
         width: wp(2.5),

@@ -92,16 +92,17 @@ const FilterScreen = (props) => {
                                         nonCollidingMultiSliderValue[0],
                                         nonCollidingMultiSliderValue[1],
                                     ]}
-                                    sliderLength={wp(88.5)}
+                                    sliderLength={wp(88)}
                                     onValuesChange={nonCollidingMultiSliderValuesChange}
                                     min={0}
                                     max={100}
                                     step={1}
-                                    allowOverlap={false}
-                                    snapped
+                                    allowOverlap={true}
+                                    //snapped
+                                    markerContainerStyle={{ paddingLeft: wp(2), paddingRight: wp(-1) }}
                                     minMarkerOverlapDistance={20}
                                     customMarker={() =>
-                                        <View>
+                                        <View style={{ width: wp(10) }}>
                                             <View style={styles.scrollLabel}>
                                                 <Image resizeMode='contain' source={appIcons.scrollmarker} style={styles.scrollMarkerImage} />
                                             </View>
@@ -122,7 +123,9 @@ const FilterScreen = (props) => {
                                 {showCalander ?
                                     <CustomCalendar
                                         lineTop={hp(-1.4)}
+                                        paddingVertical={hp(1.47)}
                                         marginRight={wp(2)}
+                                        paddingTop={hp(.2)}
                                         boxColor={colors.theme}
                                         lineColor={colors.calenderline}
                                         //  {...{ showCal, setShowCal }}

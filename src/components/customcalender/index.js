@@ -25,7 +25,9 @@ const CustomCalendar = ({
     boxColor,
     lineColor,
     lineTop,
-    marginRight
+    marginRight,
+    paddingTop,
+    paddingVertical
 
 }) => {
     const [dateList, setDateList] = useState([]);
@@ -202,7 +204,7 @@ const CustomCalendar = ({
 
                                 alignItems: "center",
                                 justifyContent: "center",
-                                paddingVertical: 2,
+                                paddingVertical: paddingVertical ? paddingVertical : 2,
                                 //paddingLeft: isStartDateRadius(date) ? 0 : 0,
                                 //width: isStartDateRadius(date) ? wp(10) : 0,
                                 marginRight: isEndDateRadius(date) ? marginRight : 0,
@@ -266,7 +268,7 @@ const CustomCalendar = ({
                                     {
                                         flex: 1,
                                         alignSelf: "center",
-                                        paddingTop: hp(.2),
+                                        paddingTop: paddingTop,
                                         //marginRight: wp(-7),
                                         alignItems: 'center',
                                         //justifyContent: 'center',

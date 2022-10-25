@@ -78,6 +78,7 @@ export const styles = StyleSheet.create({
     },
     margintop: {
         marginTop: hp(1),
+
     },
     rateText: {
         color: colors.black,

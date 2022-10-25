@@ -82,6 +82,7 @@ const ServiceProvider = (props) => {
                     {
                         isCalender ? <CustomCalendar
                             lineTop={hp(-1.7)}
+                            paddingTop={hp(.3)}
                             marginRight={wp(3.5)}
                             boxColor={colors.blueBox}
                             lineColor={colors.blueLine}
