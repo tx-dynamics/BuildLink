@@ -142,6 +142,7 @@ const SkilledHome = ({ navigation }) => {
                         <CustomCalendar
                             lineTop={hp(-1.7)}
                             marginRight={wp(3.5)}
+                            paddingTop={hp(.3)}
                             boxColor={colors.theme}
                             lineColor={colors.calenderline}
                             //  {...{ showCal, setShowCal }}
